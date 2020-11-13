@@ -1,6 +1,20 @@
 import logo from './logo.svg';
 import './App.css';
 
+const items = [
+  {
+    "id": 1,
+    "desc": "travel in Seattle",
+    "amount": 2000,
+    "date": "05-30-2014",
+    "category": {
+      "id": 1,
+      "name": "travel",
+      "type": "outcome"
+    }
+  }
+];
+
 function App() {
   return (
     <div className="App">
