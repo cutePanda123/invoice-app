@@ -1,5 +1,6 @@
 import React from 'react';
 import Ionicon from 'react-ionicons';
+import PropTypes from 'prop-types';
 
 const TransactionList = ({ items, onModifyItem, onDeleteItem }) => {
     return (
@@ -72,6 +73,12 @@ const TransactionList = ({ items, onModifyItem, onDeleteItem }) => {
             }
         </ul>
     );
+}
+
+TransactionList.propTypes = {
+    items: PropTypes.array.isRequired,
+    onModifyItem: PropTypes.func.isRequired,
+    onDeleteItem: PropTypes.func.isRequired
 }
 
 export default TransactionList;
