@@ -2,8 +2,9 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import './App.css';
 import TransactionList from './components/TransactionList';
 import ViewTab from './components/ViewTab';
-import Constants from './utilility';
+import Utility from './utilility';
 import SpendingSummary from './components/SpendingSummary';
+import MonthPicker from './components/MonthPicker';
 
 const items = [
   {
@@ -35,12 +36,16 @@ const items = [
 function App() {
   return (
     <div className="App">
+      <MonthPicker
+        year={2020}
+        month={11}
+      />
       <SpendingSummary
         income={1000}
         outcome={500}
       />
       <ViewTab
-        activeViewName={Constants.LIST_VIEW_NAME}
+        activeViewName={Utility.LIST_VIEW_NAME}
         onClickTab={
           (viewName)=>{
             console.log(viewName);

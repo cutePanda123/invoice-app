@@ -4,9 +4,9 @@ import PropTypes from 'prop-types';
 const SpendingSummary = ({income, outcome}) => {
     return (
         <div className="containers">
-            <div className="row">
-                <div className="col">Income: {income}</div>
-                <div className="col">Outcome: {outcome}</div>
+            <div className="row justify-content-end">
+                <div className="col-2">Income: {income}</div>
+                <div className="col-2">Outcome: {outcome}</div>
             </div>
         </div>
     );
