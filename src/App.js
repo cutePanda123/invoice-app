@@ -35,7 +35,7 @@ const items = [
 
 function App() {
   return (
-    <div className="App">
+    <div>
       <MonthPicker
         year={2020}
         month={11}
