@@ -3,6 +3,7 @@ import './App.css';
 import TransactionList from './components/TransactionList';
 import ViewTab from './components/ViewTab';
 import Constants from './utilility';
+import SpendingSummary from './components/SpendingSummary';
 
 const items = [
   {
@@ -34,6 +35,10 @@ const items = [
 function App() {
   return (
     <div className="App">
+      <SpendingSummary
+        income={1000}
+        outcome={500}
+      />
       <ViewTab
         activeViewName={Constants.LIST_VIEW_NAME}
         onClickTab={
