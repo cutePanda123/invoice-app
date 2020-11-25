@@ -38,7 +38,10 @@ function App() {
     <div>
       <MonthPicker
         year={2020}
-        month={11}
+        month={12}
+        onDateChange={(year, month) => {
+          console.log(year + " " + month);
+        }}
       />
       <SpendingSummary
         income={1000}
