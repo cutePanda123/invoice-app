@@ -13,6 +13,7 @@ class MonthPicker extends React.Component {
     }
 
     onYearChange = (event, year) => {
+        event.stopPropagation();
         event.preventDefault();
         this.setState({
             selectedYear: year
@@ -20,6 +21,7 @@ class MonthPicker extends React.Component {
     }
 
     onMonthChange = (event, month) => {
+        event.stopPropagation();
         event.preventDefault();
         this.setState({
             selectedMonth: month,
@@ -30,9 +32,20 @@ class MonthPicker extends React.Component {
 
 
     onDropdownClick = (event) => {
+        event.stopPropagation();
         event.preventDefault();
         this.setState({
             isOpen: !this.state.isOpen
+        });
+    }
+
+    componentDidMount() {
+        document.addEventListener('click', (e) => {
+            e.preventDefault();
+            this.setState({
+                isOpen: false
+            });
+            this.props.onDateChange(this.state.selectedYear, this.state.selectedMonth);
         });
     }
 
