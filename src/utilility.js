@@ -2,6 +2,8 @@
 const Utility = {
     LIST_VIEW_NAME: 'list-view',
     CHART_VIEW_NAME:'chart-view',
+    INCOME_TYPE: 'income',
+    OUTCOME_TYPE: 'outcome',
     getMonthString: (month) => {
         return month < 10 ? '0' + month : month;
     },

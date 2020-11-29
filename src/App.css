@@ -1,10 +1,15 @@
 .App {
-  text-align: center;
+  /*text-align: center;*/
+}
+
+header {
+
 }
 
 .App-logo {
   height: 40vmin;
   pointer-events: none;
+  text-align: center;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -15,17 +20,15 @@
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  padding: 20px;
   color: white;
 }
 
 .App-link {
   color: #61dafb;
+}
+.content-area {
+  background: #fff;;
 }
 
 @keyframes App-logo-spin {
