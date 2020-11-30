@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 import Utility from '../utilility';
 
@@ -39,13 +40,20 @@ class MonthPicker extends React.Component {
         });
     }
 
+    componentWillUnmount() {
+        document.removeEventListener('click', this.closeMonthPickerDropdown, false);
+    }
+
     componentDidMount() {
-        document.addEventListener('click', (e) => {
-            e.preventDefault();
-            this.setState({
-                isOpen: false
-            });
-            this.props.onDateChange(this.state.selectedYear, this.state.selectedMonth);
+        document.addEventListener('click', this.closeMonthPickerDropdown, false);
+    }
+
+    closeMonthPickerDropdown = (event) => {
+        if (ReactDOM.findDOMNode(this).contains(event.target)) {
+            return;
+        }
+        this.setState({
+            isOpen: false
         });
     }
 
