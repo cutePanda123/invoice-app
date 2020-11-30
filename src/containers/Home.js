@@ -5,6 +5,7 @@ import ViewTab from '../components/ViewTab';
 import Utility from '../utilility';
 import SpendingSummary from '../components/SpendingSummary';
 import MonthPicker from '../components/MonthPicker';
+import CreateTransactionButton from '../components/CreateTransactionButton';
 
 const items = [
   {
@@ -76,7 +77,12 @@ class Home extends React.Component {
               }
             }
           />
-          <div>Place holder for CreateButton</div>
+          <CreateTransactionButton
+            onCreateTransaction={
+              () => {
+                console.log("create a transaction button");
+              }}
+          />
           <TransactionList 
             items = {items}
             onDeleteItem = {
