@@ -13,6 +13,14 @@ const Utility = {
             array[i - startAt] = i;
         }
         return array;
+    },
+
+    parseYearAndMonth: (str) => {
+        const date = str ? new Date(str) : new Date();
+        return {
+            year: date.getFullYear(),
+            month: date.getMonth() + 1
+        };
     }
 }
 
