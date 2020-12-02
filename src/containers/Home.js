@@ -56,6 +56,26 @@ class Home extends React.Component {
     };
   }
 
+  changeView = () => {
+
+  }
+
+  changeDate = () => {
+
+  }
+
+  modifyTrasaction = () => {
+
+  }
+
+  createTransaction = () => {
+
+  }
+
+  deleteTransaction = () => {
+
+  }
+
   render() {
     const {items, currentDate, tabView} = this.state;
     const itemsWithCategory = items.map(item => {
@@ -81,9 +101,7 @@ class Home extends React.Component {
               <MonthPicker
                 year={currentDate.year}
                 month={currentDate.month}
-                onDateChange={(year, month) => {
-                  console.log(year + " " + month);
-                }}
+                onDateChange={this.changeDate}
               />
             </div>
             <div className="col">
@@ -97,30 +115,15 @@ class Home extends React.Component {
         <div className="cotent-area py-3 px-3">
           <ViewTab
             activeViewName={tabView}
-            onClickTab={
-              (viewName)=>{
-                console.log(viewName);
-              }
-            }
+            onClickTab={this.changeView}
           />
           <CreateTransactionButton
-            onCreateTransaction={
-              () => {
-                console.log("create a transaction button");
-              }}
+            onCreateTransaction={this.createTransaction}
           />
           <TransactionList 
             items = {itemsWithCategory}
-            onDeleteItem = {
-              (item) => {
-                alert(item.id);
-              }
-            }
-            onModifyItem = {
-              (item) => {
-                alert(item.id);
-              }
-            }
+            onDeleteItem = {this.deleteTransaction}
+            onModifyItem = {this.modifyTrasaction}
           /> 
         </div>
       </React.Fragment>
