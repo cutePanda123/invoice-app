@@ -6,7 +6,9 @@ const CreateTransactionButton = ({ onCreateTransaction }) => {
     return (
         <button 
             className="btn btn-primary btn-block d-flex justify-content-center align-items-center"
-            onClick={onCreateTransaction}    
+            onClick={(e) => {
+                onCreateTransaction()
+            }}    
         >
             <Ionicon
                 className="rounded-circle"
@@ -24,7 +26,7 @@ CreateTransactionButton.propTypes = {
 }
 
 CreateTransactionButton.defaultProps = {
-    onClionCreateTransactionck: () => {
+    onCreateTransaction: () => {
         console.log("create a transaction button");
     }
 }

@@ -24,27 +24,35 @@ const categories = {
 
 const items = [
   {
-    "id": 1,
+    "id": 0,
     "desc": "travel in Seattle",
     "amount": 2000,
     "date": "05-30-2014",
     "categoryId": 1
   },
   {
-    "id": 2,
+    "id": 1,
     "desc": "travel in San Jose",
     "amount": 4000,
     "date": "08-10-2014",
     "categoryId": 1
   },
   {
-    "id": 3,
+    "id": 2,
     "desc": "stock investement",
     "amount": 14000,
     "date": "12-10-2014",
     "categoryId": 2
   }
 ];
+
+const fakeNewTransaction = {
+  "id": 0,
+  "desc": "fake new transaction",
+  "amount": 14000,
+  "date": "12-10-2014",
+  "categoryId": 2
+};
 
 class Home extends React.Component {
   constructor(props) {
@@ -56,12 +64,14 @@ class Home extends React.Component {
     };
   }
 
-  changeView = () => {
-
+  changeView = (view) => {
+    this.setState({
+      tabView: view,
+    });
   }
 
   changeDate = () => {
-
+    
   }
 
   modifyTrasaction = () => {
@@ -69,11 +79,29 @@ class Home extends React.Component {
   }
 
   createTransaction = () => {
-
+    let len = this.state.items.length;
+    console.log("initial length: " + len);
+    fakeNewTransaction.id = len == 0 ? 0 : Math.max.apply(Math, this.state.items.map(item => item.id)) + 1;
+    console.log("item id:" + fakeNewTransaction.id); 
+    const newItems = [fakeNewTransaction, ...this.state.items];
+    function setStateFunction(state, props) {
+      const newState = {...state, items: [fakeNewTransaction, ...state.items]};
+      return newState;
+    }
+    this.setState(setStateFunction);
+    let debugItems = this.state.items;
+    console.log("final length : " + this.state.items.length);
   }
 
-  deleteTransaction = () => {
+  //this.setState((prevState)=>({ value:  doSomething(prevState.value) })
+1
 
+
+  deleteTransaction = (victim) => {
+    let transactions = this.state.items.filter(transaction => transaction.id != victim.id);
+    this.setState({
+      items: transactions
+    });
   }
 
   render() {
@@ -120,11 +148,19 @@ class Home extends React.Component {
           <CreateTransactionButton
             onCreateTransaction={this.createTransaction}
           />
-          <TransactionList 
-            items = {itemsWithCategory}
-            onDeleteItem = {this.deleteTransaction}
-            onModifyItem = {this.modifyTrasaction}
-          /> 
+          { 
+            tabView == Utility.LIST_VIEW_NAME && 
+            <TransactionList 
+              items = {itemsWithCategory}
+              onDeleteItem = {this.deleteTransaction}
+              onModifyItem = {this.modifyTrasaction}
+            /> 
+          }
+          {
+            tabView == Utility.CHART_VIEW_NAME &&
+            <h2>Place holder for Chart View</h2>
+          }
+          
         </div>
       </React.Fragment>
     );
