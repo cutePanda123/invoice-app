@@ -46,7 +46,7 @@ const items = [
   }
 ];
 
-const fakeNewTransaction = {
+const fakeTransaction = {
   "id": 0,
   "desc": "fake new transaction",
   "amount": 14000,
@@ -70,32 +70,34 @@ class Home extends React.Component {
     });
   }
 
-  changeDate = () => {
-    
+  changeDate = (year, month) => {
+    this.setState({
+      currentDate: {year, month}
+    });
   }
 
-  modifyTrasaction = () => {
-
+  modifyTrasaction = (modifiedTransaction) => {
+    const newTransactions = this.state.items.map((transaction) => {
+      if (modifiedTransaction.id == transaction.id) {
+        transaction.desc = "modified transaction";
+      }
+      return transaction;
+    });
+    this.setState({
+      items: newTransactions
+    });
   }
 
   createTransaction = () => {
     let len = this.state.items.length;
     console.log("initial length: " + len);
-    fakeNewTransaction.id = len == 0 ? 0 : Math.max.apply(Math, this.state.items.map(item => item.id)) + 1;
-    console.log("item id:" + fakeNewTransaction.id); 
-    const newItems = [fakeNewTransaction, ...this.state.items];
-    function setStateFunction(state, props) {
-      const newState = {...state, items: [fakeNewTransaction, ...state.items]};
-      return newState;
-    }
-    this.setState(setStateFunction);
-    let debugItems = this.state.items;
-    console.log("final length : " + this.state.items.length);
+    let newTrasaction = JSON.parse(JSON.stringify(fakeTransaction));
+    newTrasaction.id = len == 0 ? 0 : Math.max.apply(Math, this.state.items.map(item => item.id)) + 1;
+    const newItems = [newTrasaction, ...this.state.items];
+    this.setState({
+      items: newItems
+    });
   }
-
-  //this.setState((prevState)=>({ value:  doSomething(prevState.value) })
-1
-
 
   deleteTransaction = (victim) => {
     let transactions = this.state.items.filter(transaction => transaction.id != victim.id);
