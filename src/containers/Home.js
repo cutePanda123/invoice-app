@@ -27,21 +27,21 @@ const items = [
     "id": 0,
     "desc": "travel in Seattle",
     "amount": 2000,
-    "date": "05-30-2014",
+    "date": "2019-10-20",
     "categoryId": 1
   },
   {
     "id": 1,
     "desc": "travel in San Jose",
     "amount": 4000,
-    "date": "08-10-2014",
+    "date": "2019-12-10",
     "categoryId": 1
   },
   {
     "id": 2,
     "desc": "stock investement",
     "amount": 14000,
-    "date": "12-10-2014",
+    "date": "2019-12-15",
     "categoryId": 2
   }
 ];
@@ -50,7 +50,7 @@ const fakeTransaction = {
   "id": 0,
   "desc": "fake new transaction",
   "amount": 14000,
-  "date": "12-10-2014",
+  "date": "2020-12-10",
   "categoryId": 2
 };
 
@@ -89,10 +89,8 @@ class Home extends React.Component {
   }
 
   createTransaction = () => {
-    let len = this.state.items.length;
-    console.log("initial length: " + len);
     let newTrasaction = JSON.parse(JSON.stringify(fakeTransaction));
-    newTrasaction.id = len == 0 ? 0 : Math.max.apply(Math, this.state.items.map(item => item.id)) + 1;
+    newTrasaction.id = this.state.items.length == 0 ? 0 : Math.max.apply(Math, this.state.items.map(item => item.id)) + 1;
     const newItems = [newTrasaction, ...this.state.items];
     this.setState({
       items: newItems
@@ -111,6 +109,9 @@ class Home extends React.Component {
     const itemsWithCategory = items.map(item => {
       item.category = categories[item.categoryId];
       return item;
+    }).filter((transaction) => {
+      const month = Utility.getMonthString(currentDate.month);
+      return transaction.date.includes(`${currentDate.year}-${month}`);
     });
     let totalIncome = 0, totalOutcome = 0;
     itemsWithCategory.forEach((item) => {

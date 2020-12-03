@@ -7,28 +7,23 @@ class MonthPicker extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            isOpen: false,
-            selectedYear: props.year,
-            selectedMonth: props.month
+            isOpen: false
         };
     }
 
     onYearChange = (event, year) => {
         event.stopPropagation();
         event.preventDefault();
-        this.setState({
-            selectedYear: year
-        });
+        this.props.onDateChange(year, this.props.month);
     }
 
     onMonthChange = (event, month) => {
         event.stopPropagation();
         event.preventDefault();
         this.setState({
-            selectedMonth: month,
             isOpen: false
         });
-        this.props.onDateChange(this.state.selectedYear, this.state.selectedMonth);
+        this.props.onDateChange(this.props.year, month);
     }
 
 
@@ -58,8 +53,7 @@ class MonthPicker extends React.Component {
     }
 
     render() {
-        const {selectedMonth, selectedYear} = this.state;
-        const {year} = this.props;
+        const {year, month} = this.props;
         const { isOpen } = this.state;
         const monthRange = Utility.range(12, 1);
         const yearRange = Utility.range(9, -4).map(number => number + year);
@@ -70,7 +64,7 @@ class MonthPicker extends React.Component {
                     className="btn btn-lg btn-secondary dropdown-toggle"
                     onClick={this.onDropdownClick}
                 >
-                    {`${Utility.getMonthString(selectedMonth)}/${selectedYear}`}
+                    {`${Utility.getMonthString(month)}/${year}`}
                 </button>
                 {
                     isOpen &&
@@ -83,7 +77,7 @@ class MonthPicker extends React.Component {
                                         <a
                                             href="#"
                                             key={idx + 1} 
-                                            className={curYear === selectedYear ? "dropdown-item active" : "dropdown-item"}
+                                            className={curYear === year ? "dropdown-item active" : "dropdown-item"}
                                             onClick={
                                                 (event) => {
                                                     this.onYearChange(event, curYear);
@@ -102,7 +96,7 @@ class MonthPicker extends React.Component {
                                         <a
                                             href="#"
                                             key={idx + 1} 
-                                            className={curMonth === selectedMonth ? "dropdown-item active" : "dropdown-item"}
+                                            className={curMonth === month ? "dropdown-item active" : "dropdown-item"}
                                             onClick={
                                                 (event) => {
                                                     this.onMonthChange(event, curMonth);
