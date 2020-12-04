@@ -1,0 +1,251 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TransactionList test snapshot test 1`] = `
+<ul
+  className="list-group list-group-flush"
+>
+  <li
+    className="list-group-item d-flex justify-content-between align-items-center"
+    key="0"
+  >
+    <span
+      className="col-1"
+    >
+      <Ionicon
+        beat={false}
+        className="rounded-circle"
+        color="#fff"
+        fontSize="30px"
+        icon="ios-plane"
+        rotate={false}
+        shake={false}
+        style={
+          Object {
+            "backgroundColor": "#007bff",
+            "padding": "5px",
+          }
+        }
+      />
+    </span>
+    <span
+      className="col-5"
+    >
+      travel in Seattle
+    </span>
+    <span
+      className="col-2 font-weight-bold"
+    >
+      -
+      $
+      2000
+    </span>
+    <span
+      className="col-2"
+    >
+      2019-10-20
+    </span>
+    <a
+      className="col-1"
+      onClick={[Function]}
+    >
+      <Ionicon
+        beat={false}
+        className="rounded-circle"
+        color="#fff"
+        fontSize="30px"
+        icon="ios-create-outline"
+        rotate={false}
+        shake={false}
+        style={
+          Object {
+            "backgroundColor": "#28a745",
+            "padding": "5px",
+          }
+        }
+      />
+    </a>
+    <a
+      className="col-1"
+      onClick={[Function]}
+    >
+      <Ionicon
+        beat={false}
+        className="rounded-circle"
+        color="#fff"
+        fontSize="30px"
+        icon="ios-close"
+        rotate={false}
+        shake={false}
+        style={
+          Object {
+            "backgroundColor": "#dc3545",
+            "padding": "5px",
+          }
+        }
+      />
+    </a>
+  </li>
+  <li
+    className="list-group-item d-flex justify-content-between align-items-center"
+    key="1"
+  >
+    <span
+      className="col-1"
+    >
+      <Ionicon
+        beat={false}
+        className="rounded-circle"
+        color="#fff"
+        fontSize="30px"
+        icon="ios-plane"
+        rotate={false}
+        shake={false}
+        style={
+          Object {
+            "backgroundColor": "#007bff",
+            "padding": "5px",
+          }
+        }
+      />
+    </span>
+    <span
+      className="col-5"
+    >
+      travel in San Jose
+    </span>
+    <span
+      className="col-2 font-weight-bold"
+    >
+      -
+      $
+      4000
+    </span>
+    <span
+      className="col-2"
+    >
+      2019-12-10
+    </span>
+    <a
+      className="col-1"
+      onClick={[Function]}
+    >
+      <Ionicon
+        beat={false}
+        className="rounded-circle"
+        color="#fff"
+        fontSize="30px"
+        icon="ios-create-outline"
+        rotate={false}
+        shake={false}
+        style={
+          Object {
+            "backgroundColor": "#28a745",
+            "padding": "5px",
+          }
+        }
+      />
+    </a>
+    <a
+      className="col-1"
+      onClick={[Function]}
+    >
+      <Ionicon
+        beat={false}
+        className="rounded-circle"
+        color="#fff"
+        fontSize="30px"
+        icon="ios-close"
+        rotate={false}
+        shake={false}
+        style={
+          Object {
+            "backgroundColor": "#dc3545",
+            "padding": "5px",
+          }
+        }
+      />
+    </a>
+  </li>
+  <li
+    className="list-group-item d-flex justify-content-between align-items-center"
+    key="2"
+  >
+    <span
+      className="col-1"
+    >
+      <Ionicon
+        beat={false}
+        className="rounded-circle"
+        color="#fff"
+        fontSize="30px"
+        icon="logo-yen"
+        rotate={false}
+        shake={false}
+        style={
+          Object {
+            "backgroundColor": "#007bff",
+            "padding": "5px",
+          }
+        }
+      />
+    </span>
+    <span
+      className="col-5"
+    >
+      stock investement
+    </span>
+    <span
+      className="col-2 font-weight-bold"
+    >
+      +
+      $
+      14000
+    </span>
+    <span
+      className="col-2"
+    >
+      2019-12-15
+    </span>
+    <a
+      className="col-1"
+      onClick={[Function]}
+    >
+      <Ionicon
+        beat={false}
+        className="rounded-circle"
+        color="#fff"
+        fontSize="30px"
+        icon="ios-create-outline"
+        rotate={false}
+        shake={false}
+        style={
+          Object {
+            "backgroundColor": "#28a745",
+            "padding": "5px",
+          }
+        }
+      />
+    </a>
+    <a
+      className="col-1"
+      onClick={[Function]}
+    >
+      <Ionicon
+        beat={false}
+        className="rounded-circle"
+        color="#fff"
+        fontSize="30px"
+        icon="ios-close"
+        rotate={false}
+        shake={false}
+        style={
+          Object {
+            "backgroundColor": "#dc3545",
+            "padding": "5px",
+          }
+        }
+      />
+    </a>
+  </li>
+</ul>
+`;

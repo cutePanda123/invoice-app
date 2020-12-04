@@ -7,7 +7,7 @@ import SpendingSummary from '../components/SpendingSummary';
 import MonthPicker from '../components/MonthPicker';
 import CreateTransactionButton from '../components/CreateTransactionButton';
 
-const categories = {
+export const categories = {
   "1": {
     "id": 1,
     "name": "travel",
@@ -22,7 +22,7 @@ const categories = {
   }
 };
 
-const items = [
+export const items = [
   {
     "id": 0,
     "desc": "travel in Seattle",
