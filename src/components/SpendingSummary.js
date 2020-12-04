@@ -5,10 +5,10 @@ const SpendingSummary = ({income, outcome}) => {
     return (
         <div className="containers">
             <div className="row">
-                <div className="col">
+                <div className="col income">
                     <h5>Income: </h5><div>{income}</div>
                 </div>
-                <div className="col">
+                <div className="col outcome">
                     <h5>Outcome: </h5><div>{outcome}</div>
                 </div>
             </div>
