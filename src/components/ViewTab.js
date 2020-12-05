@@ -1,7 +1,7 @@
 import React from 'react';
 import Ionicon from 'react-ionicons';
 import PropTypes from 'prop-types';
-import Utility from '../utilility';
+import Utility from '../utility';
 
 const generateTabClassName = (curTabName, activeViewName) => {
     return (curTabName === activeViewName) ? "nav-link active" : "nav-link";

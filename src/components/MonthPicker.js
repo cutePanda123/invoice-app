@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
-import Utility from '../utilility';
+import Utility from '../utility';
 
 class MonthPicker extends React.Component {
     constructor(props) {
