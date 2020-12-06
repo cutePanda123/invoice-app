@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 import { mount } from 'enzyme';
 import MonthPicker from '../MonthPicker';
 
@@ -58,5 +59,31 @@ describe('MonthPicker test', () => {
             });
         expect(props.onDateChange).toHaveBeenCalledWith(2020, 1);
         expect(wrapper.state('isOpen')).toEqual(false);
-    })
+    });
+
+    it('click dropdown itself cannot close the dropdown if it is open', () => {
+        let clickEventCallback = null;
+        document.addEventListener = jest.fn((event, cb) => {
+            clickEventCallback = cb;
+        });
+        let localWrapper = mount(<MonthPicker {...props} />);
+        localWrapper.find('.dropdown-toggle').simulate('click');
+        clickEventCallback({
+            target: ReactDOM.findDOMNode(localWrapper.instance())
+        });
+        expect(localWrapper.state('isOpen')).toEqual(true);
+    });
+
+    it('click document can close the dropdown if it is open', () => {
+        let clickEventCallback = null;
+        document.addEventListener = jest.fn((event, cb) => {
+            clickEventCallback = cb;
+        });
+        let localWrapper = mount(<MonthPicker {...props} />);
+        localWrapper.find('.dropdown-toggle').simulate('click');
+        clickEventCallback({
+            target: document
+        });
+        expect(localWrapper.state('isOpen')).toEqual(false);
+    });
 });
