@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MonthPicker test snapshot test 1`] = `
+<MonthPicker
+  month={8}
+  onDateChange={[MockFunction]}
+  year={2020}
+>
+  <div
+    className="dropdown month-picker-component"
+  >
+    <h4>
+      Select a month
+    </h4>
+    <button
+      className="btn btn-lg btn-secondary dropdown-toggle"
+      onClick={[Function]}
+    >
+      08/2020
+    </button>
+  </div>
+</MonthPicker>
+`;

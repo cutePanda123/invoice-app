@@ -27,21 +27,21 @@ export const items = [
     "id": 0,
     "desc": "travel in Seattle",
     "amount": 2000,
-    "date": "2019-10-20",
+    "date": "2020-10-20",
     "categoryId": 1
   },
   {
     "id": 1,
     "desc": "travel in San Jose",
     "amount": 4000,
-    "date": "2019-12-10",
+    "date": "2020-12-10",
     "categoryId": 1
   },
   {
     "id": 2,
     "desc": "stock investement",
     "amount": 14000,
-    "date": "2019-12-15",
+    "date": "2020-12-15",
     "categoryId": 2
   }
 ];

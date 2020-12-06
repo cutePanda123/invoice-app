@@ -9,8 +9,8 @@ const Utility = {
     },
     range: (size, startAt = 0) => {
         const array = [];
-        for (let i = startAt; i <= size; i++) {
-            array[i - startAt] = i;
+        for (let i = 0; i < size; i++) {
+            array[i] = i + startAt;
         }
         return array;
     },

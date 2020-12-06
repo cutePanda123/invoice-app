@@ -70,8 +70,8 @@ class MonthPicker extends React.Component {
                     isOpen &&
                     <div className="dropdown-menu" style={{display: 'block'}}>
                         <div className="row">
-                            <div className="col border-right">
-                                <a key="0" className="dropdown-item">Year</a>
+                            <div className="col border-right years-range">
+                                <p key="0" className="dropdown-item-title">Year</p>
                                 {yearRange.map((curYear, idx) => {
                                     return (
                                         <a
@@ -89,8 +89,8 @@ class MonthPicker extends React.Component {
                                     );
                                 })}
                             </div>
-                            <div className="col">
-                                <a key="0" className="dropdown-item">Month</a>
+                            <div className="col months-range">
+                                <p className="dropdown-item-title">Month</p>
                                 {monthRange.map((curMonth, idx) => {
                                     return (
                                         <a
