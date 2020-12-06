@@ -56,7 +56,7 @@ const TransactionList = ({ items, onModifyItem, onDeleteItem }) => {
                             }}
                         >
                             <Ionicon
-                                className="rounded-circle"
+                                className="rounded-circle delete-button"
                                 fontSize="30px"
                                 style={
                                     {

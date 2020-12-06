@@ -70,7 +70,7 @@ exports[`TransactionList test snapshot test 1`] = `
     >
       <Ionicon
         beat={false}
-        className="rounded-circle"
+        className="rounded-circle delete-button"
         color="#fff"
         fontSize="30px"
         icon="ios-close"
@@ -151,7 +151,7 @@ exports[`TransactionList test snapshot test 1`] = `
     >
       <Ionicon
         beat={false}
-        className="rounded-circle"
+        className="rounded-circle delete-button"
         color="#fff"
         fontSize="30px"
         icon="ios-close"
@@ -232,7 +232,7 @@ exports[`TransactionList test snapshot test 1`] = `
     >
       <Ionicon
         beat={false}
-        className="rounded-circle"
+        className="rounded-circle delete-button"
         color="#fff"
         fontSize="30px"
         icon="ios-close"
