@@ -44,7 +44,10 @@ class MonthPicker extends React.Component {
     }
 
     closeMonthPickerDropdown = (event) => {
-        if (ReactDOM.findDOMNode(this).contains(event.target)) {
+        // if (ReactDOM.findDOMNode(this).contains(event.target)) {
+        //     return;
+        // }
+        if (this.node.contains(event.target)) {
             return;
         }
         this.setState({
@@ -58,7 +61,7 @@ class MonthPicker extends React.Component {
         const monthRange = Utility.range(12, 1);
         const yearRange = Utility.range(9, -4).map(number => number + year);
         return (
-            <div className="dropdown month-picker-component">
+            <div className="dropdown month-picker-component" ref={(ref) => {this.node = ref}}>
                 <h4>Select a month</h4>
                 <button
                     className="btn btn-lg btn-secondary dropdown-toggle"
