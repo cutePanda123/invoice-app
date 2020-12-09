@@ -31,6 +31,11 @@ let propsWithSelectedCategory = {
 let wrapper = null;
 
 describe('CategoryPicker test', () => {
+    it('snapshot test', () => {
+        wrapper = mount(<CategoryPicker {...props} />);
+        expect(wrapper).toMatchSnapshot();
+    });
+
     it('render should have correct number of items', () => {
         wrapper = mount(<CategoryPicker {...props} />);
         expect(wrapper.find('.category-item').length).toEqual(categories.length);
