@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tabs test snapshot test 1`] = `
+<ul
+  className="nav nav-tabs nav-fill my-4"
+>
+  <li
+    className="nav-item"
+    key=".0"
+  >
+    <a
+      className="nav-link active"
+      href="#"
+      onClick={[Function]}
+    >
+      <Tab>
+        tab1
+      </Tab>
+    </a>
+  </li>
+  <li
+    className="nav-item"
+    key=".1"
+  >
+    <a
+      className="nav-link"
+      href="#"
+      onClick={[Function]}
+    >
+      <Tab>
+        tab2
+      </Tab>
+    </a>
+  </li>
+</ul>
+`;
