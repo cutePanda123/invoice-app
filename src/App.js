@@ -19,6 +19,7 @@ function App() {
           <Link to="/create">Create</Link>
           <Link to="/edit/10">Edit</Link>
         </ul>
+        
         <Route path="/" exact component={Home} />
         <Route path="/create" component={CreateTransaction} />
         <Route path="/edit/:id" component={CreateTransaction} />

@@ -6,6 +6,7 @@ import Utility from '../utility';
 import SpendingSummary from '../components/SpendingSummary';
 import MonthPicker from '../components/MonthPicker';
 import CreateTransactionButton from '../components/CreateTransactionButton';
+import CreateTransactionForm from '../components/CreateTransactionForm';
 
 export const categories = {
   "1": {
@@ -78,7 +79,7 @@ class Home extends React.Component {
 
   modifyTrasaction = (modifiedTransaction) => {
     const newTransactions = this.state.items.map((transaction) => {
-      if (modifiedTransaction.id == transaction.id) {
+      if (modifiedTransaction.id === transaction.id) {
         transaction.desc = "modified transaction";
       }
       return transaction;
@@ -90,7 +91,7 @@ class Home extends React.Component {
 
   createTransaction = () => {
     let newTrasaction = JSON.parse(JSON.stringify(fakeTransaction));
-    newTrasaction.id = this.state.items.length == 0 ? 0 : Math.max.apply(Math, this.state.items.map(item => item.id)) + 1;
+    newTrasaction.id = this.state.items.length === 0 ? 0 : Math.max.apply(Math, this.state.items.map(item => item.id)) + 1;
     const newItems = [newTrasaction, ...this.state.items];
     this.setState({
       items: newItems
@@ -98,7 +99,7 @@ class Home extends React.Component {
   }
 
   deleteTransaction = (victim) => {
-    let transactions = this.state.items.filter(transaction => transaction.id != victim.id);
+    let transactions = this.state.items.filter(transaction => transaction.id !== victim.id);
     this.setState({
       items: transactions
     });
@@ -128,6 +129,17 @@ class Home extends React.Component {
             <img src={logo} className="App-logo"></img>
           </div>
           <div className="row mb-5">
+            <CreateTransactionForm 
+              onFormCancel={() => {
+                console.log("on form cancle")
+              }}
+              onFormSubmit={() => {
+                console.log("on form submit")
+              }}
+              transaction={{}}
+            />
+          </div>
+          <div className="row mb-5">
             <div className="col">
               <MonthPicker
                 year={currentDate.year}
@@ -152,7 +164,7 @@ class Home extends React.Component {
             onCreateTransaction={this.createTransaction}
           />
           { 
-            tabView == Utility.LIST_VIEW_NAME && 
+            tabView === Utility.LIST_VIEW_NAME && 
             <TransactionList 
               items = {itemsWithCategory}
               onDeleteItem = {this.deleteTransaction}
@@ -160,7 +172,7 @@ class Home extends React.Component {
             /> 
           }
           {
-            tabView == Utility.CHART_VIEW_NAME &&
+            tabView === Utility.CHART_VIEW_NAME &&
             <h2>Place holder for Chart View</h2>
           }
           
