@@ -172,109 +172,115 @@ exports[`Home test snapshot test 1`] = `
   <div
     className="cotent-area py-3 px-3"
   >
-    <ViewTab
-      activeViewName="list-view"
-      onClickTab={[Function]}
+    <Tabs
+      activeIndex={0}
+      onTabChange={[Function]}
     >
       <ul
         className="nav nav-tabs nav-fill my-4"
       >
         <li
           className="nav-item"
+          key=".0"
         >
           <a
             className="nav-link active"
             href="#"
             onClick={[Function]}
           >
-            <Ionicon
-              beat={false}
-              className="rounded-circle mr-2"
-              color="#007bff"
-              fontSize="25px"
-              icon="ios-paper"
-              rotate={false}
-              shake={false}
-              style={Object {}}
-            >
-              <styled.svg
-                beat={0}
+            <Tab>
+              <Ionicon
+                beat={false}
                 className="rounded-circle mr-2"
-                fill="#007bff"
-                height="25px"
-                rotate={0}
-                shake={0}
+                color="#007bff"
+                fontSize="25px"
+                icon="ios-paper"
+                rotate={false}
+                shake={false}
                 style={Object {}}
-                viewBox="0 0 1024 1024"
-                width="25px"
               >
-                <svg
-                  className="rounded-circle mr-2 sc-bdVaJa fUuvxv"
+                <styled.svg
+                  beat={0}
+                  className="rounded-circle mr-2"
                   fill="#007bff"
                   height="25px"
                   rotate={0}
+                  shake={0}
                   style={Object {}}
                   viewBox="0 0 1024 1024"
                   width="25px"
                 >
-                  <path
-                    d="M224 96v736h-32v-608h-64v642.2c0 34 27.6 61.8 61.8 61.8h644.6c34 0 61.8-27.6 61.8-61.8v-770.2h-672.2zM320 224h256v32h-256v-32zM320 544h384v32h-384v-32zM800 736h-480v-32h480v32zM800 416h-480v-32h480v32z"
-                  />
-                </svg>
-              </styled.svg>
-            </Ionicon>
-            List View
+                  <svg
+                    className="rounded-circle mr-2 sc-bdVaJa fUuvxv"
+                    fill="#007bff"
+                    height="25px"
+                    rotate={0}
+                    style={Object {}}
+                    viewBox="0 0 1024 1024"
+                    width="25px"
+                  >
+                    <path
+                      d="M224 96v736h-32v-608h-64v642.2c0 34 27.6 61.8 61.8 61.8h644.6c34 0 61.8-27.6 61.8-61.8v-770.2h-672.2zM320 224h256v32h-256v-32zM320 544h384v32h-384v-32zM800 736h-480v-32h480v32zM800 416h-480v-32h480v32z"
+                    />
+                  </svg>
+                </styled.svg>
+              </Ionicon>
+              List View
+            </Tab>
           </a>
         </li>
         <li
           className="nav-item"
+          key=".1"
         >
           <a
             className="nav-link"
             href="#"
             onClick={[Function]}
           >
-            <Ionicon
-              beat={false}
-              className="rounded-circle mr-2"
-              color="#007bff"
-              fontSize="25px"
-              icon="ios-pie"
-              rotate={false}
-              shake={false}
-              style={Object {}}
-            >
-              <styled.svg
-                beat={0}
+            <Tab>
+              <Ionicon
+                beat={false}
                 className="rounded-circle mr-2"
-                fill="#007bff"
-                height="25px"
-                rotate={0}
-                shake={0}
+                color="#007bff"
+                fontSize="25px"
+                icon="ios-pie"
+                rotate={false}
+                shake={false}
                 style={Object {}}
-                viewBox="0 0 1024 1024"
-                width="25px"
               >
-                <svg
-                  className="rounded-circle mr-2 sc-bdVaJa fUuvxv"
+                <styled.svg
+                  beat={0}
+                  className="rounded-circle mr-2"
                   fill="#007bff"
                   height="25px"
                   rotate={0}
+                  shake={0}
                   style={Object {}}
                   viewBox="0 0 1024 1024"
                   width="25px"
                 >
-                  <path
-                    d="M544 128v448l-395.51 98.752c54.816 165.69 211.192 285.248 395.26 285.248 229.75 0 416.25-186.25 416.25-416s-186-416-416-416v0z M512 64h-11c-320 0-437 232.5-437 414.574 0 0 0.5 113.332 37.82 176.582l410.18-104.010v-487.146z"
-                  />
-                </svg>
-              </styled.svg>
-            </Ionicon>
-            Chart View
+                  <svg
+                    className="rounded-circle mr-2 sc-bdVaJa fUuvxv"
+                    fill="#007bff"
+                    height="25px"
+                    rotate={0}
+                    style={Object {}}
+                    viewBox="0 0 1024 1024"
+                    width="25px"
+                  >
+                    <path
+                      d="M544 128v448l-395.51 98.752c54.816 165.69 211.192 285.248 395.26 285.248 229.75 0 416.25-186.25 416.25-416s-186-416-416-416v0z M512 64h-11c-320 0-437 232.5-437 414.574 0 0 0.5 113.332 37.82 176.582l410.18-104.010v-487.146z"
+                    />
+                  </svg>
+                </styled.svg>
+              </Ionicon>
+              Chart View
+            </Tab>
           </a>
         </li>
       </ul>
-    </ViewTab>
+    </Tabs>
     <CreateTransactionButton
       onCreateTransaction={[Function]}
     >

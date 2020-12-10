@@ -2,9 +2,8 @@ import React from 'react';
 import { mount } from 'enzyme';
 import Home from '../Home';
 import TransactionList from '../../components/TransactionList';
-import ViewTab from '../../components/ViewTab';
+import { Tabs, Tab} from '../../components/Tabs';
 import Utility from '../../utility';
-import SpendingSummary from '../../components/SpendingSummary';
 import MonthPicker from '../../components/MonthPicker';
 import CreateTransactionButton from '../../components/CreateTransactionButton';
 
@@ -22,15 +21,15 @@ describe('Home test', () => {
     it('should render correct dom', () => {
         const curDate = Utility.parseYearAndMonth('2020/12/31');
         expect(wrapper.find(TransactionList).length).toEqual(1);
-        expect(wrapper.find(ViewTab).props().activeViewName).toEqual(Utility.LIST_VIEW_NAME);
+        expect(wrapper.find(Tabs).props().activeIndex).toEqual(0);
         expect(wrapper.find(MonthPicker).props().year).toEqual(curDate.year);
         expect(wrapper.find(MonthPicker).props().month).toEqual(curDate.month);
         expect(wrapper.find(TransactionList).props().items).not.toBeNaN();
     });
 
     it('should switch tab when click tab', () => {
-        wrapper.find('.nav-item a').last().simulate('click');
-        expect(wrapper.find(ViewTab).props().activeViewName).toEqual(Utility.CHART_VIEW_NAME);
+        wrapper.find('.nav-item a').first().simulate('click');
+        expect(wrapper.find(Tabs).props().activeIndex).toEqual(0);
     });
 
     it('should change date tab when click a new month', () => {

@@ -7,6 +7,8 @@ import SpendingSummary from '../components/SpendingSummary';
 import MonthPicker from '../components/MonthPicker';
 import CreateTransactionButton from '../components/CreateTransactionButton';
 import EditTransactionForm from '../components/EditTransactionForm';
+import { Tabs, Tab } from '../components/Tabs';
+import Ionicon from 'react-ionicons';
 
 export const categories = {
   "1": {
@@ -55,6 +57,8 @@ const fakeTransaction = {
   "categoryId": 2
 };
 
+const tabTexts = [Utility.LIST_VIEW_NAME, Utility.CHART_VIEW_NAME];
+
 class Home extends React.Component {
   constructor(props) {
     super(props);
@@ -65,9 +69,9 @@ class Home extends React.Component {
     };
   }
 
-  changeView = (view) => {
+  changeView = (viewIndex) => {
     this.setState({
-      tabView: view,
+      tabView: tabTexts[viewIndex],
     });
   }
 
@@ -156,10 +160,29 @@ class Home extends React.Component {
           </div>
         </header>
         <div className="cotent-area py-3 px-3">
-          <ViewTab
-            activeViewName={tabView}
-            onClickTab={this.changeView}
-          />
+          <Tabs
+            activeIndex={0}
+            onTabChange={this.changeView}
+          >
+              <Tab>
+                <Ionicon
+                  className="rounded-circle mr-2"
+                  fontSize="25px"
+                  color={"#007bff"}
+                  icon="ios-paper"
+                />
+                List View
+              </Tab>
+              <Tab>
+                <Ionicon
+                  className="rounded-circle mr-2"
+                  fontSize="25px"
+                  color={"#007bff"}
+                  icon="ios-pie"
+                />
+                Chart View
+              </Tab>
+          </Tabs>
           <CreateTransactionButton
             onCreateTransaction={this.createTransaction}
           />
