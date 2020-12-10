@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTyes from 'prop-types';
-import CreateTransactionButton from './CreateTransactionButton';
 
 class CreateTransactionForm extends React.Component {
 
@@ -13,7 +12,29 @@ class CreateTransactionForm extends React.Component {
     }
 
     submitForm = (event) => {
+        const {transaction, onFormSubmit} = this.props;
+        const amount = this.amountInput.value.trim() * 1;
+        const date = this.dateInput.value.trim();
+        const title = this.titleInput.value.trim();
+        const isEditMode = !!transaction.title;
 
+        if (amount && date && title) {
+            if (amount < 0) {
+                this.setState({
+                    errorMessage: 'dollar amount cannot be negative'
+                });
+            } else {
+                if (isEditMode) {
+                    onFormSubmit({...transaction, amount, date, title}, isEditMode);
+                } else {
+                    onFormSubmit({amount, date, title}, isEditMode)
+                }
+            }
+        } else {
+            this.setState({
+                errorMessage: 'input filed cannot be empty'
+            });
+        }
         event.preventDefault();
     }
 
@@ -21,7 +42,7 @@ class CreateTransactionForm extends React.Component {
         return (
             <form onSubmit={(event) => {this.submitForm(event)}} noValidate>
                 <div className="form-group">
-                    <label for="title">Title</label>
+                    <label htmlFor="title">Title</label>
                     <input
                         type="text"
                         className="form-control"
@@ -31,25 +52,26 @@ class CreateTransactionForm extends React.Component {
                         ref={(inputValue) => {
                             this.titleInput = inputValue;
                         }}
+                        defaultValue={this.props.transaction.title}
                     />
                     <small id="titleHelp" className="form-text text-muted">Title for your transaction.</small>
                 </div>
                 <div className="form-group">
-                    <label for="price">Price</label>
+                    <label htmlFor="amount">Dollar Amount</label>
                     <input
                         type="number"
                         className="form-control"
-                        id="price"
-                        placeholder="Price"
-                        defaultValue={this.props.transaction.price}
+                        id="amount"
+                        placeholder="Dollar Amount"
+                        defaultValue={this.props.transaction.amount}
                         ref={(inputValue) => {
-                            this.priceInput = inputValue;
+                            this.amountInput = inputValue;
                         }}
                     />
-                    <small id="priceHelp" className="form-text text-muted">Price for your transaction.</small>
+                    <small id="amountHelp" className="form-text text-muted">Dollar amount for your transaction.</small>
                 </div>
                 <div className="form-group">
-                    <label for="date">Date</label>
+                    <label htmlFor="date">Date</label>
                     <input
                         type="date"
                         className="form-control"
@@ -80,7 +102,6 @@ class CreateTransactionForm extends React.Component {
         );
     }
 }
-
 
 CreateTransactionForm.propTypes = {
     transaction: PropTyes.object.isRequired,

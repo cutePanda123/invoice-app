@@ -1,0 +1,190 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`EditTransactionFrom test snaptshot test 1`] = `
+<CreateTransactionForm
+  onFormCancel={[MockFunction]}
+  onFormSubmit={[MockFunction]}
+  transaction={Object {}}
+>
+  <form
+    noValidate={true}
+    onSubmit={[Function]}
+  >
+    <div
+      className="form-group"
+    >
+      <label
+        htmlFor="title"
+      >
+        Title
+      </label>
+      <input
+        aria-describedby="titleHelp"
+        className="form-control"
+        id="title"
+        placeholder="Enter title"
+        type="text"
+      />
+      <small
+        className="form-text text-muted"
+        id="titleHelp"
+      >
+        Title for your transaction.
+      </small>
+    </div>
+    <div
+      className="form-group"
+    >
+      <label
+        htmlFor="amount"
+      >
+        Dollar Amount
+      </label>
+      <input
+        className="form-control"
+        id="amount"
+        placeholder="Dollar Amount"
+        type="number"
+      />
+      <small
+        className="form-text text-muted"
+        id="amountHelp"
+      >
+        Dollar amount for your transaction.
+      </small>
+    </div>
+    <div
+      className="form-group"
+    >
+      <label
+        htmlFor="date"
+      >
+        Date
+      </label>
+      <input
+        className="form-control"
+        id="date"
+        placeholder="Date"
+        type="date"
+      />
+      <small
+        className="form-text text-muted"
+        id="dateHelp"
+      >
+        Date for your transaction.
+      </small>
+    </div>
+    <button
+      className="btn btn-primary"
+      type="submit"
+    >
+      Submit
+    </button>
+    <button
+      className="btn btn-secondary"
+      onClick={[MockFunction]}
+    >
+      Cancel
+    </button>
+  </form>
+</CreateTransactionForm>
+`;
+
+exports[`EditTransactionFrom test snaptshot test 2`] = `
+<CreateTransactionForm
+  onFormCancel={[MockFunction]}
+  onFormSubmit={[MockFunction]}
+  transaction={
+    Object {
+      "amount": 100,
+      "date": "2020-10-10",
+      "title": "t",
+    }
+  }
+>
+  <form
+    noValidate={true}
+    onSubmit={[Function]}
+  >
+    <div
+      className="form-group"
+    >
+      <label
+        htmlFor="title"
+      >
+        Title
+      </label>
+      <input
+        aria-describedby="titleHelp"
+        className="form-control"
+        defaultValue="t"
+        id="title"
+        placeholder="Enter title"
+        type="text"
+      />
+      <small
+        className="form-text text-muted"
+        id="titleHelp"
+      >
+        Title for your transaction.
+      </small>
+    </div>
+    <div
+      className="form-group"
+    >
+      <label
+        htmlFor="amount"
+      >
+        Dollar Amount
+      </label>
+      <input
+        className="form-control"
+        defaultValue={100}
+        id="amount"
+        placeholder="Dollar Amount"
+        type="number"
+      />
+      <small
+        className="form-text text-muted"
+        id="amountHelp"
+      >
+        Dollar amount for your transaction.
+      </small>
+    </div>
+    <div
+      className="form-group"
+    >
+      <label
+        htmlFor="date"
+      >
+        Date
+      </label>
+      <input
+        className="form-control"
+        defaultValue="2020-10-10"
+        id="date"
+        placeholder="Date"
+        type="date"
+      />
+      <small
+        className="form-text text-muted"
+        id="dateHelp"
+      >
+        Date for your transaction.
+      </small>
+    </div>
+    <button
+      className="btn btn-primary"
+      type="submit"
+    >
+      Submit
+    </button>
+    <button
+      className="btn btn-secondary"
+      onClick={[MockFunction]}
+    >
+      Cancel
+    </button>
+  </form>
+</CreateTransactionForm>
+`;

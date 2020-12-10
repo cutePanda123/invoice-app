@@ -6,7 +6,7 @@ import Utility from '../utility';
 import SpendingSummary from '../components/SpendingSummary';
 import MonthPicker from '../components/MonthPicker';
 import CreateTransactionButton from '../components/CreateTransactionButton';
-import CreateTransactionForm from '../components/CreateTransactionForm';
+import EditTransactionForm from '../components/EditTransactionForm';
 
 export const categories = {
   "1": {
@@ -129,7 +129,7 @@ class Home extends React.Component {
             <img src={logo} className="App-logo"></img>
           </div>
           <div className="row mb-5">
-            <CreateTransactionForm 
+            <EditTransactionForm
               onFormCancel={() => {
                 console.log("on form cancle")
               }}

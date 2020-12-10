@@ -16,6 +16,97 @@ exports[`Home test snapshot test 1`] = `
     <div
       className="row mb-5"
     >
+      <CreateTransactionForm
+        onFormCancel={[Function]}
+        onFormSubmit={[Function]}
+        transaction={Object {}}
+      >
+        <form
+          noValidate={true}
+          onSubmit={[Function]}
+        >
+          <div
+            className="form-group"
+          >
+            <label
+              htmlFor="title"
+            >
+              Title
+            </label>
+            <input
+              aria-describedby="titleHelp"
+              className="form-control"
+              id="title"
+              placeholder="Enter title"
+              type="text"
+            />
+            <small
+              className="form-text text-muted"
+              id="titleHelp"
+            >
+              Title for your transaction.
+            </small>
+          </div>
+          <div
+            className="form-group"
+          >
+            <label
+              htmlFor="amount"
+            >
+              Dollar Amount
+            </label>
+            <input
+              className="form-control"
+              id="amount"
+              placeholder="Dollar Amount"
+              type="number"
+            />
+            <small
+              className="form-text text-muted"
+              id="amountHelp"
+            >
+              Dollar amount for your transaction.
+            </small>
+          </div>
+          <div
+            className="form-group"
+          >
+            <label
+              htmlFor="date"
+            >
+              Date
+            </label>
+            <input
+              className="form-control"
+              id="date"
+              placeholder="Date"
+              type="date"
+            />
+            <small
+              className="form-text text-muted"
+              id="dateHelp"
+            >
+              Date for your transaction.
+            </small>
+          </div>
+          <button
+            className="btn btn-primary"
+            type="submit"
+          >
+            Submit
+          </button>
+          <button
+            className="btn btn-secondary"
+            onClick={[Function]}
+          >
+            Cancel
+          </button>
+        </form>
+      </CreateTransactionForm>
+    </div>
+    <div
+      className="row mb-5"
+    >
       <div
         className="col"
       >
