@@ -1,7 +1,6 @@
 import React from 'react';
 import logo from '../logo.svg';
 import TransactionList from '../components/TransactionList';
-import ViewTab from '../components/ViewTab';
 import Utility from '../utility';
 import SpendingSummary from '../components/SpendingSummary';
 import MonthPicker from '../components/MonthPicker';

@@ -1,9 +1,39 @@
 import React from 'react';
+import CategoryPicker from '../components/CategoryPicker';
+import { Tabs, Tab } from '../components/Tabs';
+import EditTransactionForm from '../components/EditTransactionForm';
+import Utility from '../utility';
+import { testCategories } from '../testData';
 
-const CreateTransaction = ({ match }) => {
-    return (
-        <h1>Create a New Transaction: {match.params.id} </h1>
-    );
+class CreateTransaction extends React.Component {
+    constructor(props) {
+        super(props);
+    }
+
+    render() {
+        return (
+            <div
+                className='create-transaction py-3 px-3 rounded mt-3'
+                style={{background: '#fff'}}
+            >
+                <Tabs
+                    activeIndex={0}
+                    onTabChange={() => {}}
+                >
+                    <Tab>Income</Tab>
+                    <Tab>Outcome</Tab>
+                </Tabs>
+                <CategoryPicker
+                    categories={testCategories}
+                    onSelectCategory={() => {}}
+                />
+                <EditTransactionForm
+                    onFormSubmit={() => {}}
+                    onFormCancel={() => {}}
+                />
+            </div>
+        );
+    }
 };
 
 export default CreateTransaction;
