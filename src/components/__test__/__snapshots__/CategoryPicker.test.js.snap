@@ -30,6 +30,12 @@ exports[`CategoryPicker test snapshot test 1`] = `
         className="category-item col-3"
         key="0"
         onClick={[Function]}
+        role="button"
+        style={
+          Object {
+            "textAlign": "center",
+          }
+        }
       >
         <Ionicon
           beat={false}
@@ -39,7 +45,12 @@ exports[`CategoryPicker test snapshot test 1`] = `
           icon="ios-plane"
           rotate={false}
           shake={false}
-          style={Object {}}
+          style={
+            Object {
+              "backgroundColor": "#efefef",
+              "padding": "5px",
+            }
+          }
         >
           <styled.svg
             beat={0}
@@ -48,7 +59,12 @@ exports[`CategoryPicker test snapshot test 1`] = `
             height="50px"
             rotate={0}
             shake={0}
-            style={Object {}}
+            style={
+              Object {
+                "backgroundColor": "#efefef",
+                "padding": "5px",
+              }
+            }
             viewBox="0 0 1024 1024"
             width="50px"
           >
@@ -57,7 +73,12 @@ exports[`CategoryPicker test snapshot test 1`] = `
               fill="#555"
               height="50px"
               rotate={0}
-              style={Object {}}
+              style={
+                Object {
+                  "backgroundColor": "#efefef",
+                  "padding": "5px",
+                }
+              }
               viewBox="0 0 1024 1024"
               width="50px"
             >
@@ -67,11 +88,20 @@ exports[`CategoryPicker test snapshot test 1`] = `
             </svg>
           </styled.svg>
         </Ionicon>
+        <p>
+          travel
+        </p>
       </div>
       <div
         className="category-item col-3"
         key="1"
         onClick={[Function]}
+        role="button"
+        style={
+          Object {
+            "textAlign": "center",
+          }
+        }
       >
         <Ionicon
           beat={false}
@@ -81,7 +111,12 @@ exports[`CategoryPicker test snapshot test 1`] = `
           icon="logo-yen"
           rotate={false}
           shake={false}
-          style={Object {}}
+          style={
+            Object {
+              "backgroundColor": "#efefef",
+              "padding": "5px",
+            }
+          }
         >
           <styled.svg
             beat={0}
@@ -90,7 +125,12 @@ exports[`CategoryPicker test snapshot test 1`] = `
             height="50px"
             rotate={0}
             shake={0}
-            style={Object {}}
+            style={
+              Object {
+                "backgroundColor": "#efefef",
+                "padding": "5px",
+              }
+            }
             viewBox="0 0 1024 1024"
             width="50px"
           >
@@ -99,7 +139,12 @@ exports[`CategoryPicker test snapshot test 1`] = `
               fill="#555"
               height="50px"
               rotate={0}
-              style={Object {}}
+              style={
+                Object {
+                  "backgroundColor": "#efefef",
+                  "padding": "5px",
+                }
+              }
               viewBox="0 0 1024 1024"
               width="50px"
             >
@@ -109,6 +154,9 @@ exports[`CategoryPicker test snapshot test 1`] = `
             </svg>
           </styled.svg>
         </Ionicon>
+        <p>
+          investement
+        </p>
       </div>
     </div>
   </div>
