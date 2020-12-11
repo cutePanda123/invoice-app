@@ -2,7 +2,6 @@ import React from 'react';
 import CategoryPicker from '../components/CategoryPicker';
 import { Tabs, Tab } from '../components/Tabs';
 import EditTransactionForm from '../components/EditTransactionForm';
-import Utility from '../utility';
 import { testCategories } from '../testData';
 
 class CreateTransaction extends React.Component {
