@@ -2,19 +2,21 @@ import React from 'react';
 import AppContext from './AppContext';
 
 const withContext = (Component) => {
-    return (props) => {
-        return (
-            <AppContext.Consumer>
-                {
-                    ({ state }) => {
-                        return (
-                            <Component {...props} data={state} />
-                        );
+    return class extends React.Component {
+        render() {
+            return (
+                <AppContext.Consumer>
+                    {
+                        ({ state }) => {
+                            return (
+                                <Component {...this.props} data={state} />
+                            );
+                        }
                     }
-                }
 
-            </AppContext.Consumer>
-        );
+                </AppContext.Consumer>
+            );
+        }
     }
 }
 

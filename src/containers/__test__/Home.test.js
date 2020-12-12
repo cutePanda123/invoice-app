@@ -58,14 +58,14 @@ describe('Home test', () => {
     });
 
     it('should create a transaction when click create button', () => {
-        const oldTransactonNumber = wrapper.find(Home).state('items').length;
+        const oldTransactonNumber = wrapper.find(TransactionList).props().items.length;
         wrapper.find(CreateTransactionButton).simulate('click');
-        expect(wrapper.find(Home).state('items').length).toEqual(oldTransactonNumber + 1);
+        expect(wrapper.find(TransactionList).props().items.length).toEqual(oldTransactonNumber + 1);
     });
 
     it('should delete a transaction when click delete button', () => {
-        const oldTransactonNumber = wrapper.find(Home).state('items').length;
+        const oldTransactonNumber = wrapper.find(TransactionList).props().items.length;
         wrapper.find('.delete-button').first().simulate('click');
-        expect(wrapper.find(Home).state('items').length).toEqual(oldTransactonNumber - 1);
+        expect(wrapper.find(TransactionList).props().items.length).toEqual(oldTransactonNumber - 1);
     });
 });
