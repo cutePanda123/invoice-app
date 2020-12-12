@@ -9,7 +9,7 @@ import EditTransactionForm from '../components/EditTransactionForm';
 import { Tabs, Tab } from '../components/Tabs';
 import Ionicon from 'react-ionicons';
 import { testItems, testCategories as categories, fakeTransaction } from '../testData';
-import { AppContext } from '../App';
+import withContext from '../WithContext';
 
 const tabTexts = [Utility.LIST_VIEW_NAME, Utility.CHART_VIEW_NAME];
 
@@ -81,92 +81,81 @@ class Home extends React.Component {
       }
     });
     return (
-      <AppContext.Consumer>
-        {
-          ({ state }) => {
-            //console.log(state);
-
-            return (
-              <React.Fragment>
-                <header className="App-header">
-                  <div className="row mb-5">
-                    <img src={logo} className="App-logo"></img>
-                  </div>
-                  <div className="row mb-5">
-                    <EditTransactionForm
-                      onFormCancel={() => {
-                        console.log("on form cancle")
-                      }}
-                      onFormSubmit={() => {
-                        console.log("on form submit")
-                      }}
-                      transaction={{}}
-                    />
-                  </div>
-                  <div className="row mb-5">
-                    <div className="col">
-                      <MonthPicker
-                        year={currentDate.year}
-                        month={currentDate.month}
-                        onDateChange={this.changeDate}
-                      />
-                    </div>
-                    <div className="col">
-                      <SpendingSummary
-                        income={totalIncome}
-                        outcome={totalOutcome}
-                      />
-                    </div>
-                  </div>
-                </header>
-                <div className="cotent-area py-3 px-3">
-                  <Tabs
-                    activeIndex={0}
-                    onTabChange={this.changeView}
-                  >
-                      <Tab>
-                        <Ionicon
-                          className="rounded-circle mr-2"
-                          fontSize="25px"
-                          color={"#007bff"}
-                          icon="ios-paper"
-                        />
-                        List View
-                      </Tab>
-                      <Tab>
-                        <Ionicon
-                          className="rounded-circle mr-2"
-                          fontSize="25px"
-                          color={"#007bff"}
-                          icon="ios-pie"
-                        />
-                        Chart View
-                      </Tab>
-                  </Tabs>
-                  <CreateTransactionButton
-                    onCreateTransaction={this.createTransaction}
-                  />
-                  { 
-                    tabView === Utility.LIST_VIEW_NAME && 
-                    <TransactionList 
-                      items = {itemsWithCategory}
-                      onDeleteItem = {this.deleteTransaction}
-                      onModifyItem = {this.modifyTrasaction}
-                    /> 
-                  }
-                  {
-                    tabView === Utility.CHART_VIEW_NAME &&
-                    <h2>Place holder for Chart View</h2>
-                  }
-                  
-                </div>
-              </React.Fragment>
-            );
+      <React.Fragment>
+        <header className="App-header">
+          <div className="row mb-5">
+            <img src={logo} className="App-logo"></img>
+          </div>
+          <div className="row mb-5">
+            <EditTransactionForm
+              onFormCancel={() => {
+                console.log("on form cancle")
+              }}
+              onFormSubmit={() => {
+                console.log("on form submit")
+              }}
+              transaction={{}}
+            />
+          </div>
+          <div className="row mb-5">
+            <div className="col">
+              <MonthPicker
+                year={currentDate.year}
+                month={currentDate.month}
+                onDateChange={this.changeDate}
+              />
+            </div>
+            <div className="col">
+              <SpendingSummary
+                income={totalIncome}
+                outcome={totalOutcome}
+              />
+            </div>
+          </div>
+        </header>
+        <div className="cotent-area py-3 px-3">
+          <Tabs
+            activeIndex={0}
+            onTabChange={this.changeView}
+          >
+              <Tab>
+                <Ionicon
+                  className="rounded-circle mr-2"
+                  fontSize="25px"
+                  color={"#007bff"}
+                  icon="ios-paper"
+                />
+                List View
+              </Tab>
+              <Tab>
+                <Ionicon
+                  className="rounded-circle mr-2"
+                  fontSize="25px"
+                  color={"#007bff"}
+                  icon="ios-pie"
+                />
+                Chart View
+              </Tab>
+          </Tabs>
+          <CreateTransactionButton
+            onCreateTransaction={this.createTransaction}
+          />
+          { 
+            tabView === Utility.LIST_VIEW_NAME && 
+            <TransactionList 
+              items = {itemsWithCategory}
+              onDeleteItem = {this.deleteTransaction}
+              onModifyItem = {this.modifyTrasaction}
+            /> 
           }
-        }
-      </AppContext.Consumer>
+          {
+            tabView === Utility.CHART_VIEW_NAME &&
+            <h2>Place holder for Chart View</h2>
+          }
+        </div>
+      </React.Fragment>
     );
   }
 }
 
-export default Home;
+export default withContext(Home);

@@ -4,7 +4,7 @@ import { Tabs, Tab } from '../../components/Tabs';
 import CreateTransaction from '../CreateTransaction';
 import EditTransactionForm from '../../components/EditTransactionForm';
 import CategoryPicker from '../../components/CategoryPicker';
-import { AppContext } from '../../App';
+import AppContext from '../../AppContext';
 import { testItems, testCategories } from '../../testData';
 import Utility from '../../utility';
 
@@ -21,7 +21,7 @@ describe('CreateTransaction test', () => {
                     }
                 }
             }>
-            <CreateTransaction />
+                <CreateTransaction />
             </AppContext.Provider>
         );
     });

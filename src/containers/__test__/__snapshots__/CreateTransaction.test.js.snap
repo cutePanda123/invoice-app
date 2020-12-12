@@ -1,154 +1,213 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`CreateTransaction test snapshot test 1`] = `
-<CreateTransaction>
-  <div
-    className="create-transaction py-3 px-3 rounded mt-3"
-    style={
+<Component>
+  <CreateTransaction
+    data={
       Object {
-        "background": "#fff",
-      }
-    }
-  >
-    <Tabs
-      activeIndex={0}
-      onTabChange={[Function]}
-    >
-      <ul
-        className="nav nav-tabs nav-fill my-4"
-      >
-        <li
-          className="nav-item"
-          key=".0"
-        >
-          <a
-            className="nav-link active"
-            href="#"
-            onClick={[Function]}
-          >
-            <Tab>
-              Income
-            </Tab>
-          </a>
-        </li>
-        <li
-          className="nav-item"
-          key=".1"
-        >
-          <a
-            className="nav-link"
-            href="#"
-            onClick={[Function]}
-          >
-            <Tab>
-              Outcome
-            </Tab>
-          </a>
-        </li>
-      </ul>
-    </Tabs>
-    <CategoryPicker
-      categories={
-        Array [
-          Object {
+        "categories": Object {
+          "1": Object {
             "iconName": "ios-plane",
             "id": "1",
             "name": "travel",
             "type": "outcome",
           },
-          Object {
-            "iconName": "ios-restaurant",
-            "id": "2",
-            "name": "food",
-            "type": "outcome",
-          },
-          Object {
-            "iconName": "ios-basket",
-            "id": "3",
-            "name": "shopping",
-            "type": "outcome",
-          },
-          Object {
-            "iconName": "ios-phone-portrait",
-            "id": "4",
-            "name": "electronic product",
-            "type": "outcome",
-          },
-          Object {
+          "10": Object {
             "iconName": "ios-card",
             "id": "10",
             "name": "工资",
             "type": "income",
           },
-          Object {
+          "11": Object {
             "iconName": "ios-cash",
             "id": "11",
             "name": "part-time job",
             "type": "income",
           },
-          Object {
+          "12": Object {
             "iconName": "logo-yen",
             "id": "12",
             "name": "investment",
             "type": "income",
           },
-        ]
+          "2": Object {
+            "iconName": "ios-restaurant",
+            "id": "2",
+            "name": "food",
+            "type": "outcome",
+          },
+          "3": Object {
+            "iconName": "ios-basket",
+            "id": "3",
+            "name": "shopping",
+            "type": "outcome",
+          },
+          "4": Object {
+            "iconName": "ios-phone-portrait",
+            "id": "4",
+            "name": "electronic product",
+            "type": "outcome",
+          },
+        },
+        "items": Object {
+          "0": Object {
+            "amount": 2000,
+            "categoryId": 1,
+            "date": "2020-10-20",
+            "desc": "travel in Seattle",
+            "id": 0,
+          },
+          "1": Object {
+            "amount": 4000,
+            "categoryId": 1,
+            "date": "2020-12-10",
+            "desc": "travel in San Jose",
+            "id": 1,
+          },
+          "2": Object {
+            "amount": 14000,
+            "categoryId": 2,
+            "date": "2020-12-15",
+            "desc": "stock investement",
+            "id": 2,
+          },
+        },
       }
-      onSelectCategory={[Function]}
+    }
+  >
+    <div
+      className="create-transaction py-3 px-3 rounded mt-3"
+      style={
+        Object {
+          "background": "#fff",
+        }
+      }
     >
-      <div
-        className="category-picker-component"
+      <Tabs
+        activeIndex={0}
+        onTabChange={[Function]}
+      >
+        <ul
+          className="nav nav-tabs nav-fill my-4"
+        >
+          <li
+            className="nav-item"
+            key=".0"
+          >
+            <a
+              className="nav-link active"
+              href="#"
+              onClick={[Function]}
+            >
+              <Tab>
+                Income
+              </Tab>
+            </a>
+          </li>
+          <li
+            className="nav-item"
+            key=".1"
+          >
+            <a
+              className="nav-link"
+              href="#"
+              onClick={[Function]}
+            >
+              <Tab>
+                Outcome
+              </Tab>
+            </a>
+          </li>
+        </ul>
+      </Tabs>
+      <CategoryPicker
+        categories={
+          Array [
+            Object {
+              "iconName": "ios-plane",
+              "id": "1",
+              "name": "travel",
+              "type": "outcome",
+            },
+            Object {
+              "iconName": "ios-restaurant",
+              "id": "2",
+              "name": "food",
+              "type": "outcome",
+            },
+            Object {
+              "iconName": "ios-basket",
+              "id": "3",
+              "name": "shopping",
+              "type": "outcome",
+            },
+            Object {
+              "iconName": "ios-phone-portrait",
+              "id": "4",
+              "name": "electronic product",
+              "type": "outcome",
+            },
+            Object {
+              "iconName": "ios-card",
+              "id": "10",
+              "name": "工资",
+              "type": "income",
+            },
+            Object {
+              "iconName": "ios-cash",
+              "id": "11",
+              "name": "part-time job",
+              "type": "income",
+            },
+            Object {
+              "iconName": "logo-yen",
+              "id": "12",
+              "name": "investment",
+              "type": "income",
+            },
+          ]
+        }
+        onSelectCategory={[Function]}
       >
         <div
-          className="row"
+          className="category-picker-component"
         >
           <div
-            className="category-item col-3"
-            key="0"
-            onClick={[Function]}
-            role="button"
-            style={
-              Object {
-                "textAlign": "center",
-              }
-            }
+            className="row"
           >
-            <Ionicon
-              beat={false}
-              className="rounded-circle"
-              color="#555"
-              fontSize="50px"
-              icon="ios-plane"
-              rotate={false}
-              shake={false}
+            <div
+              className="category-item col-3"
+              key="0"
+              onClick={[Function]}
+              role="button"
               style={
                 Object {
-                  "backgroundColor": "#efefef",
-                  "padding": "5px",
+                  "textAlign": "center",
                 }
               }
             >
-              <styled.svg
-                beat={0}
+              <Ionicon
+                beat={false}
                 className="rounded-circle"
-                fill="#555"
-                height="50px"
-                rotate={0}
-                shake={0}
+                color="#555"
+                fontSize="50px"
+                icon="ios-plane"
+                rotate={false}
+                shake={false}
                 style={
                   Object {
                     "backgroundColor": "#efefef",
                     "padding": "5px",
                   }
                 }
-                viewBox="0 0 1024 1024"
-                width="50px"
               >
-                <svg
-                  className="rounded-circle sc-bdVaJa fUuvxv"
+                <styled.svg
+                  beat={0}
+                  className="rounded-circle"
                   fill="#555"
                   height="50px"
                   rotate={0}
+                  shake={0}
                   style={
                     Object {
                       "backgroundColor": "#efefef",
@@ -158,63 +217,63 @@ exports[`CreateTransaction test snapshot test 1`] = `
                   viewBox="0 0 1024 1024"
                   width="50px"
                 >
-                  <path
-                    d="M448 144h-96l118 311.4-253.6 8.6-88.4-112h-64l64 160-64 160h64l89.8-115.4 252.2 10.4-118 313h96l196.4-309 135.6 3c6.6 0.4 13.2 0.2 20 0.2 88.4 0 160-28.8 160-64.2s-71.6-64-160-64c-6.8 0-13.4 0.2-20 0.4l-135.6 4.4-196.4-306.8z"
-                  />
-                </svg>
-              </styled.svg>
-            </Ionicon>
-            <p>
-              travel
-            </p>
-          </div>
-          <div
-            className="category-item col-3"
-            key="1"
-            onClick={[Function]}
-            role="button"
-            style={
-              Object {
-                "textAlign": "center",
-              }
-            }
-          >
-            <Ionicon
-              beat={false}
-              className="rounded-circle"
-              color="#555"
-              fontSize="50px"
-              icon="ios-restaurant"
-              rotate={false}
-              shake={false}
+                  <svg
+                    className="rounded-circle sc-bdVaJa fUuvxv"
+                    fill="#555"
+                    height="50px"
+                    rotate={0}
+                    style={
+                      Object {
+                        "backgroundColor": "#efefef",
+                        "padding": "5px",
+                      }
+                    }
+                    viewBox="0 0 1024 1024"
+                    width="50px"
+                  >
+                    <path
+                      d="M448 144h-96l118 311.4-253.6 8.6-88.4-112h-64l64 160-64 160h64l89.8-115.4 252.2 10.4-118 313h96l196.4-309 135.6 3c6.6 0.4 13.2 0.2 20 0.2 88.4 0 160-28.8 160-64.2s-71.6-64-160-64c-6.8 0-13.4 0.2-20 0.4l-135.6 4.4-196.4-306.8z"
+                    />
+                  </svg>
+                </styled.svg>
+              </Ionicon>
+              <p>
+                travel
+              </p>
+            </div>
+            <div
+              className="category-item col-3"
+              key="1"
+              onClick={[Function]}
+              role="button"
               style={
                 Object {
-                  "backgroundColor": "#efefef",
-                  "padding": "5px",
+                  "textAlign": "center",
                 }
               }
             >
-              <styled.svg
-                beat={0}
+              <Ionicon
+                beat={false}
                 className="rounded-circle"
-                fill="#555"
-                height="50px"
-                rotate={0}
-                shake={0}
+                color="#555"
+                fontSize="50px"
+                icon="ios-restaurant"
+                rotate={false}
+                shake={false}
                 style={
                   Object {
                     "backgroundColor": "#efefef",
                     "padding": "5px",
                   }
                 }
-                viewBox="0 0 1024 1024"
-                width="50px"
               >
-                <svg
-                  className="rounded-circle sc-bdVaJa fUuvxv"
+                <styled.svg
+                  beat={0}
+                  className="rounded-circle"
                   fill="#555"
                   height="50px"
                   rotate={0}
+                  shake={0}
                   style={
                     Object {
                       "backgroundColor": "#efefef",
@@ -224,63 +283,63 @@ exports[`CreateTransaction test snapshot test 1`] = `
                   viewBox="0 0 1024 1024"
                   width="50px"
                 >
-                  <path
-                    d="M768 128c-49.6 0-96 154.6-96 320 0 114 64 160 64 160v256c0 17.6 14.4 32 32 32s32-14.4 32-32v-714c0-22-22-22-32-22z M576 128l20 208c0 8.8-7.2 16-16 16s-16-7.2-16-16l-12-208h-16l-12 208c0 8.8-7.2 16-16 16s-16-7.2-16-16l20-208h-16c0 0-48 214.4-48 256s26.8 77.2 64 90.4v389.6c0 17.6 14.4 32 32 32s32-14.4 32-32v-389.6c37.2-13.2 64-48.4 64-90.4s-48-256-48-256h-16z M320 128c-53 0-96 128-96 256 0 41.6 26.8 77.2 64 90.4v389.6c0 17.6 14.4 32 32 32s32-14.4 32-32v-389.6c37.2-13.2 64-48.4 64-90.4 0-128-43-256-96-256z"
-                  />
-                </svg>
-              </styled.svg>
-            </Ionicon>
-            <p>
-              food
-            </p>
-          </div>
-          <div
-            className="category-item col-3"
-            key="2"
-            onClick={[Function]}
-            role="button"
-            style={
-              Object {
-                "textAlign": "center",
-              }
-            }
-          >
-            <Ionicon
-              beat={false}
-              className="rounded-circle"
-              color="#555"
-              fontSize="50px"
-              icon="ios-basket"
-              rotate={false}
-              shake={false}
+                  <svg
+                    className="rounded-circle sc-bdVaJa fUuvxv"
+                    fill="#555"
+                    height="50px"
+                    rotate={0}
+                    style={
+                      Object {
+                        "backgroundColor": "#efefef",
+                        "padding": "5px",
+                      }
+                    }
+                    viewBox="0 0 1024 1024"
+                    width="50px"
+                  >
+                    <path
+                      d="M768 128c-49.6 0-96 154.6-96 320 0 114 64 160 64 160v256c0 17.6 14.4 32 32 32s32-14.4 32-32v-714c0-22-22-22-32-22z M576 128l20 208c0 8.8-7.2 16-16 16s-16-7.2-16-16l-12-208h-16l-12 208c0 8.8-7.2 16-16 16s-16-7.2-16-16l20-208h-16c0 0-48 214.4-48 256s26.8 77.2 64 90.4v389.6c0 17.6 14.4 32 32 32s32-14.4 32-32v-389.6c37.2-13.2 64-48.4 64-90.4s-48-256-48-256h-16z M320 128c-53 0-96 128-96 256 0 41.6 26.8 77.2 64 90.4v389.6c0 17.6 14.4 32 32 32s32-14.4 32-32v-389.6c37.2-13.2 64-48.4 64-90.4 0-128-43-256-96-256z"
+                    />
+                  </svg>
+                </styled.svg>
+              </Ionicon>
+              <p>
+                food
+              </p>
+            </div>
+            <div
+              className="category-item col-3"
+              key="2"
+              onClick={[Function]}
+              role="button"
               style={
                 Object {
-                  "backgroundColor": "#efefef",
-                  "padding": "5px",
+                  "textAlign": "center",
                 }
               }
             >
-              <styled.svg
-                beat={0}
+              <Ionicon
+                beat={false}
                 className="rounded-circle"
-                fill="#555"
-                height="50px"
-                rotate={0}
-                shake={0}
+                color="#555"
+                fontSize="50px"
+                icon="ios-basket"
+                rotate={false}
+                shake={false}
                 style={
                   Object {
                     "backgroundColor": "#efefef",
                     "padding": "5px",
                   }
                 }
-                viewBox="0 0 1024 1024"
-                width="50px"
               >
-                <svg
-                  className="rounded-circle sc-bdVaJa fUuvxv"
+                <styled.svg
+                  beat={0}
+                  className="rounded-circle"
                   fill="#555"
                   height="50px"
                   rotate={0}
+                  shake={0}
                   style={
                     Object {
                       "backgroundColor": "#efefef",
@@ -290,63 +349,63 @@ exports[`CreateTransaction test snapshot test 1`] = `
                   viewBox="0 0 1024 1024"
                   width="50px"
                 >
-                  <path
-                    d="M800 448v-192c0-70.4-57.6-128-128-128h-320c-70.4 0-128 57.6-128 128v192h-160l105 388.6c9.4 34 40.8 59.4 78.2 59.4h529.4c37.4 0 68.8-25 78.6-59l104.8-389h-160zM256 256c0-25.6 10-49.6 28.2-67.8s42.2-28.2 67.8-28.2h320c25.6 0 49.6 10 67.8 28.2s28.2 42.2 28.2 67.8v192h-512v-192zM883.8 608h-147.8v128h113.4l-8.6 32h-104.8v96h-32v-96h-176v96h-32v-96h-176v96h-32v-96h-104.4l-8.6-32h113v-128h-147.6l-8.6-32h156.2v-96h32v96h176v-96h32v96h176v-96h32v96h156.4l-8.6 32z M528 608h176v128h-176v-128z M320 608h176v128h-176v-128z"
-                  />
-                </svg>
-              </styled.svg>
-            </Ionicon>
-            <p>
-              shopping
-            </p>
-          </div>
-          <div
-            className="category-item col-3"
-            key="3"
-            onClick={[Function]}
-            role="button"
-            style={
-              Object {
-                "textAlign": "center",
-              }
-            }
-          >
-            <Ionicon
-              beat={false}
-              className="rounded-circle"
-              color="#555"
-              fontSize="50px"
-              icon="ios-phone-portrait"
-              rotate={false}
-              shake={false}
+                  <svg
+                    className="rounded-circle sc-bdVaJa fUuvxv"
+                    fill="#555"
+                    height="50px"
+                    rotate={0}
+                    style={
+                      Object {
+                        "backgroundColor": "#efefef",
+                        "padding": "5px",
+                      }
+                    }
+                    viewBox="0 0 1024 1024"
+                    width="50px"
+                  >
+                    <path
+                      d="M800 448v-192c0-70.4-57.6-128-128-128h-320c-70.4 0-128 57.6-128 128v192h-160l105 388.6c9.4 34 40.8 59.4 78.2 59.4h529.4c37.4 0 68.8-25 78.6-59l104.8-389h-160zM256 256c0-25.6 10-49.6 28.2-67.8s42.2-28.2 67.8-28.2h320c25.6 0 49.6 10 67.8 28.2s28.2 42.2 28.2 67.8v192h-512v-192zM883.8 608h-147.8v128h113.4l-8.6 32h-104.8v96h-32v-96h-176v96h-32v-96h-176v96h-32v-96h-104.4l-8.6-32h113v-128h-147.6l-8.6-32h156.2v-96h32v96h176v-96h32v96h176v-96h32v96h156.4l-8.6 32z M528 608h176v128h-176v-128z M320 608h176v128h-176v-128z"
+                    />
+                  </svg>
+                </styled.svg>
+              </Ionicon>
+              <p>
+                shopping
+              </p>
+            </div>
+            <div
+              className="category-item col-3"
+              key="3"
+              onClick={[Function]}
+              role="button"
               style={
                 Object {
-                  "backgroundColor": "#efefef",
-                  "padding": "5px",
+                  "textAlign": "center",
                 }
               }
             >
-              <styled.svg
-                beat={0}
+              <Ionicon
+                beat={false}
                 className="rounded-circle"
-                fill="#555"
-                height="50px"
-                rotate={0}
-                shake={0}
+                color="#555"
+                fontSize="50px"
+                icon="ios-phone-portrait"
+                rotate={false}
+                shake={false}
                 style={
                   Object {
                     "backgroundColor": "#efefef",
                     "padding": "5px",
                   }
                 }
-                viewBox="0 0 1024 1024"
-                width="50px"
               >
-                <svg
-                  className="rounded-circle sc-bdVaJa fUuvxv"
+                <styled.svg
+                  beat={0}
+                  className="rounded-circle"
                   fill="#555"
                   height="50px"
                   rotate={0}
+                  shake={0}
                   style={
                     Object {
                       "backgroundColor": "#efefef",
@@ -356,63 +415,63 @@ exports[`CreateTransaction test snapshot test 1`] = `
                   viewBox="0 0 1024 1024"
                   width="50px"
                 >
-                  <path
-                    d="M671.4 64h-317.2c-36.6 0-66.2 29.2-66.2 65.8v762c0 36.8 29.6 68.2 66.2 68.2h317c36.6 0 64.6-31.4 64.6-68.2v-762c0.2-36.6-27.8-65.8-64.4-65.8zM482 110h60c4.4 0 8 3.6 8 8s-3.6 8-8 8h-60c-4.4 0-8-3.6-8-8s3.6-8 8-8zM513 938c-19.2 0-34.8-15.6-34.8-34.8s15.6-34.8 34.8-34.8c19.2 0 34.8 15.6 34.8 34.8s-15.6 34.8-34.8 34.8zM704 848h-384v-682h384v682z M513 883.2c-11 0-20 9-20 19.8 0 11 9 20 20 20s20-9 20-20c-0.2-10.8-9-19.8-20-19.8z"
-                  />
-                </svg>
-              </styled.svg>
-            </Ionicon>
-            <p>
-              electronic product
-            </p>
-          </div>
-          <div
-            className="category-item col-3"
-            key="4"
-            onClick={[Function]}
-            role="button"
-            style={
-              Object {
-                "textAlign": "center",
-              }
-            }
-          >
-            <Ionicon
-              beat={false}
-              className="rounded-circle"
-              color="#555"
-              fontSize="50px"
-              icon="ios-card"
-              rotate={false}
-              shake={false}
+                  <svg
+                    className="rounded-circle sc-bdVaJa fUuvxv"
+                    fill="#555"
+                    height="50px"
+                    rotate={0}
+                    style={
+                      Object {
+                        "backgroundColor": "#efefef",
+                        "padding": "5px",
+                      }
+                    }
+                    viewBox="0 0 1024 1024"
+                    width="50px"
+                  >
+                    <path
+                      d="M671.4 64h-317.2c-36.6 0-66.2 29.2-66.2 65.8v762c0 36.8 29.6 68.2 66.2 68.2h317c36.6 0 64.6-31.4 64.6-68.2v-762c0.2-36.6-27.8-65.8-64.4-65.8zM482 110h60c4.4 0 8 3.6 8 8s-3.6 8-8 8h-60c-4.4 0-8-3.6-8-8s3.6-8 8-8zM513 938c-19.2 0-34.8-15.6-34.8-34.8s15.6-34.8 34.8-34.8c19.2 0 34.8 15.6 34.8 34.8s-15.6 34.8-34.8 34.8zM704 848h-384v-682h384v682z M513 883.2c-11 0-20 9-20 19.8 0 11 9 20 20 20s20-9 20-20c-0.2-10.8-9-19.8-20-19.8z"
+                    />
+                  </svg>
+                </styled.svg>
+              </Ionicon>
+              <p>
+                electronic product
+              </p>
+            </div>
+            <div
+              className="category-item col-3"
+              key="4"
+              onClick={[Function]}
+              role="button"
               style={
                 Object {
-                  "backgroundColor": "#efefef",
-                  "padding": "5px",
+                  "textAlign": "center",
                 }
               }
             >
-              <styled.svg
-                beat={0}
+              <Ionicon
+                beat={false}
                 className="rounded-circle"
-                fill="#555"
-                height="50px"
-                rotate={0}
-                shake={0}
+                color="#555"
+                fontSize="50px"
+                icon="ios-card"
+                rotate={false}
+                shake={false}
                 style={
                   Object {
                     "backgroundColor": "#efefef",
                     "padding": "5px",
                   }
                 }
-                viewBox="0 0 1024 1024"
-                width="50px"
               >
-                <svg
-                  className="rounded-circle sc-bdVaJa fUuvxv"
+                <styled.svg
+                  beat={0}
+                  className="rounded-circle"
                   fill="#555"
                   height="50px"
                   rotate={0}
+                  shake={0}
                   style={
                     Object {
                       "backgroundColor": "#efefef",
@@ -422,63 +481,63 @@ exports[`CreateTransaction test snapshot test 1`] = `
                   viewBox="0 0 1024 1024"
                   width="50px"
                 >
-                  <path
-                    d="M864 224h-704c-35.2 0-64 28.8-64 64v448c0 35.2 28.8 64 64 64h704c35.2 0 64-28.8 64-64v-448c0-35.2-28.8-64-64-64zM160 256h704c17.6 0 32 14.4 32 32v64h-768v-64c0-17.6 14.4-32 32-32zM864 768h-704c-17.6 0-32-14.4-32-32v-224h768v224c0 17.6-14.4 32-32 32z M192 640h64v32h-64v-32z M320 640h384v32h-384v-32z"
-                  />
-                </svg>
-              </styled.svg>
-            </Ionicon>
-            <p>
-              工资
-            </p>
-          </div>
-          <div
-            className="category-item col-3"
-            key="5"
-            onClick={[Function]}
-            role="button"
-            style={
-              Object {
-                "textAlign": "center",
-              }
-            }
-          >
-            <Ionicon
-              beat={false}
-              className="rounded-circle"
-              color="#555"
-              fontSize="50px"
-              icon="ios-cash"
-              rotate={false}
-              shake={false}
+                  <svg
+                    className="rounded-circle sc-bdVaJa fUuvxv"
+                    fill="#555"
+                    height="50px"
+                    rotate={0}
+                    style={
+                      Object {
+                        "backgroundColor": "#efefef",
+                        "padding": "5px",
+                      }
+                    }
+                    viewBox="0 0 1024 1024"
+                    width="50px"
+                  >
+                    <path
+                      d="M864 224h-704c-35.2 0-64 28.8-64 64v448c0 35.2 28.8 64 64 64h704c35.2 0 64-28.8 64-64v-448c0-35.2-28.8-64-64-64zM160 256h704c17.6 0 32 14.4 32 32v64h-768v-64c0-17.6 14.4-32 32-32zM864 768h-704c-17.6 0-32-14.4-32-32v-224h768v224c0 17.6-14.4 32-32 32z M192 640h64v32h-64v-32z M320 640h384v32h-384v-32z"
+                    />
+                  </svg>
+                </styled.svg>
+              </Ionicon>
+              <p>
+                工资
+              </p>
+            </div>
+            <div
+              className="category-item col-3"
+              key="5"
+              onClick={[Function]}
+              role="button"
               style={
                 Object {
-                  "backgroundColor": "#efefef",
-                  "padding": "5px",
+                  "textAlign": "center",
                 }
               }
             >
-              <styled.svg
-                beat={0}
+              <Ionicon
+                beat={false}
                 className="rounded-circle"
-                fill="#555"
-                height="50px"
-                rotate={0}
-                shake={0}
+                color="#555"
+                fontSize="50px"
+                icon="ios-cash"
+                rotate={false}
+                shake={false}
                 style={
                   Object {
                     "backgroundColor": "#efefef",
                     "padding": "5px",
                   }
                 }
-                viewBox="0 0 1024 1024"
-                width="50px"
               >
-                <svg
-                  className="rounded-circle sc-bdVaJa fUuvxv"
+                <styled.svg
+                  beat={0}
+                  className="rounded-circle"
                   fill="#555"
                   height="50px"
                   rotate={0}
+                  shake={0}
                   style={
                     Object {
                       "backgroundColor": "#efefef",
@@ -488,63 +547,63 @@ exports[`CreateTransaction test snapshot test 1`] = `
                   viewBox="0 0 1024 1024"
                   width="50px"
                 >
-                  <path
-                    d="M80 736h864v32h-864v-32z M96 800h832v32h-832v-32z M512 336c-61.8 0-112 50.2-112 112s50.2 112 112 112 112-50.2 112-112-50.2-112-112-112z M64 192v512h896v-512h-896zM256 640h-128v-32h128v32zM256 288h-128v-32h128v32zM512 592c-79.4 0-144-64.6-144-144s64.6-144 144-144 144 64.6 144 144-64.6 144-144 144zM896 640h-128v-32h128v32zM896 288h-128v-32h128v32z"
-                  />
-                </svg>
-              </styled.svg>
-            </Ionicon>
-            <p>
-              part-time job
-            </p>
-          </div>
-          <div
-            className="category-item col-3"
-            key="6"
-            onClick={[Function]}
-            role="button"
-            style={
-              Object {
-                "textAlign": "center",
-              }
-            }
-          >
-            <Ionicon
-              beat={false}
-              className="rounded-circle"
-              color="#555"
-              fontSize="50px"
-              icon="logo-yen"
-              rotate={false}
-              shake={false}
+                  <svg
+                    className="rounded-circle sc-bdVaJa fUuvxv"
+                    fill="#555"
+                    height="50px"
+                    rotate={0}
+                    style={
+                      Object {
+                        "backgroundColor": "#efefef",
+                        "padding": "5px",
+                      }
+                    }
+                    viewBox="0 0 1024 1024"
+                    width="50px"
+                  >
+                    <path
+                      d="M80 736h864v32h-864v-32z M96 800h832v32h-832v-32z M512 336c-61.8 0-112 50.2-112 112s50.2 112 112 112 112-50.2 112-112-50.2-112-112-112z M64 192v512h896v-512h-896zM256 640h-128v-32h128v32zM256 288h-128v-32h128v32zM512 592c-79.4 0-144-64.6-144-144s64.6-144 144-144 144 64.6 144 144-64.6 144-144 144zM896 640h-128v-32h128v32zM896 288h-128v-32h128v32z"
+                    />
+                  </svg>
+                </styled.svg>
+              </Ionicon>
+              <p>
+                part-time job
+              </p>
+            </div>
+            <div
+              className="category-item col-3"
+              key="6"
+              onClick={[Function]}
+              role="button"
               style={
                 Object {
-                  "backgroundColor": "#efefef",
-                  "padding": "5px",
+                  "textAlign": "center",
                 }
               }
             >
-              <styled.svg
-                beat={0}
+              <Ionicon
+                beat={false}
                 className="rounded-circle"
-                fill="#555"
-                height="50px"
-                rotate={0}
-                shake={0}
+                color="#555"
+                fontSize="50px"
+                icon="logo-yen"
+                rotate={false}
+                shake={false}
                 style={
                   Object {
                     "backgroundColor": "#efefef",
                     "padding": "5px",
                   }
                 }
-                viewBox="0 0 1024 1024"
-                width="50px"
               >
-                <svg
-                  className="rounded-circle sc-bdVaJa fUuvxv"
+                <styled.svg
+                  beat={0}
+                  className="rounded-circle"
                   fill="#555"
                   height="50px"
                   rotate={0}
+                  shake={0}
                   style={
                     Object {
                       "backgroundColor": "#efefef",
@@ -554,106 +613,121 @@ exports[`CreateTransaction test snapshot test 1`] = `
                   viewBox="0 0 1024 1024"
                   width="50px"
                 >
-                  <path
-                    d="M896 64h-160l-224 442.256-224-442.256h-160l224.736 416h-96.736v96h147.128l28.872 62v34h-176v96h176v192h160v-192h176v-96h-176v-34l29.782-62h146.218v-96h-96.578l224.578-416z"
-                  />
-                </svg>
-              </styled.svg>
-            </Ionicon>
-            <p>
-              investment
-            </p>
+                  <svg
+                    className="rounded-circle sc-bdVaJa fUuvxv"
+                    fill="#555"
+                    height="50px"
+                    rotate={0}
+                    style={
+                      Object {
+                        "backgroundColor": "#efefef",
+                        "padding": "5px",
+                      }
+                    }
+                    viewBox="0 0 1024 1024"
+                    width="50px"
+                  >
+                    <path
+                      d="M896 64h-160l-224 442.256-224-442.256h-160l224.736 416h-96.736v96h147.128l28.872 62v34h-176v96h176v192h160v-192h176v-96h-176v-34l29.782-62h146.218v-96h-96.578l224.578-416z"
+                    />
+                  </svg>
+                </styled.svg>
+              </Ionicon>
+              <p>
+                investment
+              </p>
+            </div>
           </div>
         </div>
-      </div>
-    </CategoryPicker>
-    <CreateTransactionForm
-      onFormCancel={[Function]}
-      onFormSubmit={[Function]}
-      transaction={Object {}}
-    >
-      <form
-        noValidate={true}
-        onSubmit={[Function]}
+      </CategoryPicker>
+      <CreateTransactionForm
+        onFormCancel={[Function]}
+        onFormSubmit={[Function]}
+        transaction={Object {}}
       >
-        <div
-          className="form-group"
+        <form
+          noValidate={true}
+          onSubmit={[Function]}
         >
-          <label
-            htmlFor="title"
+          <div
+            className="form-group"
           >
-            Title
-          </label>
-          <input
-            aria-describedby="titleHelp"
-            className="form-control"
-            id="title"
-            placeholder="Enter title"
-            type="text"
-          />
-          <small
-            className="form-text text-muted"
-            id="titleHelp"
+            <label
+              htmlFor="title"
+            >
+              Title
+            </label>
+            <input
+              aria-describedby="titleHelp"
+              className="form-control"
+              id="title"
+              placeholder="Enter title"
+              type="text"
+            />
+            <small
+              className="form-text text-muted"
+              id="titleHelp"
+            >
+              Title for your transaction.
+            </small>
+          </div>
+          <div
+            className="form-group"
           >
-            Title for your transaction.
-          </small>
-        </div>
-        <div
-          className="form-group"
-        >
-          <label
-            htmlFor="amount"
+            <label
+              htmlFor="amount"
+            >
+              Dollar Amount
+            </label>
+            <input
+              className="form-control"
+              id="amount"
+              placeholder="Dollar Amount"
+              type="number"
+            />
+            <small
+              className="form-text text-muted"
+              id="amountHelp"
+            >
+              Dollar amount for your transaction.
+            </small>
+          </div>
+          <div
+            className="form-group"
           >
-            Dollar Amount
-          </label>
-          <input
-            className="form-control"
-            id="amount"
-            placeholder="Dollar Amount"
-            type="number"
-          />
-          <small
-            className="form-text text-muted"
-            id="amountHelp"
+            <label
+              htmlFor="date"
+            >
+              Date
+            </label>
+            <input
+              className="form-control"
+              id="date"
+              placeholder="Date"
+              type="date"
+            />
+            <small
+              className="form-text text-muted"
+              id="dateHelp"
+            >
+              Date for your transaction.
+            </small>
+          </div>
+          <button
+            className="btn btn-primary"
+            type="submit"
           >
-            Dollar amount for your transaction.
-          </small>
-        </div>
-        <div
-          className="form-group"
-        >
-          <label
-            htmlFor="date"
+            Submit
+          </button>
+          <button
+            className="btn btn-secondary"
+            onClick={[Function]}
           >
-            Date
-          </label>
-          <input
-            className="form-control"
-            id="date"
-            placeholder="Date"
-            type="date"
-          />
-          <small
-            className="form-text text-muted"
-            id="dateHelp"
-          >
-            Date for your transaction.
-          </small>
-        </div>
-        <button
-          className="btn btn-primary"
-          type="submit"
-        >
-          Submit
-        </button>
-        <button
-          className="btn btn-secondary"
-          onClick={[Function]}
-        >
-          Cancel
-        </button>
-      </form>
-    </CreateTransactionForm>
-  </div>
-</CreateTransaction>
+            Cancel
+          </button>
+        </form>
+      </CreateTransactionForm>
+    </div>
+  </CreateTransaction>
+</Component>
 `;

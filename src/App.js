@@ -4,15 +4,13 @@ import './App.css';
 import Home from './containers/Home';
 import {
   BrowserRouter as Router,
-  Switch,
   Route,
   Link
 } from "react-router-dom";
 import CreateTransaction from "./containers/CreateTransaction";
 import Utility from './utility';
 import { testCategories, testItems } from './testData';
-
-export const AppContext = React.createContext();
+import AppContext from './AppContext';
 
 class App extends React.Component {
   constructor(props) {

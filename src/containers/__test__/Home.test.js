@@ -6,7 +6,7 @@ import { Tabs, Tab} from '../../components/Tabs';
 import Utility from '../../utility';
 import MonthPicker from '../../components/MonthPicker';
 import CreateTransactionButton from '../../components/CreateTransactionButton';
-import { AppContext } from '../../App';
+import AppContext from '../../AppContext';
 import { testItems, testCategories } from '../../testData'; 
 
 let wrapper = null;
@@ -14,16 +14,16 @@ let wrapper = null;
 describe('Home test', () => {
     beforeEach(() => {
         wrapper = mount(
-        <AppContext.Provider value={
-            {
-                state: {
-                    items: Utility.flattenArray(testItems),
-                    categories: Utility.flattenArray(testCategories)
+            <AppContext.Provider value={
+                {
+                    state: {
+                        items: Utility.flattenArray(testItems),
+                        categories: Utility.flattenArray(testCategories)
+                    }
                 }
-            }
-        }>
-        <Home />
-        </AppContext.Provider>
+            }>
+                <Home />
+            </AppContext.Provider>
         );
     });
 
@@ -58,14 +58,14 @@ describe('Home test', () => {
     });
 
     it('should create a transaction when click create button', () => {
-        const oldTransactonNumber = wrapper.state('items').length;
+        const oldTransactonNumber = wrapper.find(Home).state('items').length;
         wrapper.find(CreateTransactionButton).simulate('click');
-        expect(wrapper.state('items').length).toEqual(oldTransactonNumber + 1);
+        expect(wrapper.find(Home).state('items').length).toEqual(oldTransactonNumber + 1);
     });
 
     it('should delete a transaction when click delete button', () => {
-        const oldTransactonNumber = wrapper.state('items').length;
+        const oldTransactonNumber = wrapper.find(Home).state('items').length;
         wrapper.find('.delete-button').first().simulate('click');
-        expect(wrapper.state('items').length).toEqual(oldTransactonNumber - 1);
+        expect(wrapper.find(Home).state('items').length).toEqual(oldTransactonNumber - 1);
     });
 });
