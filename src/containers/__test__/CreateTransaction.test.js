@@ -4,27 +4,26 @@ import { Tabs, Tab } from '../../components/Tabs';
 import CreateTransaction from '../CreateTransaction';
 import EditTransactionForm from '../../components/EditTransactionForm';
 import CategoryPicker from '../../components/CategoryPicker';
-
-const categories = [
-    {
-        "id": 1,
-        "name": "travel",
-        "type": "outcome",
-        "iconName": "ios-plane"
-    },
-    {
-        "id": 2,
-        "name": "investement",
-        "type": "income",
-        "iconName": "logo-yen"
-    }
-];
+import { AppContext } from '../../App';
+import { testItems, testCategories } from '../../testData';
+import Utility from '../../utility';
 
 let wrapper = null;
 
 describe('CreateTransaction test', () => {
     beforeEach(() => {
-        wrapper = mount(<CreateTransaction />);
+        wrapper = wrapper = mount(
+            <AppContext.Provider value={
+                {
+                    state: {
+                        items: Utility.flattenArray(testItems),
+                        categories: Utility.flattenArray(testCategories)
+                    }
+                }
+            }>
+            <CreateTransaction />
+            </AppContext.Provider>
+        );
     });
 
     it('snapshot test', () => {

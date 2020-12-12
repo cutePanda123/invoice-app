@@ -134,8 +134,8 @@ exports[`Home test snapshot test 1`] = `
         className="col"
       >
         <SpendingSummary
-          income={14000}
-          outcome={4000}
+          income={0}
+          outcome={18000}
         >
           <div
             className="containers"
@@ -150,7 +150,7 @@ exports[`Home test snapshot test 1`] = `
                   Income: 
                 </h5>
                 <div>
-                  14000
+                  0
                 </div>
               </div>
               <div
@@ -160,7 +160,7 @@ exports[`Home test snapshot test 1`] = `
                   Outcome: 
                 </h5>
                 <div>
-                  4000
+                  18000
                 </div>
               </div>
             </div>
@@ -333,9 +333,9 @@ exports[`Home test snapshot test 1`] = `
           Object {
             "amount": 4000,
             "category": Object {
-              "iconName": "ios-plane",
-              "id": 1,
-              "name": "travel",
+              "iconName": "ios-restaurant",
+              "id": "2",
+              "name": "food",
               "type": "outcome",
             },
             "categoryId": 1,
@@ -346,10 +346,10 @@ exports[`Home test snapshot test 1`] = `
           Object {
             "amount": 14000,
             "category": Object {
-              "iconName": "logo-yen",
-              "id": 2,
-              "name": "investement",
-              "type": "income",
+              "iconName": "ios-basket",
+              "id": "3",
+              "name": "shopping",
+              "type": "outcome",
             },
             "categoryId": 2,
             "date": "2020-12-15",
@@ -376,7 +376,7 @@ exports[`Home test snapshot test 1`] = `
               className="rounded-circle"
               color="#fff"
               fontSize="30px"
-              icon="ios-plane"
+              icon="ios-restaurant"
               rotate={false}
               shake={false}
               style={
@@ -417,7 +417,7 @@ exports[`Home test snapshot test 1`] = `
                   width="30px"
                 >
                   <path
-                    d="M448 144h-96l118 311.4-253.6 8.6-88.4-112h-64l64 160-64 160h64l89.8-115.4 252.2 10.4-118 313h96l196.4-309 135.6 3c6.6 0.4 13.2 0.2 20 0.2 88.4 0 160-28.8 160-64.2s-71.6-64-160-64c-6.8 0-13.4 0.2-20 0.4l-135.6 4.4-196.4-306.8z"
+                    d="M768 128c-49.6 0-96 154.6-96 320 0 114 64 160 64 160v256c0 17.6 14.4 32 32 32s32-14.4 32-32v-714c0-22-22-22-32-22z M576 128l20 208c0 8.8-7.2 16-16 16s-16-7.2-16-16l-12-208h-16l-12 208c0 8.8-7.2 16-16 16s-16-7.2-16-16l20-208h-16c0 0-48 214.4-48 256s26.8 77.2 64 90.4v389.6c0 17.6 14.4 32 32 32s32-14.4 32-32v-389.6c37.2-13.2 64-48.4 64-90.4s-48-256-48-256h-16z M320 128c-53 0-96 128-96 256 0 41.6 26.8 77.2 64 90.4v389.6c0 17.6 14.4 32 32 32s32-14.4 32-32v-389.6c37.2-13.2 64-48.4 64-90.4 0-128-43-256-96-256z"
                   />
                 </svg>
               </styled.svg>
@@ -565,7 +565,7 @@ exports[`Home test snapshot test 1`] = `
               className="rounded-circle"
               color="#fff"
               fontSize="30px"
-              icon="logo-yen"
+              icon="ios-basket"
               rotate={false}
               shake={false}
               style={
@@ -606,7 +606,7 @@ exports[`Home test snapshot test 1`] = `
                   width="30px"
                 >
                   <path
-                    d="M896 64h-160l-224 442.256-224-442.256h-160l224.736 416h-96.736v96h147.128l28.872 62v34h-176v96h176v192h160v-192h176v-96h-176v-34l29.782-62h146.218v-96h-96.578l224.578-416z"
+                    d="M800 448v-192c0-70.4-57.6-128-128-128h-320c-70.4 0-128 57.6-128 128v192h-160l105 388.6c9.4 34 40.8 59.4 78.2 59.4h529.4c37.4 0 68.8-25 78.6-59l104.8-389h-160zM256 256c0-25.6 10-49.6 28.2-67.8s42.2-28.2 67.8-28.2h320c25.6 0 49.6 10 67.8 28.2s28.2 42.2 28.2 67.8v192h-512v-192zM883.8 608h-147.8v128h113.4l-8.6 32h-104.8v96h-32v-96h-176v96h-32v-96h-176v96h-32v-96h-104.4l-8.6-32h113v-128h-147.6l-8.6-32h156.2v-96h32v96h176v-96h32v96h176v-96h32v96h156.4l-8.6 32z M528 608h176v128h-176v-128z M320 608h176v128h-176v-128z"
                   />
                 </svg>
               </styled.svg>
@@ -620,7 +620,7 @@ exports[`Home test snapshot test 1`] = `
           <span
             className="col-2 font-weight-bold"
           >
-            +
+            -
             $
             14000
           </span>

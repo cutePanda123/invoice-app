@@ -16,7 +16,7 @@ exports[`TransactionList test snapshot test 1`] = `
         className="rounded-circle"
         color="#fff"
         fontSize="30px"
-        icon="ios-plane"
+        icon="ios-restaurant"
         rotate={false}
         shake={false}
         style={
@@ -97,7 +97,7 @@ exports[`TransactionList test snapshot test 1`] = `
         className="rounded-circle"
         color="#fff"
         fontSize="30px"
-        icon="ios-plane"
+        icon="ios-restaurant"
         rotate={false}
         shake={false}
         style={
@@ -178,7 +178,7 @@ exports[`TransactionList test snapshot test 1`] = `
         className="rounded-circle"
         color="#fff"
         fontSize="30px"
-        icon="logo-yen"
+        icon="ios-basket"
         rotate={false}
         shake={false}
         style={
@@ -197,7 +197,7 @@ exports[`TransactionList test snapshot test 1`] = `
     <span
       className="col-2 font-weight-bold"
     >
-      +
+      -
       $
       14000
     </span>

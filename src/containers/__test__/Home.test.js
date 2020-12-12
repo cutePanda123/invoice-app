@@ -6,12 +6,25 @@ import { Tabs, Tab} from '../../components/Tabs';
 import Utility from '../../utility';
 import MonthPicker from '../../components/MonthPicker';
 import CreateTransactionButton from '../../components/CreateTransactionButton';
+import { AppContext } from '../../App';
+import { testItems, testCategories } from '../../testData'; 
 
 let wrapper = null;
 
 describe('Home test', () => {
     beforeEach(() => {
-        wrapper = mount(<Home />);
+        wrapper = mount(
+        <AppContext.Provider value={
+            {
+                state: {
+                    items: Utility.flattenArray(testItems),
+                    categories: Utility.flattenArray(testCategories)
+                }
+            }
+        }>
+        <Home />
+        </AppContext.Provider>
+        );
     });
 
     it('snapshot test', () => {

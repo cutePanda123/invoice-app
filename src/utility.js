@@ -21,6 +21,13 @@ const Utility = {
             year: date.getFullYear(),
             month: date.getMonth() + 1
         };
+    },
+
+    flattenArray: (array) => {
+        return array.reduce((accumulator, currentValue) => {
+            accumulator[currentValue.id] = currentValue;
+            return accumulator;
+        }, {});
     }
 }
 
