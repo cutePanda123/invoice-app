@@ -24,7 +24,7 @@ export const testCategories = [
     "type": "outcome"
   },
   {
-    "name": "工资",
+    "name": "full-time job",
     "iconName": "ios-card",
     "id": "10",
     "type": "income"
