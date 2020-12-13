@@ -8,8 +8,9 @@ import CreateTransactionButton from '../components/CreateTransactionButton';
 import EditTransactionForm from '../components/EditTransactionForm';
 import { Tabs, Tab } from '../components/Tabs';
 import Ionicon from 'react-ionicons';
-import { testItems, testCategories as categories, fakeTransaction } from '../testData';
+import { testCategories } from '../testData';
 import withContext from '../WithContext';
+import { withRouter } from 'react-router-dom';
 
 const tabTexts = [Utility.LIST_VIEW_NAME, Utility.CHART_VIEW_NAME];
 
@@ -17,7 +18,6 @@ class Home extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      items: testItems,
       currentDate: Utility.parseYearAndMonth(),
       tabView: Utility.LIST_VIEW_NAME
     };
@@ -35,6 +35,10 @@ class Home extends React.Component {
     });
   }
 
+  createItem = () => {
+    this.props.history.push('/create');
+  }
+
   modifyTrasaction = (modifiedTransaction) => {
     const newTransactions = this.state.items.map((transaction) => {
       if (modifiedTransaction.id === transaction.id) {
@@ -42,44 +46,39 @@ class Home extends React.Component {
       }
       return transaction;
     });
-    this.setState({
-      items: newTransactions
-    });
+    this.props.history.push(`/edit/${newTransactions.id}`);
   }
 
   createTransaction = () => {
-    let newTrasaction = JSON.parse(JSON.stringify(fakeTransaction));
+    /*let newTrasaction = JSON.parse(JSON.stringify(fakeTransaction));
     newTrasaction.id = this.state.items.length === 0 ? 0 : Math.max.apply(Math, this.state.items.map(item => item.id)) + 1;
     const newItems = [newTrasaction, ...this.state.items];
     this.setState({
       items: newItems
-    });
+    });*/
+    this.props.history.push('/create');
   }
 
   deleteTransaction = (victim) => {
-    let transactions = this.state.items.filter(transaction => transaction.id !== victim.id);
-    this.setState({
-      items: transactions
-    });
+    this.props.actions.deleteTransaction(victim);
   }
 
   render() {
-    const {items, currentDate, tabView} = this.state;
-    const itemsWithCategory = items.map(item => {
-      item.category = categories[item.categoryId];
-      return item;
-    }).filter((transaction) => {
-      const month = Utility.getMonthString(currentDate.month);
-      return transaction.date.includes(`${currentDate.year}-${month}`);
-    });
+    const {currentDate, tabView} = this.state;
+    const { items } = this.props.data;
     let totalIncome = 0, totalOutcome = 0;
-    itemsWithCategory.forEach((item) => {
-      if (item.category.type === Utility.OUTCOME_TYPE) {
-        totalOutcome += item.amount;
+    let itemsWithCategory = [];
+    for (const tId in items) {
+      const category = testCategories[items[tId].categoryId]
+      if (category.type === Utility.OUTCOME_TYPE) {
+        totalOutcome += items[tId].amount;
       } else {
-        totalIncome += item.amount;
+        totalIncome += items[tId].amount;
       }
-    });
+      items[tId]['category'] = category;
+      itemsWithCategory.push(items[tId]);
+    }
+
     return (
       <React.Fragment>
         <header className="App-header">
@@ -158,4 +157,4 @@ class Home extends React.Component {
   }
 }
 
-export default withContext(Home);
+export default withRouter(withContext(Home));

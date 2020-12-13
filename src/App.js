@@ -20,6 +20,15 @@ class App extends React.Component {
       items: Utility.flattenArray(testItems),
       categories: Utility.flattenArray(testCategories)
     };
+
+    this.actions = {
+      deleteTransaction: (transaction) => {
+        delete this.state.items[transaction.id];
+        this.setState({
+          items: this.state.items
+        });
+      }
+    };
   }
 
   render() {
@@ -27,7 +36,8 @@ class App extends React.Component {
       <AppContext.Provider
         value={
           {
-            state: this.state
+            state: this.state,
+            actions: this.actions
           }
         }
       >
