@@ -1,841 +1,1143 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Home test snapshot test 1`] = `
-<Component>
-  <Home
-    data={
+<BrowserRouter>
+  <Router
+    history={
       Object {
-        "categories": Object {
-          "1": Object {
-            "iconName": "ios-plane",
-            "id": "1",
-            "name": "travel",
-            "type": "outcome",
-          },
-          "10": Object {
-            "iconName": "ios-card",
-            "id": "10",
-            "name": "工资",
-            "type": "income",
-          },
-          "11": Object {
-            "iconName": "ios-cash",
-            "id": "11",
-            "name": "part-time job",
-            "type": "income",
-          },
-          "12": Object {
-            "iconName": "logo-yen",
-            "id": "12",
-            "name": "investment",
-            "type": "income",
-          },
-          "2": Object {
-            "iconName": "ios-restaurant",
-            "id": "2",
-            "name": "food",
-            "type": "outcome",
-          },
-          "3": Object {
-            "iconName": "ios-basket",
-            "id": "3",
-            "name": "shopping",
-            "type": "outcome",
-          },
-          "4": Object {
-            "iconName": "ios-phone-portrait",
-            "id": "4",
-            "name": "electronic product",
-            "type": "outcome",
-          },
+        "action": "POP",
+        "block": [Function],
+        "createHref": [Function],
+        "go": [Function],
+        "goBack": [Function],
+        "goForward": [Function],
+        "length": 1,
+        "listen": [Function],
+        "location": Object {
+          "hash": "",
+          "pathname": "/",
+          "search": "",
+          "state": undefined,
         },
-        "items": Object {
-          "0": Object {
-            "amount": 2000,
-            "category": Object {
-              "iconName": "ios-restaurant",
-              "id": "2",
-              "name": "food",
-              "type": "outcome",
-            },
-            "categoryId": 1,
-            "date": "2020-10-20",
-            "desc": "travel in Seattle",
-            "id": 0,
-          },
-          "1": Object {
-            "amount": 4000,
-            "category": Object {
-              "iconName": "ios-restaurant",
-              "id": "2",
-              "name": "food",
-              "type": "outcome",
-            },
-            "categoryId": 1,
-            "date": "2020-12-10",
-            "desc": "travel in San Jose",
-            "id": 1,
-          },
-          "2": Object {
-            "amount": 14000,
-            "category": Object {
-              "iconName": "ios-basket",
-              "id": "3",
-              "name": "shopping",
-              "type": "outcome",
-            },
-            "categoryId": 2,
-            "date": "2020-12-15",
-            "desc": "stock investement",
-            "id": 2,
-          },
-        },
+        "push": [Function],
+        "replace": [Function],
       }
     }
   >
-    <header
-      className="App-header"
-    >
-      <div
-        className="row mb-5"
+    <withRouter()>
+      <Component
+        history={
+          Object {
+            "action": "POP",
+            "block": [Function],
+            "createHref": [Function],
+            "go": [Function],
+            "goBack": [Function],
+            "goForward": [Function],
+            "length": 1,
+            "listen": [Function],
+            "location": Object {
+              "hash": "",
+              "pathname": "/",
+              "search": "",
+              "state": undefined,
+            },
+            "push": [Function],
+            "replace": [Function],
+          }
+        }
+        location={
+          Object {
+            "hash": "",
+            "pathname": "/",
+            "search": "",
+            "state": undefined,
+          }
+        }
+        match={
+          Object {
+            "isExact": true,
+            "params": Object {},
+            "path": "/",
+            "url": "/",
+          }
+        }
       >
-        <img
-          className="App-logo"
-          src="logo.svg"
-        />
-      </div>
-      <div
-        className="row mb-5"
-      >
-        <CreateTransactionForm
-          onFormCancel={[Function]}
-          onFormSubmit={[Function]}
-          transaction={Object {}}
+        <Home
+          data={
+            Object {
+              "categories": Object {
+                "1": Object {
+                  "iconName": "ios-plane",
+                  "id": "1",
+                  "name": "travel",
+                  "type": "outcome",
+                },
+                "10": Object {
+                  "iconName": "ios-card",
+                  "id": "10",
+                  "name": "full-time job",
+                  "type": "income",
+                },
+                "11": Object {
+                  "iconName": "ios-cash",
+                  "id": "11",
+                  "name": "part-time job",
+                  "type": "income",
+                },
+                "12": Object {
+                  "iconName": "logo-yen",
+                  "id": "12",
+                  "name": "investment",
+                  "type": "income",
+                },
+                "2": Object {
+                  "iconName": "ios-restaurant",
+                  "id": "2",
+                  "name": "food",
+                  "type": "outcome",
+                },
+                "3": Object {
+                  "iconName": "ios-basket",
+                  "id": "3",
+                  "name": "shopping",
+                  "type": "outcome",
+                },
+                "4": Object {
+                  "iconName": "ios-phone-portrait",
+                  "id": "4",
+                  "name": "electronic product",
+                  "type": "outcome",
+                },
+              },
+              "items": Object {
+                "0": Object {
+                  "amount": 2000,
+                  "category": Object {
+                    "iconName": "ios-plane",
+                    "id": "1",
+                    "name": "travel",
+                    "type": "outcome",
+                  },
+                  "categoryId": 1,
+                  "date": "2020-10-20",
+                  "desc": "travel in Seattle",
+                  "id": 0,
+                },
+                "1": Object {
+                  "amount": 4000,
+                  "category": Object {
+                    "iconName": "ios-plane",
+                    "id": "1",
+                    "name": "travel",
+                    "type": "outcome",
+                  },
+                  "categoryId": 1,
+                  "date": "2020-12-10",
+                  "desc": "travel in San Jose",
+                  "id": 1,
+                },
+                "2": Object {
+                  "amount": 14000,
+                  "category": Object {
+                    "iconName": "ios-restaurant",
+                    "id": "2",
+                    "name": "food",
+                    "type": "outcome",
+                  },
+                  "categoryId": 2,
+                  "date": "2020-12-15",
+                  "desc": "stock investement",
+                  "id": 2,
+                },
+              },
+            }
+          }
+          history={
+            Object {
+              "action": "POP",
+              "block": [Function],
+              "createHref": [Function],
+              "go": [Function],
+              "goBack": [Function],
+              "goForward": [Function],
+              "length": 1,
+              "listen": [Function],
+              "location": Object {
+                "hash": "",
+                "pathname": "/",
+                "search": "",
+                "state": undefined,
+              },
+              "push": [Function],
+              "replace": [Function],
+            }
+          }
+          location={
+            Object {
+              "hash": "",
+              "pathname": "/",
+              "search": "",
+              "state": undefined,
+            }
+          }
+          match={
+            Object {
+              "isExact": true,
+              "params": Object {},
+              "path": "/",
+              "url": "/",
+            }
+          }
         >
-          <form
-            noValidate={true}
-            onSubmit={[Function]}
+          <header
+            className="App-header"
           >
             <div
-              className="form-group"
+              className="row mb-5"
             >
-              <label
-                htmlFor="title"
-              >
-                Title
-              </label>
-              <input
-                aria-describedby="titleHelp"
-                className="form-control"
-                id="title"
-                placeholder="Enter title"
-                type="text"
+              <img
+                className="App-logo"
+                src="logo.svg"
               />
-              <small
-                className="form-text text-muted"
-                id="titleHelp"
-              >
-                Title for your transaction.
-              </small>
             </div>
             <div
-              className="form-group"
+              className="row mb-5"
             >
-              <label
-                htmlFor="amount"
+              <CreateTransactionForm
+                onFormCancel={[Function]}
+                onFormSubmit={[Function]}
+                transaction={Object {}}
               >
-                Dollar Amount
-              </label>
-              <input
-                className="form-control"
-                id="amount"
-                placeholder="Dollar Amount"
-                type="number"
-              />
-              <small
-                className="form-text text-muted"
-                id="amountHelp"
-              >
-                Dollar amount for your transaction.
-              </small>
+                <form
+                  noValidate={true}
+                  onSubmit={[Function]}
+                >
+                  <div
+                    className="form-group"
+                  >
+                    <label
+                      htmlFor="title"
+                    >
+                      Title
+                    </label>
+                    <input
+                      aria-describedby="titleHelp"
+                      className="form-control"
+                      id="title"
+                      placeholder="Enter title"
+                      type="text"
+                    />
+                    <small
+                      className="form-text text-muted"
+                      id="titleHelp"
+                    >
+                      Title for your transaction.
+                    </small>
+                  </div>
+                  <div
+                    className="form-group"
+                  >
+                    <label
+                      htmlFor="amount"
+                    >
+                      Dollar Amount
+                    </label>
+                    <input
+                      className="form-control"
+                      id="amount"
+                      placeholder="Dollar Amount"
+                      type="number"
+                    />
+                    <small
+                      className="form-text text-muted"
+                      id="amountHelp"
+                    >
+                      Dollar amount for your transaction.
+                    </small>
+                  </div>
+                  <div
+                    className="form-group"
+                  >
+                    <label
+                      htmlFor="date"
+                    >
+                      Date
+                    </label>
+                    <input
+                      className="form-control"
+                      id="date"
+                      placeholder="Date"
+                      type="date"
+                    />
+                    <small
+                      className="form-text text-muted"
+                      id="dateHelp"
+                    >
+                      Date for your transaction.
+                    </small>
+                  </div>
+                  <button
+                    className="btn btn-primary"
+                    type="submit"
+                  >
+                    Submit
+                  </button>
+                  <button
+                    className="btn btn-secondary"
+                    onClick={[Function]}
+                  >
+                    Cancel
+                  </button>
+                </form>
+              </CreateTransactionForm>
             </div>
             <div
-              className="form-group"
-            >
-              <label
-                htmlFor="date"
-              >
-                Date
-              </label>
-              <input
-                className="form-control"
-                id="date"
-                placeholder="Date"
-                type="date"
-              />
-              <small
-                className="form-text text-muted"
-                id="dateHelp"
-              >
-                Date for your transaction.
-              </small>
-            </div>
-            <button
-              className="btn btn-primary"
-              type="submit"
-            >
-              Submit
-            </button>
-            <button
-              className="btn btn-secondary"
-              onClick={[Function]}
-            >
-              Cancel
-            </button>
-          </form>
-        </CreateTransactionForm>
-      </div>
-      <div
-        className="row mb-5"
-      >
-        <div
-          className="col"
-        >
-          <MonthPicker
-            month={12}
-            onDateChange={[Function]}
-            year={2020}
-          >
-            <div
-              className="dropdown month-picker-component"
-            >
-              <h4>
-                Select a month
-              </h4>
-              <button
-                className="btn btn-lg btn-secondary dropdown-toggle"
-                onClick={[Function]}
-              >
-                12/2020
-              </button>
-            </div>
-          </MonthPicker>
-        </div>
-        <div
-          className="col"
-        >
-          <SpendingSummary
-            income={0}
-            outcome={18000}
-          >
-            <div
-              className="containers"
+              className="row mb-5"
             >
               <div
-                className="row"
+                className="col"
               >
-                <div
-                  className="col income"
+                <MonthPicker
+                  month={12}
+                  onDateChange={[Function]}
+                  year={2020}
                 >
-                  <h5>
-                    Income: 
-                  </h5>
-                  <div>
-                    0
+                  <div
+                    className="dropdown month-picker-component"
+                  >
+                    <h4>
+                      Select a month
+                    </h4>
+                    <button
+                      className="btn btn-lg btn-secondary dropdown-toggle"
+                      onClick={[Function]}
+                    >
+                      12/2020
+                    </button>
                   </div>
-                </div>
-                <div
-                  className="col outcome"
+                </MonthPicker>
+              </div>
+              <div
+                className="col"
+              >
+                <SpendingSummary
+                  income={0}
+                  outcome={20000}
                 >
-                  <h5>
-                    Outcome: 
-                  </h5>
-                  <div>
-                    18000
+                  <div
+                    className="containers"
+                  >
+                    <div
+                      className="row"
+                    >
+                      <div
+                        className="col income"
+                      >
+                        <h5>
+                          Income: 
+                        </h5>
+                        <div>
+                          0
+                        </div>
+                      </div>
+                      <div
+                        className="col outcome"
+                      >
+                        <h5>
+                          Outcome: 
+                        </h5>
+                        <div>
+                          20000
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                </div>
+                </SpendingSummary>
               </div>
             </div>
-          </SpendingSummary>
-        </div>
-      </div>
-    </header>
-    <div
-      className="cotent-area py-3 px-3"
-    >
-      <Tabs
-        activeIndex={0}
-        onTabChange={[Function]}
-      >
-        <ul
-          className="nav nav-tabs nav-fill my-4"
-        >
-          <li
-            className="nav-item"
-            key=".0"
+          </header>
+          <div
+            className="cotent-area py-3 px-3"
           >
-            <a
-              className="nav-link active"
-              href="#"
-              onClick={[Function]}
+            <Tabs
+              activeIndex={0}
+              onTabChange={[Function]}
             >
-              <Tab>
+              <ul
+                className="nav nav-tabs nav-fill my-4"
+              >
+                <li
+                  className="nav-item"
+                  key=".0"
+                >
+                  <a
+                    className="nav-link active"
+                    href="#"
+                    onClick={[Function]}
+                  >
+                    <Tab>
+                      <Ionicon
+                        beat={false}
+                        className="rounded-circle mr-2"
+                        color="#007bff"
+                        fontSize="25px"
+                        icon="ios-paper"
+                        rotate={false}
+                        shake={false}
+                        style={Object {}}
+                      >
+                        <styled.svg
+                          beat={0}
+                          className="rounded-circle mr-2"
+                          fill="#007bff"
+                          height="25px"
+                          rotate={0}
+                          shake={0}
+                          style={Object {}}
+                          viewBox="0 0 1024 1024"
+                          width="25px"
+                        >
+                          <svg
+                            className="rounded-circle mr-2 sc-bdVaJa fUuvxv"
+                            fill="#007bff"
+                            height="25px"
+                            rotate={0}
+                            style={Object {}}
+                            viewBox="0 0 1024 1024"
+                            width="25px"
+                          >
+                            <path
+                              d="M224 96v736h-32v-608h-64v642.2c0 34 27.6 61.8 61.8 61.8h644.6c34 0 61.8-27.6 61.8-61.8v-770.2h-672.2zM320 224h256v32h-256v-32zM320 544h384v32h-384v-32zM800 736h-480v-32h480v32zM800 416h-480v-32h480v32z"
+                            />
+                          </svg>
+                        </styled.svg>
+                      </Ionicon>
+                      List View
+                    </Tab>
+                  </a>
+                </li>
+                <li
+                  className="nav-item"
+                  key=".1"
+                >
+                  <a
+                    className="nav-link"
+                    href="#"
+                    onClick={[Function]}
+                  >
+                    <Tab>
+                      <Ionicon
+                        beat={false}
+                        className="rounded-circle mr-2"
+                        color="#007bff"
+                        fontSize="25px"
+                        icon="ios-pie"
+                        rotate={false}
+                        shake={false}
+                        style={Object {}}
+                      >
+                        <styled.svg
+                          beat={0}
+                          className="rounded-circle mr-2"
+                          fill="#007bff"
+                          height="25px"
+                          rotate={0}
+                          shake={0}
+                          style={Object {}}
+                          viewBox="0 0 1024 1024"
+                          width="25px"
+                        >
+                          <svg
+                            className="rounded-circle mr-2 sc-bdVaJa fUuvxv"
+                            fill="#007bff"
+                            height="25px"
+                            rotate={0}
+                            style={Object {}}
+                            viewBox="0 0 1024 1024"
+                            width="25px"
+                          >
+                            <path
+                              d="M544 128v448l-395.51 98.752c54.816 165.69 211.192 285.248 395.26 285.248 229.75 0 416.25-186.25 416.25-416s-186-416-416-416v0z M512 64h-11c-320 0-437 232.5-437 414.574 0 0 0.5 113.332 37.82 176.582l410.18-104.010v-487.146z"
+                            />
+                          </svg>
+                        </styled.svg>
+                      </Ionicon>
+                      Chart View
+                    </Tab>
+                  </a>
+                </li>
+              </ul>
+            </Tabs>
+            <CreateTransactionButton
+              onCreateTransaction={[Function]}
+            >
+              <button
+                className="btn btn-primary btn-block d-flex justify-content-center align-items-center"
+                onClick={[Function]}
+              >
                 <Ionicon
                   beat={false}
-                  className="rounded-circle mr-2"
-                  color="#007bff"
-                  fontSize="25px"
-                  icon="ios-paper"
+                  className="rounded-circle"
+                  color="#fff"
+                  fontSize="30px"
+                  icon="ios-add-circle"
                   rotate={false}
                   shake={false}
                   style={Object {}}
                 >
                   <styled.svg
                     beat={0}
-                    className="rounded-circle mr-2"
-                    fill="#007bff"
-                    height="25px"
+                    className="rounded-circle"
+                    fill="#fff"
+                    height="30px"
                     rotate={0}
                     shake={0}
                     style={Object {}}
                     viewBox="0 0 1024 1024"
-                    width="25px"
+                    width="30px"
                   >
                     <svg
-                      className="rounded-circle mr-2 sc-bdVaJa fUuvxv"
-                      fill="#007bff"
-                      height="25px"
+                      className="rounded-circle sc-bdVaJa fUuvxv"
+                      fill="#fff"
+                      height="30px"
                       rotate={0}
                       style={Object {}}
                       viewBox="0 0 1024 1024"
-                      width="25px"
+                      width="30px"
                     >
                       <path
-                        d="M224 96v736h-32v-608h-64v642.2c0 34 27.6 61.8 61.8 61.8h644.6c34 0 61.8-27.6 61.8-61.8v-770.2h-672.2zM320 224h256v32h-256v-32zM320 544h384v32h-384v-32zM800 736h-480v-32h480v32zM800 416h-480v-32h480v32z"
+                        d="M512 96c-229.8 0-416 186.2-416 416s186.2 416 416 416c229.8 0 416-186.2 416-416s-186.2-416-416-416zM768 528h-240v240h-32v-240h-240v-32h240v-240h32v240h240v32z"
                       />
                     </svg>
                   </styled.svg>
                 </Ionicon>
-                List View
-              </Tab>
-            </a>
-          </li>
-          <li
-            className="nav-item"
-            key=".1"
-          >
-            <a
-              className="nav-link"
-              href="#"
-              onClick={[Function]}
+                Create a new transaction
+              </button>
+            </CreateTransactionButton>
+            <TransactionList
+              items={
+                Array [
+                  Object {
+                    "amount": 2000,
+                    "category": Object {
+                      "iconName": "ios-plane",
+                      "id": "1",
+                      "name": "travel",
+                      "type": "outcome",
+                    },
+                    "categoryId": 1,
+                    "date": "2020-10-20",
+                    "desc": "travel in Seattle",
+                    "id": 0,
+                  },
+                  Object {
+                    "amount": 4000,
+                    "category": Object {
+                      "iconName": "ios-plane",
+                      "id": "1",
+                      "name": "travel",
+                      "type": "outcome",
+                    },
+                    "categoryId": 1,
+                    "date": "2020-12-10",
+                    "desc": "travel in San Jose",
+                    "id": 1,
+                  },
+                  Object {
+                    "amount": 14000,
+                    "category": Object {
+                      "iconName": "ios-restaurant",
+                      "id": "2",
+                      "name": "food",
+                      "type": "outcome",
+                    },
+                    "categoryId": 2,
+                    "date": "2020-12-15",
+                    "desc": "stock investement",
+                    "id": 2,
+                  },
+                ]
+              }
+              onDeleteItem={[Function]}
+              onModifyItem={[Function]}
             >
-              <Tab>
-                <Ionicon
-                  beat={false}
-                  className="rounded-circle mr-2"
-                  color="#007bff"
-                  fontSize="25px"
-                  icon="ios-pie"
-                  rotate={false}
-                  shake={false}
-                  style={Object {}}
+              <ul
+                className="list-group list-group-flush"
+              >
+                <li
+                  className="list-group-item d-flex justify-content-between align-items-center"
+                  key="0"
                 >
-                  <styled.svg
-                    beat={0}
-                    className="rounded-circle mr-2"
-                    fill="#007bff"
-                    height="25px"
-                    rotate={0}
-                    shake={0}
-                    style={Object {}}
-                    viewBox="0 0 1024 1024"
-                    width="25px"
+                  <span
+                    className="col-1"
                   >
-                    <svg
-                      className="rounded-circle mr-2 sc-bdVaJa fUuvxv"
-                      fill="#007bff"
-                      height="25px"
-                      rotate={0}
-                      style={Object {}}
-                      viewBox="0 0 1024 1024"
-                      width="25px"
+                    <Ionicon
+                      beat={false}
+                      className="rounded-circle"
+                      color="#fff"
+                      fontSize="30px"
+                      icon="ios-plane"
+                      rotate={false}
+                      shake={false}
+                      style={
+                        Object {
+                          "backgroundColor": "#007bff",
+                          "padding": "5px",
+                        }
+                      }
                     >
-                      <path
-                        d="M544 128v448l-395.51 98.752c54.816 165.69 211.192 285.248 395.26 285.248 229.75 0 416.25-186.25 416.25-416s-186-416-416-416v0z M512 64h-11c-320 0-437 232.5-437 414.574 0 0 0.5 113.332 37.82 176.582l410.18-104.010v-487.146z"
-                      />
-                    </svg>
-                  </styled.svg>
-                </Ionicon>
-                Chart View
-              </Tab>
-            </a>
-          </li>
-        </ul>
-      </Tabs>
-      <CreateTransactionButton
-        onCreateTransaction={[Function]}
-      >
-        <button
-          className="btn btn-primary btn-block d-flex justify-content-center align-items-center"
-          onClick={[Function]}
-        >
-          <Ionicon
-            beat={false}
-            className="rounded-circle"
-            color="#fff"
-            fontSize="30px"
-            icon="ios-add-circle"
-            rotate={false}
-            shake={false}
-            style={Object {}}
-          >
-            <styled.svg
-              beat={0}
-              className="rounded-circle"
-              fill="#fff"
-              height="30px"
-              rotate={0}
-              shake={0}
-              style={Object {}}
-              viewBox="0 0 1024 1024"
-              width="30px"
-            >
-              <svg
-                className="rounded-circle sc-bdVaJa fUuvxv"
-                fill="#fff"
-                height="30px"
-                rotate={0}
-                style={Object {}}
-                viewBox="0 0 1024 1024"
-                width="30px"
-              >
-                <path
-                  d="M512 96c-229.8 0-416 186.2-416 416s186.2 416 416 416c229.8 0 416-186.2 416-416s-186.2-416-416-416zM768 528h-240v240h-32v-240h-240v-32h240v-240h32v240h240v32z"
-                />
-              </svg>
-            </styled.svg>
-          </Ionicon>
-          Create a new transaction
-        </button>
-      </CreateTransactionButton>
-      <TransactionList
-        items={
-          Array [
-            Object {
-              "amount": 4000,
-              "category": Object {
-                "iconName": "ios-restaurant",
-                "id": "2",
-                "name": "food",
-                "type": "outcome",
-              },
-              "categoryId": 1,
-              "date": "2020-12-10",
-              "desc": "travel in San Jose",
-              "id": 1,
-            },
-            Object {
-              "amount": 14000,
-              "category": Object {
-                "iconName": "ios-basket",
-                "id": "3",
-                "name": "shopping",
-                "type": "outcome",
-              },
-              "categoryId": 2,
-              "date": "2020-12-15",
-              "desc": "stock investement",
-              "id": 2,
-            },
-          ]
-        }
-        onDeleteItem={[Function]}
-        onModifyItem={[Function]}
-      >
-        <ul
-          className="list-group list-group-flush"
-        >
-          <li
-            className="list-group-item d-flex justify-content-between align-items-center"
-            key="1"
-          >
-            <span
-              className="col-1"
-            >
-              <Ionicon
-                beat={false}
-                className="rounded-circle"
-                color="#fff"
-                fontSize="30px"
-                icon="ios-restaurant"
-                rotate={false}
-                shake={false}
-                style={
-                  Object {
-                    "backgroundColor": "#007bff",
-                    "padding": "5px",
-                  }
-                }
-              >
-                <styled.svg
-                  beat={0}
-                  className="rounded-circle"
-                  fill="#fff"
-                  height="30px"
-                  rotate={0}
-                  shake={0}
-                  style={
-                    Object {
-                      "backgroundColor": "#007bff",
-                      "padding": "5px",
-                    }
-                  }
-                  viewBox="0 0 1024 1024"
-                  width="30px"
-                >
-                  <svg
-                    className="rounded-circle sc-bdVaJa fUuvxv"
-                    fill="#fff"
-                    height="30px"
-                    rotate={0}
-                    style={
-                      Object {
-                        "backgroundColor": "#007bff",
-                        "padding": "5px",
-                      }
-                    }
-                    viewBox="0 0 1024 1024"
-                    width="30px"
+                      <styled.svg
+                        beat={0}
+                        className="rounded-circle"
+                        fill="#fff"
+                        height="30px"
+                        rotate={0}
+                        shake={0}
+                        style={
+                          Object {
+                            "backgroundColor": "#007bff",
+                            "padding": "5px",
+                          }
+                        }
+                        viewBox="0 0 1024 1024"
+                        width="30px"
+                      >
+                        <svg
+                          className="rounded-circle sc-bdVaJa fUuvxv"
+                          fill="#fff"
+                          height="30px"
+                          rotate={0}
+                          style={
+                            Object {
+                              "backgroundColor": "#007bff",
+                              "padding": "5px",
+                            }
+                          }
+                          viewBox="0 0 1024 1024"
+                          width="30px"
+                        >
+                          <path
+                            d="M448 144h-96l118 311.4-253.6 8.6-88.4-112h-64l64 160-64 160h64l89.8-115.4 252.2 10.4-118 313h96l196.4-309 135.6 3c6.6 0.4 13.2 0.2 20 0.2 88.4 0 160-28.8 160-64.2s-71.6-64-160-64c-6.8 0-13.4 0.2-20 0.4l-135.6 4.4-196.4-306.8z"
+                          />
+                        </svg>
+                      </styled.svg>
+                    </Ionicon>
+                  </span>
+                  <span
+                    className="col-5"
                   >
-                    <path
-                      d="M768 128c-49.6 0-96 154.6-96 320 0 114 64 160 64 160v256c0 17.6 14.4 32 32 32s32-14.4 32-32v-714c0-22-22-22-32-22z M576 128l20 208c0 8.8-7.2 16-16 16s-16-7.2-16-16l-12-208h-16l-12 208c0 8.8-7.2 16-16 16s-16-7.2-16-16l20-208h-16c0 0-48 214.4-48 256s26.8 77.2 64 90.4v389.6c0 17.6 14.4 32 32 32s32-14.4 32-32v-389.6c37.2-13.2 64-48.4 64-90.4s-48-256-48-256h-16z M320 128c-53 0-96 128-96 256 0 41.6 26.8 77.2 64 90.4v389.6c0 17.6 14.4 32 32 32s32-14.4 32-32v-389.6c37.2-13.2 64-48.4 64-90.4 0-128-43-256-96-256z"
-                    />
-                  </svg>
-                </styled.svg>
-              </Ionicon>
-            </span>
-            <span
-              className="col-5"
-            >
-              travel in San Jose
-            </span>
-            <span
-              className="col-2 font-weight-bold"
-            >
-              -
-              $
-              4000
-            </span>
-            <span
-              className="col-2"
-            >
-              2020-12-10
-            </span>
-            <a
-              className="col-1"
-              onClick={[Function]}
-            >
-              <Ionicon
-                beat={false}
-                className="rounded-circle"
-                color="#fff"
-                fontSize="30px"
-                icon="ios-create-outline"
-                rotate={false}
-                shake={false}
-                style={
-                  Object {
-                    "backgroundColor": "#28a745",
-                    "padding": "5px",
-                  }
-                }
-              >
-                <styled.svg
-                  beat={0}
-                  className="rounded-circle"
-                  fill="#fff"
-                  height="30px"
-                  rotate={0}
-                  shake={0}
-                  style={
-                    Object {
-                      "backgroundColor": "#28a745",
-                      "padding": "5px",
-                    }
-                  }
-                  viewBox="0 0 1024 1024"
-                  width="30px"
-                >
-                  <svg
-                    className="rounded-circle sc-bdVaJa fUuvxv"
-                    fill="#fff"
-                    height="30px"
-                    rotate={0}
-                    style={
-                      Object {
-                        "backgroundColor": "#28a745",
-                        "padding": "5px",
-                      }
-                    }
-                    viewBox="0 0 1024 1024"
-                    width="30px"
+                    travel in Seattle
+                  </span>
+                  <span
+                    className="col-2 font-weight-bold"
                   >
-                    <path
-                      d="M736 832h-576v-544h448.234l32-32h-512.234v608h640v-480.234l-32 32z M475.246 568.168l-19.412-19.414 342.646-342.646-22.626-22.628-359.854 359.822v64.698h64.432l360.090-359.968-22.628-22.572z M888.426 160.624l-24.93-24.932c-5.328-4.758-12.384-7.692-20.004-7.692-7.624 0-14.608 2.936-19.858 7.7l-24.302 24.3 64.786 64.786 24.3-24.3c4.766-5.25 7.582-12.234 7.582-19.858 0-7.62-2.816-14.678-7.574-20.004z"
-                    />
-                  </svg>
-                </styled.svg>
-              </Ionicon>
-            </a>
-            <a
-              className="col-1"
-              onClick={[Function]}
-            >
-              <Ionicon
-                beat={false}
-                className="rounded-circle delete-button"
-                color="#fff"
-                fontSize="30px"
-                icon="ios-close"
-                rotate={false}
-                shake={false}
-                style={
-                  Object {
-                    "backgroundColor": "#dc3545",
-                    "padding": "5px",
-                  }
-                }
-              >
-                <styled.svg
-                  beat={0}
-                  className="rounded-circle delete-button"
-                  fill="#fff"
-                  height="30px"
-                  rotate={0}
-                  shake={0}
-                  style={
-                    Object {
-                      "backgroundColor": "#dc3545",
-                      "padding": "5px",
-                    }
-                  }
-                  viewBox="0 0 1024 1024"
-                  width="30px"
-                >
-                  <svg
-                    className="rounded-circle delete-button sc-bdVaJa fUuvxv"
-                    fill="#fff"
-                    height="30px"
-                    rotate={0}
-                    style={
-                      Object {
-                        "backgroundColor": "#dc3545",
-                        "padding": "5px",
-                      }
-                    }
-                    viewBox="0 0 1024 1024"
-                    width="30px"
+                    -
+                    $
+                    2000
+                  </span>
+                  <span
+                    className="col-2"
                   >
-                    <path
-                      d="M680.4 320l-168.8 168.6-168-167.8-23.6 23.6 168 167.6-168 167.8 23.6 23.4 168-167.6 168.8 168.4 23.6-23.4-168.8-168.6 168.8-168.4z"
-                    />
-                  </svg>
-                </styled.svg>
-              </Ionicon>
-            </a>
-          </li>
-          <li
-            className="list-group-item d-flex justify-content-between align-items-center"
-            key="2"
-          >
-            <span
-              className="col-1"
-            >
-              <Ionicon
-                beat={false}
-                className="rounded-circle"
-                color="#fff"
-                fontSize="30px"
-                icon="ios-basket"
-                rotate={false}
-                shake={false}
-                style={
-                  Object {
-                    "backgroundColor": "#007bff",
-                    "padding": "5px",
-                  }
-                }
-              >
-                <styled.svg
-                  beat={0}
-                  className="rounded-circle"
-                  fill="#fff"
-                  height="30px"
-                  rotate={0}
-                  shake={0}
-                  style={
-                    Object {
-                      "backgroundColor": "#007bff",
-                      "padding": "5px",
-                    }
-                  }
-                  viewBox="0 0 1024 1024"
-                  width="30px"
-                >
-                  <svg
-                    className="rounded-circle sc-bdVaJa fUuvxv"
-                    fill="#fff"
-                    height="30px"
-                    rotate={0}
-                    style={
-                      Object {
-                        "backgroundColor": "#007bff",
-                        "padding": "5px",
-                      }
-                    }
-                    viewBox="0 0 1024 1024"
-                    width="30px"
+                    2020-10-20
+                  </span>
+                  <a
+                    className="col-1"
+                    onClick={[Function]}
                   >
-                    <path
-                      d="M800 448v-192c0-70.4-57.6-128-128-128h-320c-70.4 0-128 57.6-128 128v192h-160l105 388.6c9.4 34 40.8 59.4 78.2 59.4h529.4c37.4 0 68.8-25 78.6-59l104.8-389h-160zM256 256c0-25.6 10-49.6 28.2-67.8s42.2-28.2 67.8-28.2h320c25.6 0 49.6 10 67.8 28.2s28.2 42.2 28.2 67.8v192h-512v-192zM883.8 608h-147.8v128h113.4l-8.6 32h-104.8v96h-32v-96h-176v96h-32v-96h-176v96h-32v-96h-104.4l-8.6-32h113v-128h-147.6l-8.6-32h156.2v-96h32v96h176v-96h32v96h176v-96h32v96h156.4l-8.6 32z M528 608h176v128h-176v-128z M320 608h176v128h-176v-128z"
-                    />
-                  </svg>
-                </styled.svg>
-              </Ionicon>
-            </span>
-            <span
-              className="col-5"
-            >
-              stock investement
-            </span>
-            <span
-              className="col-2 font-weight-bold"
-            >
-              -
-              $
-              14000
-            </span>
-            <span
-              className="col-2"
-            >
-              2020-12-15
-            </span>
-            <a
-              className="col-1"
-              onClick={[Function]}
-            >
-              <Ionicon
-                beat={false}
-                className="rounded-circle"
-                color="#fff"
-                fontSize="30px"
-                icon="ios-create-outline"
-                rotate={false}
-                shake={false}
-                style={
-                  Object {
-                    "backgroundColor": "#28a745",
-                    "padding": "5px",
-                  }
-                }
-              >
-                <styled.svg
-                  beat={0}
-                  className="rounded-circle"
-                  fill="#fff"
-                  height="30px"
-                  rotate={0}
-                  shake={0}
-                  style={
-                    Object {
-                      "backgroundColor": "#28a745",
-                      "padding": "5px",
-                    }
-                  }
-                  viewBox="0 0 1024 1024"
-                  width="30px"
-                >
-                  <svg
-                    className="rounded-circle sc-bdVaJa fUuvxv"
-                    fill="#fff"
-                    height="30px"
-                    rotate={0}
-                    style={
-                      Object {
-                        "backgroundColor": "#28a745",
-                        "padding": "5px",
+                    <Ionicon
+                      beat={false}
+                      className="rounded-circle"
+                      color="#fff"
+                      fontSize="30px"
+                      icon="ios-create-outline"
+                      rotate={false}
+                      shake={false}
+                      style={
+                        Object {
+                          "backgroundColor": "#28a745",
+                          "padding": "5px",
+                        }
                       }
-                    }
-                    viewBox="0 0 1024 1024"
-                    width="30px"
+                    >
+                      <styled.svg
+                        beat={0}
+                        className="rounded-circle"
+                        fill="#fff"
+                        height="30px"
+                        rotate={0}
+                        shake={0}
+                        style={
+                          Object {
+                            "backgroundColor": "#28a745",
+                            "padding": "5px",
+                          }
+                        }
+                        viewBox="0 0 1024 1024"
+                        width="30px"
+                      >
+                        <svg
+                          className="rounded-circle sc-bdVaJa fUuvxv"
+                          fill="#fff"
+                          height="30px"
+                          rotate={0}
+                          style={
+                            Object {
+                              "backgroundColor": "#28a745",
+                              "padding": "5px",
+                            }
+                          }
+                          viewBox="0 0 1024 1024"
+                          width="30px"
+                        >
+                          <path
+                            d="M736 832h-576v-544h448.234l32-32h-512.234v608h640v-480.234l-32 32z M475.246 568.168l-19.412-19.414 342.646-342.646-22.626-22.628-359.854 359.822v64.698h64.432l360.090-359.968-22.628-22.572z M888.426 160.624l-24.93-24.932c-5.328-4.758-12.384-7.692-20.004-7.692-7.624 0-14.608 2.936-19.858 7.7l-24.302 24.3 64.786 64.786 24.3-24.3c4.766-5.25 7.582-12.234 7.582-19.858 0-7.62-2.816-14.678-7.574-20.004z"
+                          />
+                        </svg>
+                      </styled.svg>
+                    </Ionicon>
+                  </a>
+                  <a
+                    className="col-1"
+                    onClick={[Function]}
                   >
-                    <path
-                      d="M736 832h-576v-544h448.234l32-32h-512.234v608h640v-480.234l-32 32z M475.246 568.168l-19.412-19.414 342.646-342.646-22.626-22.628-359.854 359.822v64.698h64.432l360.090-359.968-22.628-22.572z M888.426 160.624l-24.93-24.932c-5.328-4.758-12.384-7.692-20.004-7.692-7.624 0-14.608 2.936-19.858 7.7l-24.302 24.3 64.786 64.786 24.3-24.3c4.766-5.25 7.582-12.234 7.582-19.858 0-7.62-2.816-14.678-7.574-20.004z"
-                    />
-                  </svg>
-                </styled.svg>
-              </Ionicon>
-            </a>
-            <a
-              className="col-1"
-              onClick={[Function]}
-            >
-              <Ionicon
-                beat={false}
-                className="rounded-circle delete-button"
-                color="#fff"
-                fontSize="30px"
-                icon="ios-close"
-                rotate={false}
-                shake={false}
-                style={
-                  Object {
-                    "backgroundColor": "#dc3545",
-                    "padding": "5px",
-                  }
-                }
-              >
-                <styled.svg
-                  beat={0}
-                  className="rounded-circle delete-button"
-                  fill="#fff"
-                  height="30px"
-                  rotate={0}
-                  shake={0}
-                  style={
-                    Object {
-                      "backgroundColor": "#dc3545",
-                      "padding": "5px",
-                    }
-                  }
-                  viewBox="0 0 1024 1024"
-                  width="30px"
-                >
-                  <svg
-                    className="rounded-circle delete-button sc-bdVaJa fUuvxv"
-                    fill="#fff"
-                    height="30px"
-                    rotate={0}
-                    style={
-                      Object {
-                        "backgroundColor": "#dc3545",
-                        "padding": "5px",
+                    <Ionicon
+                      beat={false}
+                      className="rounded-circle delete-button"
+                      color="#fff"
+                      fontSize="30px"
+                      icon="ios-close"
+                      rotate={false}
+                      shake={false}
+                      style={
+                        Object {
+                          "backgroundColor": "#dc3545",
+                          "padding": "5px",
+                        }
                       }
-                    }
-                    viewBox="0 0 1024 1024"
-                    width="30px"
+                    >
+                      <styled.svg
+                        beat={0}
+                        className="rounded-circle delete-button"
+                        fill="#fff"
+                        height="30px"
+                        rotate={0}
+                        shake={0}
+                        style={
+                          Object {
+                            "backgroundColor": "#dc3545",
+                            "padding": "5px",
+                          }
+                        }
+                        viewBox="0 0 1024 1024"
+                        width="30px"
+                      >
+                        <svg
+                          className="rounded-circle delete-button sc-bdVaJa fUuvxv"
+                          fill="#fff"
+                          height="30px"
+                          rotate={0}
+                          style={
+                            Object {
+                              "backgroundColor": "#dc3545",
+                              "padding": "5px",
+                            }
+                          }
+                          viewBox="0 0 1024 1024"
+                          width="30px"
+                        >
+                          <path
+                            d="M680.4 320l-168.8 168.6-168-167.8-23.6 23.6 168 167.6-168 167.8 23.6 23.4 168-167.6 168.8 168.4 23.6-23.4-168.8-168.6 168.8-168.4z"
+                          />
+                        </svg>
+                      </styled.svg>
+                    </Ionicon>
+                  </a>
+                </li>
+                <li
+                  className="list-group-item d-flex justify-content-between align-items-center"
+                  key="1"
+                >
+                  <span
+                    className="col-1"
                   >
-                    <path
-                      d="M680.4 320l-168.8 168.6-168-167.8-23.6 23.6 168 167.6-168 167.8 23.6 23.4 168-167.6 168.8 168.4 23.6-23.4-168.8-168.6 168.8-168.4z"
-                    />
-                  </svg>
-                </styled.svg>
-              </Ionicon>
-            </a>
-          </li>
-        </ul>
-      </TransactionList>
-    </div>
-  </Home>
-</Component>
+                    <Ionicon
+                      beat={false}
+                      className="rounded-circle"
+                      color="#fff"
+                      fontSize="30px"
+                      icon="ios-plane"
+                      rotate={false}
+                      shake={false}
+                      style={
+                        Object {
+                          "backgroundColor": "#007bff",
+                          "padding": "5px",
+                        }
+                      }
+                    >
+                      <styled.svg
+                        beat={0}
+                        className="rounded-circle"
+                        fill="#fff"
+                        height="30px"
+                        rotate={0}
+                        shake={0}
+                        style={
+                          Object {
+                            "backgroundColor": "#007bff",
+                            "padding": "5px",
+                          }
+                        }
+                        viewBox="0 0 1024 1024"
+                        width="30px"
+                      >
+                        <svg
+                          className="rounded-circle sc-bdVaJa fUuvxv"
+                          fill="#fff"
+                          height="30px"
+                          rotate={0}
+                          style={
+                            Object {
+                              "backgroundColor": "#007bff",
+                              "padding": "5px",
+                            }
+                          }
+                          viewBox="0 0 1024 1024"
+                          width="30px"
+                        >
+                          <path
+                            d="M448 144h-96l118 311.4-253.6 8.6-88.4-112h-64l64 160-64 160h64l89.8-115.4 252.2 10.4-118 313h96l196.4-309 135.6 3c6.6 0.4 13.2 0.2 20 0.2 88.4 0 160-28.8 160-64.2s-71.6-64-160-64c-6.8 0-13.4 0.2-20 0.4l-135.6 4.4-196.4-306.8z"
+                          />
+                        </svg>
+                      </styled.svg>
+                    </Ionicon>
+                  </span>
+                  <span
+                    className="col-5"
+                  >
+                    travel in San Jose
+                  </span>
+                  <span
+                    className="col-2 font-weight-bold"
+                  >
+                    -
+                    $
+                    4000
+                  </span>
+                  <span
+                    className="col-2"
+                  >
+                    2020-12-10
+                  </span>
+                  <a
+                    className="col-1"
+                    onClick={[Function]}
+                  >
+                    <Ionicon
+                      beat={false}
+                      className="rounded-circle"
+                      color="#fff"
+                      fontSize="30px"
+                      icon="ios-create-outline"
+                      rotate={false}
+                      shake={false}
+                      style={
+                        Object {
+                          "backgroundColor": "#28a745",
+                          "padding": "5px",
+                        }
+                      }
+                    >
+                      <styled.svg
+                        beat={0}
+                        className="rounded-circle"
+                        fill="#fff"
+                        height="30px"
+                        rotate={0}
+                        shake={0}
+                        style={
+                          Object {
+                            "backgroundColor": "#28a745",
+                            "padding": "5px",
+                          }
+                        }
+                        viewBox="0 0 1024 1024"
+                        width="30px"
+                      >
+                        <svg
+                          className="rounded-circle sc-bdVaJa fUuvxv"
+                          fill="#fff"
+                          height="30px"
+                          rotate={0}
+                          style={
+                            Object {
+                              "backgroundColor": "#28a745",
+                              "padding": "5px",
+                            }
+                          }
+                          viewBox="0 0 1024 1024"
+                          width="30px"
+                        >
+                          <path
+                            d="M736 832h-576v-544h448.234l32-32h-512.234v608h640v-480.234l-32 32z M475.246 568.168l-19.412-19.414 342.646-342.646-22.626-22.628-359.854 359.822v64.698h64.432l360.090-359.968-22.628-22.572z M888.426 160.624l-24.93-24.932c-5.328-4.758-12.384-7.692-20.004-7.692-7.624 0-14.608 2.936-19.858 7.7l-24.302 24.3 64.786 64.786 24.3-24.3c4.766-5.25 7.582-12.234 7.582-19.858 0-7.62-2.816-14.678-7.574-20.004z"
+                          />
+                        </svg>
+                      </styled.svg>
+                    </Ionicon>
+                  </a>
+                  <a
+                    className="col-1"
+                    onClick={[Function]}
+                  >
+                    <Ionicon
+                      beat={false}
+                      className="rounded-circle delete-button"
+                      color="#fff"
+                      fontSize="30px"
+                      icon="ios-close"
+                      rotate={false}
+                      shake={false}
+                      style={
+                        Object {
+                          "backgroundColor": "#dc3545",
+                          "padding": "5px",
+                        }
+                      }
+                    >
+                      <styled.svg
+                        beat={0}
+                        className="rounded-circle delete-button"
+                        fill="#fff"
+                        height="30px"
+                        rotate={0}
+                        shake={0}
+                        style={
+                          Object {
+                            "backgroundColor": "#dc3545",
+                            "padding": "5px",
+                          }
+                        }
+                        viewBox="0 0 1024 1024"
+                        width="30px"
+                      >
+                        <svg
+                          className="rounded-circle delete-button sc-bdVaJa fUuvxv"
+                          fill="#fff"
+                          height="30px"
+                          rotate={0}
+                          style={
+                            Object {
+                              "backgroundColor": "#dc3545",
+                              "padding": "5px",
+                            }
+                          }
+                          viewBox="0 0 1024 1024"
+                          width="30px"
+                        >
+                          <path
+                            d="M680.4 320l-168.8 168.6-168-167.8-23.6 23.6 168 167.6-168 167.8 23.6 23.4 168-167.6 168.8 168.4 23.6-23.4-168.8-168.6 168.8-168.4z"
+                          />
+                        </svg>
+                      </styled.svg>
+                    </Ionicon>
+                  </a>
+                </li>
+                <li
+                  className="list-group-item d-flex justify-content-between align-items-center"
+                  key="2"
+                >
+                  <span
+                    className="col-1"
+                  >
+                    <Ionicon
+                      beat={false}
+                      className="rounded-circle"
+                      color="#fff"
+                      fontSize="30px"
+                      icon="ios-restaurant"
+                      rotate={false}
+                      shake={false}
+                      style={
+                        Object {
+                          "backgroundColor": "#007bff",
+                          "padding": "5px",
+                        }
+                      }
+                    >
+                      <styled.svg
+                        beat={0}
+                        className="rounded-circle"
+                        fill="#fff"
+                        height="30px"
+                        rotate={0}
+                        shake={0}
+                        style={
+                          Object {
+                            "backgroundColor": "#007bff",
+                            "padding": "5px",
+                          }
+                        }
+                        viewBox="0 0 1024 1024"
+                        width="30px"
+                      >
+                        <svg
+                          className="rounded-circle sc-bdVaJa fUuvxv"
+                          fill="#fff"
+                          height="30px"
+                          rotate={0}
+                          style={
+                            Object {
+                              "backgroundColor": "#007bff",
+                              "padding": "5px",
+                            }
+                          }
+                          viewBox="0 0 1024 1024"
+                          width="30px"
+                        >
+                          <path
+                            d="M768 128c-49.6 0-96 154.6-96 320 0 114 64 160 64 160v256c0 17.6 14.4 32 32 32s32-14.4 32-32v-714c0-22-22-22-32-22z M576 128l20 208c0 8.8-7.2 16-16 16s-16-7.2-16-16l-12-208h-16l-12 208c0 8.8-7.2 16-16 16s-16-7.2-16-16l20-208h-16c0 0-48 214.4-48 256s26.8 77.2 64 90.4v389.6c0 17.6 14.4 32 32 32s32-14.4 32-32v-389.6c37.2-13.2 64-48.4 64-90.4s-48-256-48-256h-16z M320 128c-53 0-96 128-96 256 0 41.6 26.8 77.2 64 90.4v389.6c0 17.6 14.4 32 32 32s32-14.4 32-32v-389.6c37.2-13.2 64-48.4 64-90.4 0-128-43-256-96-256z"
+                          />
+                        </svg>
+                      </styled.svg>
+                    </Ionicon>
+                  </span>
+                  <span
+                    className="col-5"
+                  >
+                    stock investement
+                  </span>
+                  <span
+                    className="col-2 font-weight-bold"
+                  >
+                    -
+                    $
+                    14000
+                  </span>
+                  <span
+                    className="col-2"
+                  >
+                    2020-12-15
+                  </span>
+                  <a
+                    className="col-1"
+                    onClick={[Function]}
+                  >
+                    <Ionicon
+                      beat={false}
+                      className="rounded-circle"
+                      color="#fff"
+                      fontSize="30px"
+                      icon="ios-create-outline"
+                      rotate={false}
+                      shake={false}
+                      style={
+                        Object {
+                          "backgroundColor": "#28a745",
+                          "padding": "5px",
+                        }
+                      }
+                    >
+                      <styled.svg
+                        beat={0}
+                        className="rounded-circle"
+                        fill="#fff"
+                        height="30px"
+                        rotate={0}
+                        shake={0}
+                        style={
+                          Object {
+                            "backgroundColor": "#28a745",
+                            "padding": "5px",
+                          }
+                        }
+                        viewBox="0 0 1024 1024"
+                        width="30px"
+                      >
+                        <svg
+                          className="rounded-circle sc-bdVaJa fUuvxv"
+                          fill="#fff"
+                          height="30px"
+                          rotate={0}
+                          style={
+                            Object {
+                              "backgroundColor": "#28a745",
+                              "padding": "5px",
+                            }
+                          }
+                          viewBox="0 0 1024 1024"
+                          width="30px"
+                        >
+                          <path
+                            d="M736 832h-576v-544h448.234l32-32h-512.234v608h640v-480.234l-32 32z M475.246 568.168l-19.412-19.414 342.646-342.646-22.626-22.628-359.854 359.822v64.698h64.432l360.090-359.968-22.628-22.572z M888.426 160.624l-24.93-24.932c-5.328-4.758-12.384-7.692-20.004-7.692-7.624 0-14.608 2.936-19.858 7.7l-24.302 24.3 64.786 64.786 24.3-24.3c4.766-5.25 7.582-12.234 7.582-19.858 0-7.62-2.816-14.678-7.574-20.004z"
+                          />
+                        </svg>
+                      </styled.svg>
+                    </Ionicon>
+                  </a>
+                  <a
+                    className="col-1"
+                    onClick={[Function]}
+                  >
+                    <Ionicon
+                      beat={false}
+                      className="rounded-circle delete-button"
+                      color="#fff"
+                      fontSize="30px"
+                      icon="ios-close"
+                      rotate={false}
+                      shake={false}
+                      style={
+                        Object {
+                          "backgroundColor": "#dc3545",
+                          "padding": "5px",
+                        }
+                      }
+                    >
+                      <styled.svg
+                        beat={0}
+                        className="rounded-circle delete-button"
+                        fill="#fff"
+                        height="30px"
+                        rotate={0}
+                        shake={0}
+                        style={
+                          Object {
+                            "backgroundColor": "#dc3545",
+                            "padding": "5px",
+                          }
+                        }
+                        viewBox="0 0 1024 1024"
+                        width="30px"
+                      >
+                        <svg
+                          className="rounded-circle delete-button sc-bdVaJa fUuvxv"
+                          fill="#fff"
+                          height="30px"
+                          rotate={0}
+                          style={
+                            Object {
+                              "backgroundColor": "#dc3545",
+                              "padding": "5px",
+                            }
+                          }
+                          viewBox="0 0 1024 1024"
+                          width="30px"
+                        >
+                          <path
+                            d="M680.4 320l-168.8 168.6-168-167.8-23.6 23.6 168 167.6-168 167.8 23.6 23.4 168-167.6 168.8 168.4 23.6-23.4-168.8-168.6 168.8-168.4z"
+                          />
+                        </svg>
+                      </styled.svg>
+                    </Ionicon>
+                  </a>
+                </li>
+              </ul>
+            </TransactionList>
+          </div>
+        </Home>
+      </Component>
+    </withRouter()>
+  </Router>
+</BrowserRouter>
 `;

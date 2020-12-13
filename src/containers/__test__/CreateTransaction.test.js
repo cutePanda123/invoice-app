@@ -7,22 +7,25 @@ import CategoryPicker from '../../components/CategoryPicker';
 import AppContext from '../../AppContext';
 import { testItems, testCategories } from '../../testData';
 import Utility from '../../utility';
+import { BrowserRouter as Router } from 'react-router-dom';
 
 let wrapper = null;
 
 describe('CreateTransaction test', () => {
     beforeEach(() => {
         wrapper = wrapper = mount(
-            <AppContext.Provider value={
-                {
-                    state: {
-                        items: Utility.flattenArray(testItems),
-                        categories: Utility.flattenArray(testCategories)
+            <Router>
+                <AppContext.Provider value={
+                    {
+                        state: {
+                            items: Utility.flattenArray(testItems),
+                            categories: Utility.flattenArray(testCategories)
+                        }
                     }
-                }
-            }>
-                <CreateTransaction />
-            </AppContext.Provider>
+                }>
+                    <CreateTransaction />
+                </AppContext.Provider>
+            </Router>
         );
     });
 

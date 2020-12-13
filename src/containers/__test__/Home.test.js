@@ -8,22 +8,25 @@ import MonthPicker from '../../components/MonthPicker';
 import CreateTransactionButton from '../../components/CreateTransactionButton';
 import AppContext from '../../AppContext';
 import { testItems, testCategories } from '../../testData'; 
+import { BrowserRouter as Router } from 'react-router-dom';
 
 let wrapper = null;
 
 describe('Home test', () => {
     beforeEach(() => {
         wrapper = mount(
-            <AppContext.Provider value={
-                {
-                    state: {
-                        items: Utility.flattenArray(testItems),
-                        categories: Utility.flattenArray(testCategories)
+            <Router>
+                <AppContext.Provider value={
+                    {
+                        state: {
+                            items: Utility.flattenArray(testItems),
+                            categories: Utility.flattenArray(testCategories)
+                        }
                     }
-                }
-            }>
-                <Home />
-            </AppContext.Provider>
+                }>
+                    <Home />
+                </AppContext.Provider>
+            </Router>
         );
     });
 
