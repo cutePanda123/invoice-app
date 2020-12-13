@@ -27,6 +27,14 @@ class App extends React.Component {
         this.setState({
           items: this.state.items
         });
+      },
+
+      createTransaction: (transaction) => {
+        const newTransactionId = Math.max(...Object.keys(this.state.items)) + 1;
+        const newTransaction = {... transaction, id: newTransactionId, timestamp: new Date(transaction.date).getTime()};
+        this.setState({
+          items: {...this.state.items, [newTransactionId]: newTransaction}
+        });
       }
     };
   }

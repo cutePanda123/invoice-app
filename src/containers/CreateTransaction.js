@@ -3,13 +3,19 @@ import CategoryPicker from '../components/CategoryPicker';
 import { Tabs, Tab } from '../components/Tabs';
 import EditTransactionForm from '../components/EditTransactionForm';
 import withContext from '../WithContext';
+import { withRouter } from 'react-router-dom';
 
 class CreateTransaction extends React.Component {
     constructor(props) {
         super(props);
 
+        let filteredCategories = Object.keys(this.props.data.categories).filter((cId) => {
+            return this.props.data.categories[cId].type === this.getActiveSelectedCategoryType(0);
+        }).map(cId => this.props.data.categories[cId]);
+
         this.state = {
-            activeTabIndex: 0
+            activeTabIndex: 0,
+            selectedCategory: filteredCategories[0]
         };
     }
 
@@ -21,6 +27,25 @@ class CreateTransaction extends React.Component {
 
     getActiveSelectedCategoryType = (tabIndex) => {
         return tabIndex === 0 ? "income" : "outcome";
+    }
+
+    cancelSubmit = () => {
+        this.props.history.push('/');
+    }
+
+    finishSubmit= (formData, isEditMode) => {
+        if (!isEditMode) {
+            this.props.actions.createTransaction({...formData, categoryId: this.state.selectedCategory.id});
+            this.props.history.push('/');
+        } else {
+            // edit a transaction 
+        }
+    }
+
+    selectCategory = (category) => {
+        this.setState({
+            selectedCategory: category
+        });
     }
 
     render() {
@@ -42,15 +67,16 @@ class CreateTransaction extends React.Component {
                 </Tabs>
                 <CategoryPicker
                     categories={filteredCategories}
-                    onSelectCategory={() => {}}
+                    onSelectCategory={this.selectCategory}
+                    selectedCategoryId={this.state.selectedCategory.id}
                 />
                 <EditTransactionForm
-                    onFormSubmit={() => {}}
-                    onFormCancel={() => {}}
+                    onFormSubmit={this.finishSubmit}
+                    onFormCancel={this.cancelSubmit}
                 />
             </div>
         );
     }
 };
 
-export default withContext(CreateTransaction);
+export default withRouter(withContext(CreateTransaction));

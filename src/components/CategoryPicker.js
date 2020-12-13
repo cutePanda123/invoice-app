@@ -5,22 +5,15 @@ import Ionicon from 'react-ionicons';
 class CategoryPicker extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {
-            selectedCategoryId: props.selectedCategory && props.selectedCategory.id
-        };
     }
 
     selectCategory = (event, category) => {
-        this.setState({
-            selectedCategoryId: category.id
-        });
         this.props.onSelectCategory(category);
         event.preventDefault();
     }
 
     render() {
-        const { categories } = this.props;
-        const { selectedCategoryId } = this.state;
+        const { categories, selectedCategoryId } = this.props;
         return (
             <div className="category-picker-component">
                 <div className="row">
@@ -28,7 +21,7 @@ class CategoryPicker extends React.Component {
                         categories.map((category, index) => {
                             const iconColor = (category.id === selectedCategoryId) ? '#fff' : '#555';
                             const backColor = (category.id === selectedCategoryId) ? '#347eff' : '#efefef';
-                            const activeClassName = selectedCategoryId === category.id ? 
+                            const activeClassName = selectedCategoryId == category.id ? 
                                 "category-item col-3 active" : "category-item col-3";
                             return (
                                 <div
@@ -65,7 +58,8 @@ class CategoryPicker extends React.Component {
 
 CategoryPicker.propTypes = {
     categories: PropTypes.array.isRequired,
-    onSelectCategory: PropTypes.func.isRequired
+    onSelectCategory: PropTypes.func.isRequired,
+    selectedCategoryId: PropTypes.string.isRequired
 };
 
 export default CategoryPicker;

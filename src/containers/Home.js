@@ -8,7 +8,6 @@ import CreateTransactionButton from '../components/CreateTransactionButton';
 import EditTransactionForm from '../components/EditTransactionForm';
 import { Tabs, Tab } from '../components/Tabs';
 import Ionicon from 'react-ionicons';
-import { testCategories } from '../testData';
 import withContext from '../WithContext';
 import { withRouter } from 'react-router-dom';
 
@@ -65,11 +64,11 @@ class Home extends React.Component {
 
   render() {
     const {currentDate, tabView} = this.state;
-    const { items } = this.props.data;
+    const { items, categories } = this.props.data;
     let totalIncome = 0, totalOutcome = 0;
     let itemsWithCategory = [];
     for (const tId in items) {
-      const category = testCategories[items[tId].categoryId]
+      const category = categories[items[tId].categoryId]
       if (category.type === Utility.OUTCOME_TYPE) {
         totalOutcome += items[tId].amount;
       } else {

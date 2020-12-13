@@ -24,8 +24,8 @@ class CreateTransactionForm extends React.Component {
                     errorMessage: 'dollar amount cannot be negative'
                 });
             } else {
-                if (isEditMode) {
-                    onFormSubmit({...transaction, amount, date, title}, isEditMode);
+                if (!isEditMode) {
+                    onFormSubmit({...transaction, amount, date, desc: title}, isEditMode);
                 } else {
                     onFormSubmit({amount, date, title}, isEditMode)
                 }
