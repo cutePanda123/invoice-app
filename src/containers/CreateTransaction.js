@@ -8,14 +8,20 @@ import { withRouter } from 'react-router-dom';
 class CreateTransaction extends React.Component {
     constructor(props) {
         super(props);
-
+        const { items, categories } = this.props.data;
         let filteredCategories = Object.keys(this.props.data.categories).filter((cId) => {
             return this.props.data.categories[cId].type === this.getActiveSelectedCategoryType(0);
         }).map(cId => this.props.data.categories[cId]);
-
+        const editTransaction = this.getEditTransaction();
+        let tabIndex = 0;
+        let curCategory = filteredCategories[0];
+        if (editTransaction && editTransaction.id) {
+            curCategory = categories[items[editTransaction.id].categoryId];
+            tabIndex = curCategory.type === "income" ? 0 : 1;
+        }
         this.state = {
-            activeTabIndex: 0,
-            selectedCategory: filteredCategories[0]
+            activeTabIndex: tabIndex,
+            selectedCategory: curCategory
         };
     }
 
@@ -36,16 +42,23 @@ class CreateTransaction extends React.Component {
     finishSubmit= (formData, isEditMode) => {
         if (!isEditMode) {
             this.props.actions.createTransaction({...formData, categoryId: this.state.selectedCategory.id});
-            this.props.history.push('/');
         } else {
-            // edit a transaction 
+            this.props.actions.updateTransaction({...formData, categoryId: this.state.selectedCategory.id});
         }
+        this.props.history.push('/');
     }
 
     selectCategory = (category) => {
         this.setState({
             selectedCategory: category
         });
+    }
+
+    getEditTransaction = () => {
+        const { items } = this.props.data;
+        const {transactionId} = this.props.match.params;
+        const editTransaction = (transactionId && items[transactionId]) ? items[transactionId] : {}
+        return editTransaction;
     }
 
     render() {
@@ -73,6 +86,7 @@ class CreateTransaction extends React.Component {
                 <EditTransactionForm
                     onFormSubmit={this.finishSubmit}
                     onFormCancel={this.cancelSubmit}
+                    transaction={this.getEditTransaction()}
                 />
             </div>
         );

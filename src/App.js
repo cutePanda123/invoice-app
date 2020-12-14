@@ -35,6 +35,13 @@ class App extends React.Component {
         this.setState({
           items: {...this.state.items, [newTransactionId]: newTransaction}
         });
+      },
+
+      updateTransaction: (transaction) => {
+        const editedTransaction = {... transaction, timestamp: new Date(transaction.date).getTime()}
+        this.setState({
+          items: {...this.state.items, [editedTransaction.id]: editedTransaction}
+        });
       }
     };
   }
@@ -59,7 +66,7 @@ class App extends React.Component {
             
             <Route path="/" exact component={Home} />
             <Route path="/create" component={CreateTransaction} />
-            <Route path="/edit/:id" component={CreateTransaction} />
+            <Route path="/edit/:transactionId" component={CreateTransaction} />
           </React.Fragment>
         </Router>
       </AppContext.Provider>

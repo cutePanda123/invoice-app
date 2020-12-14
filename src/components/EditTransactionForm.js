@@ -16,7 +16,7 @@ class CreateTransactionForm extends React.Component {
         const amount = this.amountInput.value.trim() * 1;
         const date = this.dateInput.value.trim();
         const title = this.titleInput.value.trim();
-        const isEditMode = !!transaction.title;
+        const isEditMode = transaction.desc;
 
         if (amount && date && title) {
             if (amount < 0) {
@@ -24,11 +24,7 @@ class CreateTransactionForm extends React.Component {
                     errorMessage: 'dollar amount cannot be negative'
                 });
             } else {
-                if (!isEditMode) {
-                    onFormSubmit({...transaction, amount, date, desc: title}, isEditMode);
-                } else {
-                    onFormSubmit({amount, date, title}, isEditMode)
-                }
+                onFormSubmit({...transaction, amount, date, desc: title}, isEditMode)
             }
         } else {
             this.setState({
@@ -52,7 +48,7 @@ class CreateTransactionForm extends React.Component {
                         ref={(inputValue) => {
                             this.titleInput = inputValue;
                         }}
-                        defaultValue={this.props.transaction.title}
+                        defaultValue={this.props.transaction.desc}
                     />
                     <small id="titleHelp" className="form-text text-muted">Title for your transaction.</small>
                 </div>

@@ -39,22 +39,10 @@ class Home extends React.Component {
   }
 
   modifyTrasaction = (modifiedTransaction) => {
-    const newTransactions = this.state.items.map((transaction) => {
-      if (modifiedTransaction.id === transaction.id) {
-        transaction.desc = "modified transaction";
-      }
-      return transaction;
-    });
-    this.props.history.push(`/edit/${newTransactions.id}`);
+    this.props.history.push(`/edit/${modifiedTransaction.id}`);
   }
 
   createTransaction = () => {
-    /*let newTrasaction = JSON.parse(JSON.stringify(fakeTransaction));
-    newTrasaction.id = this.state.items.length === 0 ? 0 : Math.max.apply(Math, this.state.items.map(item => item.id)) + 1;
-    const newItems = [newTrasaction, ...this.state.items];
-    this.setState({
-      items: newItems
-    });*/
     this.props.history.push('/create');
   }
 

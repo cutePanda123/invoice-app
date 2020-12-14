@@ -63,7 +63,7 @@ export const testItems = [
     "desc": "stock investement",
     "amount": 14000,
     "date": "2020-12-15",
-    "categoryId": 2
+    "categoryId": 12
   }
 ];
 
