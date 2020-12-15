@@ -5,7 +5,6 @@ import Utility from '../utility';
 import SpendingSummary from '../components/SpendingSummary';
 import MonthPicker from '../components/MonthPicker';
 import CreateTransactionButton from '../components/CreateTransactionButton';
-import EditTransactionForm from '../components/EditTransactionForm';
 import { Tabs, Tab } from '../components/Tabs';
 import Ionicon from 'react-ionicons';
 import withContext from '../WithContext';
@@ -51,11 +50,16 @@ class Home extends React.Component {
   }
 
   render() {
-    const {currentDate, tabView} = this.state;
+    const { currentDate, tabView } = this.state;
+    const { year, month } = this.state.currentDate;
     const { items, categories } = this.props.data;
     let totalIncome = 0, totalOutcome = 0;
     let itemsWithCategory = [];
     for (const tId in items) {
+      const dateStr = year + '-' + Utility.getMonthString(month);
+      if (!items[tId].date.includes(dateStr)) {
+        continue;
+      }
       const category = categories[items[tId].categoryId]
       if (category.type === Utility.OUTCOME_TYPE) {
         totalOutcome += items[tId].amount;
@@ -71,17 +75,6 @@ class Home extends React.Component {
         <header className="App-header">
           <div className="row mb-5">
             <img src={logo} className="App-logo"></img>
-          </div>
-          <div className="row mb-5">
-            <EditTransactionForm
-              onFormCancel={() => {
-                console.log("on form cancle")
-              }}
-              onFormSubmit={() => {
-                console.log("on form submit")
-              }}
-              transaction={{}}
-            />
           </div>
           <div className="row mb-5">
             <div className="col">

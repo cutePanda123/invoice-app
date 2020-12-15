@@ -118,12 +118,6 @@ exports[`Home test snapshot test 1`] = `
               "items": Object {
                 "0": Object {
                   "amount": 2000,
-                  "category": Object {
-                    "iconName": "ios-plane",
-                    "id": "1",
-                    "name": "travel",
-                    "type": "outcome",
-                  },
                   "categoryId": 1,
                   "date": "2020-10-20",
                   "desc": "travel in Seattle",
@@ -209,97 +203,6 @@ exports[`Home test snapshot test 1`] = `
             <div
               className="row mb-5"
             >
-              <CreateTransactionForm
-                onFormCancel={[Function]}
-                onFormSubmit={[Function]}
-                transaction={Object {}}
-              >
-                <form
-                  noValidate={true}
-                  onSubmit={[Function]}
-                >
-                  <div
-                    className="form-group"
-                  >
-                    <label
-                      htmlFor="title"
-                    >
-                      Title
-                    </label>
-                    <input
-                      aria-describedby="titleHelp"
-                      className="form-control"
-                      id="desc"
-                      placeholder="Enter title"
-                      type="text"
-                    />
-                    <small
-                      className="form-text text-muted"
-                      id="titleHelp"
-                    >
-                      Title for your transaction.
-                    </small>
-                  </div>
-                  <div
-                    className="form-group"
-                  >
-                    <label
-                      htmlFor="amount"
-                    >
-                      Dollar Amount
-                    </label>
-                    <input
-                      className="form-control"
-                      id="amount"
-                      placeholder="Dollar Amount"
-                      type="number"
-                    />
-                    <small
-                      className="form-text text-muted"
-                      id="amountHelp"
-                    >
-                      Dollar amount for your transaction.
-                    </small>
-                  </div>
-                  <div
-                    className="form-group"
-                  >
-                    <label
-                      htmlFor="date"
-                    >
-                      Date
-                    </label>
-                    <input
-                      className="form-control"
-                      id="date"
-                      placeholder="Date"
-                      type="date"
-                    />
-                    <small
-                      className="form-text text-muted"
-                      id="dateHelp"
-                    >
-                      Date for your transaction.
-                    </small>
-                  </div>
-                  <button
-                    className="btn btn-primary"
-                    type="submit"
-                  >
-                    Submit
-                  </button>
-                  <button
-                    className="btn btn-secondary"
-                    onClick={[Function]}
-                  >
-                    Cancel
-                  </button>
-                </form>
-              </CreateTransactionForm>
-            </div>
-            <div
-              className="row mb-5"
-            >
               <div
                 className="col"
               >
@@ -328,7 +231,7 @@ exports[`Home test snapshot test 1`] = `
               >
                 <SpendingSummary
                   income={14000}
-                  outcome={6000}
+                  outcome={4000}
                 >
                   <div
                     className="containers"
@@ -353,7 +256,7 @@ exports[`Home test snapshot test 1`] = `
                           Outcome: 
                         </h5>
                         <div>
-                          6000
+                          4000
                         </div>
                       </div>
                     </div>
@@ -524,19 +427,6 @@ exports[`Home test snapshot test 1`] = `
               items={
                 Array [
                   Object {
-                    "amount": 2000,
-                    "category": Object {
-                      "iconName": "ios-plane",
-                      "id": "1",
-                      "name": "travel",
-                      "type": "outcome",
-                    },
-                    "categoryId": 1,
-                    "date": "2020-10-20",
-                    "desc": "travel in Seattle",
-                    "id": 0,
-                  },
-                  Object {
                     "amount": 4000,
                     "category": Object {
                       "iconName": "ios-plane",
@@ -570,195 +460,6 @@ exports[`Home test snapshot test 1`] = `
               <ul
                 className="list-group list-group-flush"
               >
-                <li
-                  className="list-group-item d-flex justify-content-between align-items-center"
-                  key="0"
-                >
-                  <span
-                    className="col-1"
-                  >
-                    <Ionicon
-                      beat={false}
-                      className="rounded-circle"
-                      color="#fff"
-                      fontSize="30px"
-                      icon="ios-plane"
-                      rotate={false}
-                      shake={false}
-                      style={
-                        Object {
-                          "backgroundColor": "#007bff",
-                          "padding": "5px",
-                        }
-                      }
-                    >
-                      <styled.svg
-                        beat={0}
-                        className="rounded-circle"
-                        fill="#fff"
-                        height="30px"
-                        rotate={0}
-                        shake={0}
-                        style={
-                          Object {
-                            "backgroundColor": "#007bff",
-                            "padding": "5px",
-                          }
-                        }
-                        viewBox="0 0 1024 1024"
-                        width="30px"
-                      >
-                        <svg
-                          className="rounded-circle sc-bdVaJa fUuvxv"
-                          fill="#fff"
-                          height="30px"
-                          rotate={0}
-                          style={
-                            Object {
-                              "backgroundColor": "#007bff",
-                              "padding": "5px",
-                            }
-                          }
-                          viewBox="0 0 1024 1024"
-                          width="30px"
-                        >
-                          <path
-                            d="M448 144h-96l118 311.4-253.6 8.6-88.4-112h-64l64 160-64 160h64l89.8-115.4 252.2 10.4-118 313h96l196.4-309 135.6 3c6.6 0.4 13.2 0.2 20 0.2 88.4 0 160-28.8 160-64.2s-71.6-64-160-64c-6.8 0-13.4 0.2-20 0.4l-135.6 4.4-196.4-306.8z"
-                          />
-                        </svg>
-                      </styled.svg>
-                    </Ionicon>
-                  </span>
-                  <span
-                    className="col-5"
-                  >
-                    travel in Seattle
-                  </span>
-                  <span
-                    className="col-2 font-weight-bold"
-                  >
-                    -
-                    $
-                    2000
-                  </span>
-                  <span
-                    className="col-2"
-                  >
-                    2020-10-20
-                  </span>
-                  <a
-                    className="col-1"
-                    onClick={[Function]}
-                  >
-                    <Ionicon
-                      beat={false}
-                      className="rounded-circle"
-                      color="#fff"
-                      fontSize="30px"
-                      icon="ios-create-outline"
-                      rotate={false}
-                      shake={false}
-                      style={
-                        Object {
-                          "backgroundColor": "#28a745",
-                          "padding": "5px",
-                        }
-                      }
-                    >
-                      <styled.svg
-                        beat={0}
-                        className="rounded-circle"
-                        fill="#fff"
-                        height="30px"
-                        rotate={0}
-                        shake={0}
-                        style={
-                          Object {
-                            "backgroundColor": "#28a745",
-                            "padding": "5px",
-                          }
-                        }
-                        viewBox="0 0 1024 1024"
-                        width="30px"
-                      >
-                        <svg
-                          className="rounded-circle sc-bdVaJa fUuvxv"
-                          fill="#fff"
-                          height="30px"
-                          rotate={0}
-                          style={
-                            Object {
-                              "backgroundColor": "#28a745",
-                              "padding": "5px",
-                            }
-                          }
-                          viewBox="0 0 1024 1024"
-                          width="30px"
-                        >
-                          <path
-                            d="M736 832h-576v-544h448.234l32-32h-512.234v608h640v-480.234l-32 32z M475.246 568.168l-19.412-19.414 342.646-342.646-22.626-22.628-359.854 359.822v64.698h64.432l360.090-359.968-22.628-22.572z M888.426 160.624l-24.93-24.932c-5.328-4.758-12.384-7.692-20.004-7.692-7.624 0-14.608 2.936-19.858 7.7l-24.302 24.3 64.786 64.786 24.3-24.3c4.766-5.25 7.582-12.234 7.582-19.858 0-7.62-2.816-14.678-7.574-20.004z"
-                          />
-                        </svg>
-                      </styled.svg>
-                    </Ionicon>
-                  </a>
-                  <a
-                    className="col-1"
-                    onClick={[Function]}
-                  >
-                    <Ionicon
-                      beat={false}
-                      className="rounded-circle delete-button"
-                      color="#fff"
-                      fontSize="30px"
-                      icon="ios-close"
-                      rotate={false}
-                      shake={false}
-                      style={
-                        Object {
-                          "backgroundColor": "#dc3545",
-                          "padding": "5px",
-                        }
-                      }
-                    >
-                      <styled.svg
-                        beat={0}
-                        className="rounded-circle delete-button"
-                        fill="#fff"
-                        height="30px"
-                        rotate={0}
-                        shake={0}
-                        style={
-                          Object {
-                            "backgroundColor": "#dc3545",
-                            "padding": "5px",
-                          }
-                        }
-                        viewBox="0 0 1024 1024"
-                        width="30px"
-                      >
-                        <svg
-                          className="rounded-circle delete-button sc-bdVaJa fUuvxv"
-                          fill="#fff"
-                          height="30px"
-                          rotate={0}
-                          style={
-                            Object {
-                              "backgroundColor": "#dc3545",
-                              "padding": "5px",
-                            }
-                          }
-                          viewBox="0 0 1024 1024"
-                          width="30px"
-                        >
-                          <path
-                            d="M680.4 320l-168.8 168.6-168-167.8-23.6 23.6 168 167.6-168 167.8 23.6 23.4 168-167.6 168.8 168.4 23.6-23.4-168.8-168.6 168.8-168.4z"
-                          />
-                        </svg>
-                      </styled.svg>
-                    </Ionicon>
-                  </a>
-                </li>
                 <li
                   className="list-group-item d-flex justify-content-between align-items-center"
                   key="1"
