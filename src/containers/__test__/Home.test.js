@@ -66,13 +66,11 @@ describe('Home test', () => {
     });
 
     it('should throw no exception when click create button', () => {
-        const oldTransactonNumber = wrapper.find(TransactionList).props().items.length;
         wrapper.find(CreateTransactionButton).simulate('click');
         //no exception thrown
     });
 
     it('should delete a transaction when click delete button', () => {
-        const oldTransactonNumber = wrapper.find(TransactionList).props().items.length;
         wrapper.find('.delete-button').first().simulate('click');
         expect(delectTransactionFun).toHaveBeenCalled;
     });
