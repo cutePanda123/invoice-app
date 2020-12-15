@@ -127,7 +127,7 @@ exports[`CreateTransaction test snapshot test 1`] = `
                 },
                 "2": Object {
                   "amount": 14000,
-                  "categoryId": 2,
+                  "categoryId": 12,
                   "date": "2020-12-15",
                   "desc": "stock investement",
                   "id": 2,
@@ -470,7 +470,7 @@ exports[`CreateTransaction test snapshot test 1`] = `
                   <input
                     aria-describedby="titleHelp"
                     className="form-control"
-                    id="title"
+                    id="desc"
                     placeholder="Enter title"
                     type="text"
                   />

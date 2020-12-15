@@ -4,7 +4,7 @@ import EditTransactionForm from '../EditTransactionForm';
 
 const editModeProps = {
     transaction: {
-        title: "t",
+        desc: "t",
         date: "2020-10-10",
         amount: 100
     },
@@ -36,11 +36,11 @@ describe('EditTransactionFrom test', () => {
         expect(inputs.length).toEqual(3);
         expect(getInputValue('#amount', wrapper)).toEqual('');
         expect(getInputValue('#date', wrapper)).toEqual('');
-        expect(getInputValue('#title', wrapper)).toEqual('');
+        expect(getInputValue('#desc', wrapper)).toEqual('');
 
         expect(getInputValue('#amount', editModeWrapper)).toEqual('100');
         expect(getInputValue('#date', editModeWrapper)).toEqual('2020-10-10');
-        expect(getInputValue('#title', editModeWrapper)).toEqual('t');
+        expect(getInputValue('#desc', editModeWrapper)).toEqual('t');
     });
 
     it('should render error message when input is empty', () => {
@@ -53,7 +53,7 @@ describe('EditTransactionFrom test', () => {
     it('should render error message when input dollar amount is negative', () => {
         const submitButton = wrapper.find('.btn-primary');
         setInputValue('#date', wrapper, '2020-10-10');
-        setInputValue('#title', wrapper, 't');
+        setInputValue('#desc', wrapper, 't');
         setInputValue('#amount', wrapper, '-10');
         wrapper.find('form').simulate('submit')
         expect(props.onFormSubmit).not.toHaveBeenCalled();
@@ -62,12 +62,12 @@ describe('EditTransactionFrom test', () => {
 
     it('create mode: should trigger onFormSubmit if all input are valid', () => {
         setInputValue('#date', wrapper, '2020-10-10');
-        setInputValue('#title', wrapper, 't');
+        setInputValue('#desc', wrapper, 't');
         setInputValue('#amount', wrapper, '10');
         wrapper.find('form').simulate('submit')
         expect(props.onFormSubmit).toHaveBeenCalledWith({
             date: '2020-10-10',
-            title: 't',
+            desc: 't',
             amount: 10
         }, false);
         expect(wrapper.state().errorMessage).toEqual('');
@@ -75,12 +75,12 @@ describe('EditTransactionFrom test', () => {
 
     it('edit mode: should trigger onFormSubmit if all input are valid', () => {
         setInputValue('#date', editModeWrapper, '2020-10-10');
-        setInputValue('#title', editModeWrapper, 'newTitle');
+        setInputValue('#desc', editModeWrapper, 'newTitle');
         setInputValue('#amount', editModeWrapper, '10');
         editModeWrapper.find('form').simulate('submit')
         expect(editModeProps.onFormSubmit).toHaveBeenCalledWith({
             date: '2020-10-10',
-            title: 'newTitle',
+            desc: 'newTitle',
             amount: 10
         }, true);
         expect(editModeWrapper.state().errorMessage).toEqual('');

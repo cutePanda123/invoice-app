@@ -16,7 +16,7 @@ class CreateTransactionForm extends React.Component {
         const amount = this.amountInput.value.trim() * 1;
         const date = this.dateInput.value.trim();
         const title = this.titleInput.value.trim();
-        const isEditMode = transaction.desc;
+        const isEditMode = !!transaction.desc;
 
         if (amount && date && title) {
             if (amount < 0) {
@@ -42,7 +42,7 @@ class CreateTransactionForm extends React.Component {
                     <input
                         type="text"
                         className="form-control"
-                        id="title"
+                        id="desc"
                         aria-describedby="titleHelp"
                         placeholder="Enter title"
                         ref={(inputValue) => {

@@ -21,7 +21,7 @@ exports[`EditTransactionFrom test snaptshot test 1`] = `
       <input
         aria-describedby="titleHelp"
         className="form-control"
-        id="title"
+        id="desc"
         placeholder="Enter title"
         type="text"
       />
@@ -98,7 +98,7 @@ exports[`EditTransactionFrom test snaptshot test 2`] = `
     Object {
       "amount": 100,
       "date": "2020-10-10",
-      "title": "t",
+      "desc": "t",
     }
   }
 >
@@ -118,7 +118,7 @@ exports[`EditTransactionFrom test snaptshot test 2`] = `
         aria-describedby="titleHelp"
         className="form-control"
         defaultValue="t"
-        id="title"
+        id="desc"
         placeholder="Enter title"
         type="text"
       />

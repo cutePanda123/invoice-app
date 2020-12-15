@@ -2,7 +2,7 @@ import React from 'react';
 import { mount } from 'enzyme';
 import Home from '../Home';
 import TransactionList from '../../components/TransactionList';
-import { Tabs, Tab} from '../../components/Tabs';
+import { Tabs } from '../../components/Tabs';
 import Utility from '../../utility';
 import MonthPicker from '../../components/MonthPicker';
 import CreateTransactionButton from '../../components/CreateTransactionButton';
@@ -11,6 +11,7 @@ import { testItems, testCategories } from '../../testData';
 import { BrowserRouter as Router } from 'react-router-dom';
 
 let wrapper = null;
+const delectTransactionFun = jest.fn();
 
 describe('Home test', () => {
     beforeEach(() => {
@@ -21,6 +22,9 @@ describe('Home test', () => {
                         state: {
                             items: Utility.flattenArray(testItems),
                             categories: Utility.flattenArray(testCategories)
+                        },
+                        actions: {
+                            deleteTransaction: delectTransactionFun
                         }
                     }
                 }>
@@ -60,15 +64,15 @@ describe('Home test', () => {
         expect(wrapper.find(MonthPicker).props().month).toEqual(9);
     });
 
-    it('should create a transaction when click create button', () => {
+    it('should throw no exception when click create button', () => {
         const oldTransactonNumber = wrapper.find(TransactionList).props().items.length;
         wrapper.find(CreateTransactionButton).simulate('click');
-        expect(wrapper.find(TransactionList).props().items.length).toEqual(oldTransactonNumber + 1);
+        //no exception thrown
     });
 
     it('should delete a transaction when click delete button', () => {
         const oldTransactonNumber = wrapper.find(TransactionList).props().items.length;
         wrapper.find('.delete-button').first().simulate('click');
-        expect(wrapper.find(TransactionList).props().items.length).toEqual(oldTransactonNumber - 1);
+        expect(delectTransactionFun).toHaveBeenCalledWith(testItems[0]);
     });
 });

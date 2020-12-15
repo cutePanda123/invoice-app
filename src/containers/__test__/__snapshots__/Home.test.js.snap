@@ -64,6 +64,11 @@ exports[`Home test snapshot test 1`] = `
         }
       >
         <Home
+          actions={
+            Object {
+              "deleteTransaction": [MockFunction],
+            }
+          }
           data={
             Object {
               "categories": Object {
@@ -140,12 +145,12 @@ exports[`Home test snapshot test 1`] = `
                 "2": Object {
                   "amount": 14000,
                   "category": Object {
-                    "iconName": "ios-restaurant",
-                    "id": "2",
-                    "name": "food",
-                    "type": "outcome",
+                    "iconName": "logo-yen",
+                    "id": "12",
+                    "name": "investment",
+                    "type": "income",
                   },
-                  "categoryId": 2,
+                  "categoryId": 12,
                   "date": "2020-12-15",
                   "desc": "stock investement",
                   "id": 2,
@@ -224,7 +229,7 @@ exports[`Home test snapshot test 1`] = `
                     <input
                       aria-describedby="titleHelp"
                       className="form-control"
-                      id="title"
+                      id="desc"
                       placeholder="Enter title"
                       type="text"
                     />
@@ -322,8 +327,8 @@ exports[`Home test snapshot test 1`] = `
                 className="col"
               >
                 <SpendingSummary
-                  income={0}
-                  outcome={20000}
+                  income={14000}
+                  outcome={6000}
                 >
                   <div
                     className="containers"
@@ -338,7 +343,7 @@ exports[`Home test snapshot test 1`] = `
                           Income: 
                         </h5>
                         <div>
-                          0
+                          14000
                         </div>
                       </div>
                       <div
@@ -348,7 +353,7 @@ exports[`Home test snapshot test 1`] = `
                           Outcome: 
                         </h5>
                         <div>
-                          20000
+                          6000
                         </div>
                       </div>
                     </div>
@@ -547,12 +552,12 @@ exports[`Home test snapshot test 1`] = `
                   Object {
                     "amount": 14000,
                     "category": Object {
-                      "iconName": "ios-restaurant",
-                      "id": "2",
-                      "name": "food",
-                      "type": "outcome",
+                      "iconName": "logo-yen",
+                      "id": "12",
+                      "name": "investment",
+                      "type": "income",
                     },
-                    "categoryId": 2,
+                    "categoryId": 12,
                     "date": "2020-12-15",
                     "desc": "stock investement",
                     "id": 2,
@@ -955,7 +960,7 @@ exports[`Home test snapshot test 1`] = `
                       className="rounded-circle"
                       color="#fff"
                       fontSize="30px"
-                      icon="ios-restaurant"
+                      icon="logo-yen"
                       rotate={false}
                       shake={false}
                       style={
@@ -996,7 +1001,7 @@ exports[`Home test snapshot test 1`] = `
                           width="30px"
                         >
                           <path
-                            d="M768 128c-49.6 0-96 154.6-96 320 0 114 64 160 64 160v256c0 17.6 14.4 32 32 32s32-14.4 32-32v-714c0-22-22-22-32-22z M576 128l20 208c0 8.8-7.2 16-16 16s-16-7.2-16-16l-12-208h-16l-12 208c0 8.8-7.2 16-16 16s-16-7.2-16-16l20-208h-16c0 0-48 214.4-48 256s26.8 77.2 64 90.4v389.6c0 17.6 14.4 32 32 32s32-14.4 32-32v-389.6c37.2-13.2 64-48.4 64-90.4s-48-256-48-256h-16z M320 128c-53 0-96 128-96 256 0 41.6 26.8 77.2 64 90.4v389.6c0 17.6 14.4 32 32 32s32-14.4 32-32v-389.6c37.2-13.2 64-48.4 64-90.4 0-128-43-256-96-256z"
+                            d="M896 64h-160l-224 442.256-224-442.256h-160l224.736 416h-96.736v96h147.128l28.872 62v34h-176v96h176v192h160v-192h176v-96h-176v-34l29.782-62h146.218v-96h-96.578l224.578-416z"
                           />
                         </svg>
                       </styled.svg>
@@ -1010,7 +1015,7 @@ exports[`Home test snapshot test 1`] = `
                   <span
                     className="col-2 font-weight-bold"
                   >
-                    -
+                    +
                     $
                     14000
                   </span>
