@@ -1,8 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+import axios from 'axios';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+
+axios.get('/items').then((response) => {
+  console.log(response);
+});
 
 ReactDOM.render(
   <React.StrictMode>

@@ -6,6 +6,7 @@
     "@testing-library/jest-dom": "^5.11.5",
     "@testing-library/react": "^11.1.2",
     "@testing-library/user-event": "^12.2.2",
+    "axios": "^0.21.0",
     "bootstrap": "^4.5.3",
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
@@ -15,11 +16,11 @@
     "web-vitals": "^0.2.4"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "concurrently \"react-scripts start\" \"npm run mock\"",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "mock": "json-server --watch db.json"
+    "mock": "json-server --watch db.json --port 3004"
   },
   "eslintConfig": {
     "extends": [
@@ -40,6 +41,7 @@
     ]
   },
   "devDependencies": {
+    "concurrently": "^5.3.0",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.5",
     "enzyme-to-json": "^3.6.1",
@@ -49,5 +51,6 @@
     "snapshotSerializers": [
       "enzyme-to-json/serializer"
     ]
-  }
+  },
+  "proxy": "http://localhost:3004"
 }
