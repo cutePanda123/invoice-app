@@ -16,7 +16,6 @@ class Home extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentDate: Utility.parseYearAndMonth(),
       tabView: Utility.LIST_VIEW_NAME
     };
   }
@@ -28,9 +27,7 @@ class Home extends React.Component {
   }
 
   changeDate = (year, month) => {
-    this.setState({
-      currentDate: {year, month}
-    });
+    this.props.actions.updateDate(year, month);
   }
 
   createItem = () => {
@@ -49,17 +46,16 @@ class Home extends React.Component {
     this.props.actions.deleteTransaction(victim);
   }
 
+  componentDidMount() {
+    this.props.actions.getInitialData();
+  }
+
   render() {
-    const { currentDate, tabView } = this.state;
-    const { year, month } = this.state.currentDate;
-    const { items, categories } = this.props.data;
+    const { tabView } = this.state;
+    const { items, categories, currentDate } = this.props.data;
     let totalIncome = 0, totalOutcome = 0;
     let itemsWithCategory = [];
     for (const tId in items) {
-      const dateStr = year + '-' + Utility.getMonthString(month);
-      if (!items[tId].date.includes(dateStr)) {
-        continue;
-      }
       const category = categories[items[tId].categoryId]
       if (category.type === Utility.OUTCOME_TYPE) {
         totalOutcome += items[tId].amount;

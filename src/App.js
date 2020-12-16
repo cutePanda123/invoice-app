@@ -11,21 +11,46 @@ import CreateTransaction from "./containers/CreateTransaction";
 import Utility from './utility';
 import { testCategories, testItems } from './testData';
 import AppContext from './AppContext';
+import axios from 'axios';
 
 class App extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      items: Utility.flattenArray(testItems),
-      categories: Utility.flattenArray(testCategories)
+      items: {},
+      categories: {},
+      currentDate: Utility.parseYearAndMonth()
     };
 
     this.actions = {
+      getInitialData: () => {
+        const {year, month} = this.state.currentDate;
+        const getTransactionsUrl = `/transactions?dateTag=${year}-${month}&_sort=timestamp&_order=desc`;
+        const promises = [axios.get('/categories'), axios.get(getTransactionsUrl)];
+        Promise.all(promises).then(responses => {
+          const [categories, items] = responses;
+          this.setState({
+            items: Utility.flattenArray(items.data),
+            categories: Utility.flattenArray(categories.data)
+          });
+        });
+      },
+      updateDate: (year, month) => {
+        const getTransactionsUrl = `/transactions?dateTag=${year}-${month}&_sort=timestamp&_order=desc`;
+        axios.get(getTransactionsUrl).then(responses => {
+          this.setState({
+            items: Utility.flattenArray(responses.data),
+            currentDate: {year, month}
+          });
+        });
+      },
       deleteTransaction: (transaction) => {
-        delete this.state.items[transaction.id];
-        this.setState({
-          items: this.state.items
+        axios.delete(`/transactions/${transaction.id}`).then(() => {
+          delete this.state.items[transaction.id];
+          this.setState({
+            items: this.state.items
+          });
         });
       },
 
