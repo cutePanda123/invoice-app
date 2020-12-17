@@ -9,6 +9,7 @@ import { Tabs, Tab } from '../components/Tabs';
 import Ionicon from 'react-ionicons';
 import withContext from '../WithContext';
 import { withRouter } from 'react-router-dom';
+import Loader from '../components/Loader';
 
 const tabTexts = [Utility.LIST_VIEW_NAME, Utility.CHART_VIEW_NAME];
 
@@ -52,7 +53,7 @@ class Home extends React.Component {
 
   render() {
     const { tabView } = this.state;
-    const { items, categories, currentDate } = this.props.data;
+    const { items, categories, currentDate, isLoading } = this.props.data;
     let totalIncome = 0, totalOutcome = 0;
     let itemsWithCategory = [];
     for (const tId in items) {
@@ -89,43 +90,52 @@ class Home extends React.Component {
           </div>
         </header>
         <div className="cotent-area py-3 px-3">
-          <Tabs
-            activeIndex={0}
-            onTabChange={this.changeView}
-          >
-              <Tab>
-                <Ionicon
-                  className="rounded-circle mr-2"
-                  fontSize="25px"
-                  color={"#007bff"}
-                  icon="ios-paper"
-                />
-                List View
-              </Tab>
-              <Tab>
-                <Ionicon
-                  className="rounded-circle mr-2"
-                  fontSize="25px"
-                  color={"#007bff"}
-                  icon="ios-pie"
-                />
-                Chart View
-              </Tab>
-          </Tabs>
-          <CreateTransactionButton
-            onCreateTransaction={this.createTransaction}
-          />
-          { 
-            tabView === Utility.LIST_VIEW_NAME && 
-            <TransactionList 
-              items = {itemsWithCategory}
-              onDeleteItem = {this.deleteTransaction}
-              onModifyItem = {this.modifyTrasaction}
-            /> 
+          {
+            isLoading &&
+            <Loader />
           }
           {
-            tabView === Utility.CHART_VIEW_NAME &&
-            <h2>Place holder for Chart View</h2>
+            !isLoading &&
+              <React.Fragment>
+              <Tabs
+                activeIndex={0}
+                onTabChange={this.changeView}
+              >
+                  <Tab>
+                    <Ionicon
+                      className="rounded-circle mr-2"
+                      fontSize="25px"
+                      color={"#007bff"}
+                      icon="ios-paper"
+                    />
+                    List View
+                  </Tab>
+                  <Tab>
+                    <Ionicon
+                      className="rounded-circle mr-2"
+                      fontSize="25px"
+                      color={"#007bff"}
+                      icon="ios-pie"
+                    />
+                    Chart View
+                  </Tab>
+              </Tabs>
+              <CreateTransactionButton
+                onCreateTransaction={this.createTransaction}
+              />
+              { 
+                tabView === Utility.LIST_VIEW_NAME && 
+                <TransactionList 
+                  items = {itemsWithCategory}
+                  onDeleteItem = {this.deleteTransaction}
+                  onModifyItem = {this.modifyTrasaction}
+                /> 
+              }
+              {
+                tabView === Utility.CHART_VIEW_NAME &&
+                <h2>Place holder for Chart View</h2>
+              }
+            </React.Fragment>
           }
         </div>
       </React.Fragment>

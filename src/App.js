@@ -9,7 +9,6 @@ import {
 } from "react-router-dom";
 import CreateTransaction from "./containers/CreateTransaction";
 import Utility from './utility';
-import { testCategories, testItems } from './testData';
 import AppContext from './AppContext';
 import axios from 'axios';
 
@@ -20,11 +19,15 @@ class App extends React.Component {
     this.state = {
       items: {},
       categories: {},
-      currentDate: Utility.parseYearAndMonth()
+      currentDate: Utility.parseYearAndMonth(),
+      isLoading: false
     };
 
     this.actions = {
       getInitialData: () => {
+        this.setState({
+          isLoading: true
+        });
         const {year, month} = this.state.currentDate;
         const getTransactionsUrl = `/transactions?dateTag=${year}-${month}&_sort=timestamp&_order=desc`;
         const promises = [axios.get('/categories'), axios.get(getTransactionsUrl)];
@@ -32,7 +35,8 @@ class App extends React.Component {
           const [categories, items] = responses;
           this.setState({
             items: Utility.flattenArray(items.data),
-            categories: Utility.flattenArray(categories.data)
+            categories: Utility.flattenArray(categories.data),
+            isLoading: false
           });
         });
       },
