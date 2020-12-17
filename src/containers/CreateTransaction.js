@@ -25,6 +25,27 @@ class CreateTransaction extends React.Component {
         };
     }
 
+    componentDidMount() {
+        const { transactionId } = this.props.match.params;
+        this.props.actions.getEditTransactionData(transactionId).then(data => {
+            const {modifiedTransaction, categories} = data;
+            let filteredCategories = Object.keys(categories).filter((cId) => {
+                return categories[cId].type === this.getActiveSelectedCategoryType(0);
+            }).map(cId => categories[cId]);
+
+            let tabIndex = 0;
+            let curCategory = filteredCategories[0];
+            if (transactionId) {
+                curCategory = categories[modifiedTransaction.categoryId];
+                tabIndex = curCategory.type === "income" ? 0 : 1;
+            }
+            this.setState({
+                activeTabIndex: tabIndex,
+                selectedCategory: curCategory
+            });
+        });
+    }
+
     tabChange = (tabIndex) => {
         this.setState({
             activeTabIndex: tabIndex
@@ -41,11 +62,14 @@ class CreateTransaction extends React.Component {
 
     finishSubmit= (formData, isEditMode) => {
         if (!isEditMode) {
-            this.props.actions.createTransaction({...formData, categoryId: this.state.selectedCategory.id});
+            this.props.actions.createTransaction({...formData, categoryId: this.state.selectedCategory.id}).then(() => {
+                this.props.history.push('/');
+            });
         } else {
-            this.props.actions.updateTransaction({...formData, categoryId: this.state.selectedCategory.id});
+            this.props.actions.updateTransaction({...formData, categoryId: this.state.selectedCategory.id}).then(() => {
+                this.props.history.push('/');
+            });
         }
-        this.props.history.push('/');
     }
 
     selectCategory = (category) => {
@@ -81,7 +105,7 @@ class CreateTransaction extends React.Component {
                 <CategoryPicker
                     categories={filteredCategories}
                     onSelectCategory={this.selectCategory}
-                    selectedCategoryId={this.state.selectedCategory.id}
+                    selectedCategory={this.state.selectedCategory}
                 />
                 <EditTransactionForm
                     onFormSubmit={this.finishSubmit}

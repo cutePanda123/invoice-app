@@ -28,6 +28,11 @@ const Utility = {
             accumulator[currentValue.id] = currentValue;
             return accumulator;
         }, {});
+    },
+
+    getDateTag: (date) => {
+        const lastIdx = date.lastIndexOf("-");
+        return date.substring(0, lastIdx);
     }
 }
 

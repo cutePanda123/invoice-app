@@ -13,7 +13,8 @@ class CategoryPicker extends React.Component {
     }
 
     render() {
-        const { categories, selectedCategoryId } = this.props;
+        const { categories, selectedCategory } = this.props;
+        const selectedCategoryId = selectedCategory && selectedCategory.id;
         return (
             <div className="category-picker-component">
                 <div className="row">
@@ -59,7 +60,7 @@ class CategoryPicker extends React.Component {
 CategoryPicker.propTypes = {
     categories: PropTypes.array.isRequired,
     onSelectCategory: PropTypes.func.isRequired,
-    selectedCategoryId: PropTypes.string.isRequired
+    selectedCategory: PropTypes.object.isRequired
 };
 
 export default CategoryPicker;

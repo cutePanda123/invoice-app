@@ -23,11 +23,17 @@ class App extends React.Component {
       isLoading: false
     };
 
-    this.actions = {
-      getInitialData: async () => {
+    const withLoading = (cb) => {
+      return (...args) => {
         this.setState({
           isLoading: true
         });
+        return cb(...args);
+      }
+    }
+
+    this.actions = {
+      getInitialData: withLoading(async () => {
         const {year, month} = this.state.currentDate;
         const getTransactionsUrl = `/transactions?dateTag=${year}-${month}&_sort=timestamp&_order=desc`;
         const results = await Promise.all([axios.get('/categories'), axios.get(getTransactionsUrl)]);
@@ -39,11 +45,36 @@ class App extends React.Component {
         });
 
         return items;
-      },
-      updateDate: async (year, month) => {
-        this.setState({
-          isLoading: true
-        });
+      }),
+
+      getEditTransactionData: withLoading(async (id) => {
+        let promises = [axios.get('/categories')];
+        if (id) {
+          promises.push(axios.get(`/transactions/${id}`));
+        }
+
+        const results = await Promise.all(promises);
+        const [categories, modifiedTransaction] = results;
+        if (id) {
+          this.setState({
+            items: {...this.state.items, [id]: modifiedTransaction.data},
+            categories: Utility.flattenArray(categories.data),
+            isLoading: false
+          });
+        } else {
+          this.setState({
+            categories: Utility.flattenArray(categories.data),
+            isLoading: false
+          });
+        }
+
+        return {
+          categories: Utility.flattenArray(categories.data),
+          modifiedTransaction: modifiedTransaction ? modifiedTransaction.data : null
+        }
+      }),
+
+      updateDate: withLoading(async (year, month) => {
         const getTransactionsUrl = `/transactions?dateTag=${year}-${month}&_sort=timestamp&_order=desc`;
         const response = await axios.get(getTransactionsUrl);
         this.setState({
@@ -53,11 +84,8 @@ class App extends React.Component {
         });
 
         return response;
-      },
-      deleteTransaction: async (transaction) => {
-        this.setState({
-          isLoading: true
-        });
+      }),
+      deleteTransaction: withLoading(async (transaction) => {
         const deletedTransaction = await axios.delete(`/transactions/${transaction.id}`);
         delete this.state.items[transaction.id];
         this.setState({
@@ -65,22 +93,36 @@ class App extends React.Component {
           isLoading: false
         });
         return deletedTransaction;
-      },
+      }),
 
-      createTransaction: (transaction) => {
+      createTransaction: withLoading(async (transaction) => {
         const newTransactionId = Math.max(...Object.keys(this.state.items)) + 1;
-        const newTransaction = {... transaction, id: newTransactionId, timestamp: new Date(transaction.date).getTime()};
+        const newTransaction = await axios.post('/transactions', {
+          ... transaction,
+          id: newTransactionId,
+          timestamp: new Date(transaction.date).getTime(),
+          dateTag: Utility.getDateTag(transaction.date)
+        }); 
         this.setState({
-          items: {...this.state.items, [newTransactionId]: newTransaction}
+          items: {...this.state.items, [newTransactionId]: newTransaction.data}
         });
-      },
+        return newTransaction.data;
+      }),
 
-      updateTransaction: (transaction) => {
-        const editedTransaction = {... transaction, timestamp: new Date(transaction.date).getTime()}
+      updateTransaction: withLoading(async (transaction) => {
+        const editedTransaction = await axios.put(`/transactions/${transaction.id}`, 
+          {
+            ... transaction,
+            timestamp: new Date(transaction.date).getTime(),
+            dateTag: Utility.getDateTag(transaction.date)
+          }
+        );
         this.setState({
-          items: {...this.state.items, [editedTransaction.id]: editedTransaction}
+          items: {...this.state.items, [editedTransaction.id]: editedTransaction.data}
         });
-      }
+
+        return editedTransaction.data;
+      })
     };
   }
 
