@@ -24,38 +24,47 @@ class App extends React.Component {
     };
 
     this.actions = {
-      getInitialData: () => {
+      getInitialData: async () => {
         this.setState({
           isLoading: true
         });
         const {year, month} = this.state.currentDate;
         const getTransactionsUrl = `/transactions?dateTag=${year}-${month}&_sort=timestamp&_order=desc`;
-        const promises = [axios.get('/categories'), axios.get(getTransactionsUrl)];
-        Promise.all(promises).then(responses => {
-          const [categories, items] = responses;
-          this.setState({
-            items: Utility.flattenArray(items.data),
-            categories: Utility.flattenArray(categories.data),
-            isLoading: false
-          });
+        const results = await Promise.all([axios.get('/categories'), axios.get(getTransactionsUrl)]);
+        const [categories, items] = results;
+        this.setState({
+          items: Utility.flattenArray(items.data),
+          categories: Utility.flattenArray(categories.data),
+          isLoading: false
         });
+
+        return items;
       },
-      updateDate: (year, month) => {
+      updateDate: async (year, month) => {
+        this.setState({
+          isLoading: true
+        });
         const getTransactionsUrl = `/transactions?dateTag=${year}-${month}&_sort=timestamp&_order=desc`;
-        axios.get(getTransactionsUrl).then(responses => {
-          this.setState({
-            items: Utility.flattenArray(responses.data),
-            currentDate: {year, month}
-          });
+        const response = await axios.get(getTransactionsUrl);
+        this.setState({
+          items: Utility.flattenArray(response.data),
+          currentDate: {year, month},
+          isLoading: false
         });
+
+        return response;
       },
-      deleteTransaction: (transaction) => {
-        axios.delete(`/transactions/${transaction.id}`).then(() => {
-          delete this.state.items[transaction.id];
-          this.setState({
-            items: this.state.items
-          });
+      deleteTransaction: async (transaction) => {
+        this.setState({
+          isLoading: true
         });
+        const deletedTransaction = await axios.delete(`/transactions/${transaction.id}`);
+        delete this.state.items[transaction.id];
+        this.setState({
+          items: this.state.items,
+          isLoading: false
+        });
+        return deletedTransaction;
       },
 
       createTransaction: (transaction) => {
