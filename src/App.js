@@ -48,29 +48,35 @@ class App extends React.Component {
       }),
 
       getEditTransactionData: withLoading(async (id) => {
-        let promises = [axios.get('/categories')];
-        if (id) {
+        let promises = [];
+        const {items, categories} = this.state;
+        if (Object.keys(categories).length === 0) {
+          promises.push(axios.get('/categories'));
+        }
+        if (id && Object.keys(items).indexOf(id) === -1) {
           promises.push(axios.get(`/transactions/${id}`));
         }
 
         const results = await Promise.all(promises);
-        const [categories, modifiedTransaction] = results;
+        const [fetchedCategories, fetchedTransaction] = results;
+        const finalCategories = fetchedCategories ?  Utility.flattenArray(fetchedCategories.data) : categories;
+        const modifiedTransaction = fetchedTransaction ? fetchedTransaction.data : items[id];
         if (id) {
           this.setState({
-            items: {...this.state.items, [id]: modifiedTransaction.data},
-            categories: Utility.flattenArray(categories.data),
+            items: {...this.state.items, [id]: modifiedTransaction},
+            categories: finalCategories,
             isLoading: false
           });
         } else {
           this.setState({
-            categories: Utility.flattenArray(categories.data),
+            categories: finalCategories,
             isLoading: false
           });
         }
 
         return {
-          categories: Utility.flattenArray(categories.data),
-          modifiedTransaction: modifiedTransaction ? modifiedTransaction.data : null
+          categories: finalCategories,
+          modifiedTransaction: modifiedTransaction
         }
       }),
 
