@@ -4,8 +4,10 @@ import { Tabs, Tab } from '../components/Tabs';
 import EditTransactionForm from '../components/EditTransactionForm';
 import withContext from '../WithContext';
 import { withRouter } from 'react-router-dom';
+import PropTypes from 'prop-types';
+import Loader from '../components/Loader';
 
-class CreateTransaction extends React.Component {
+export class CreateTransaction extends React.Component {
     constructor(props) {
         super(props);
         const { items, categories } = this.props.data;
@@ -86,7 +88,7 @@ class CreateTransaction extends React.Component {
     }
 
     render() {
-        const { categories } = this.props.data;
+        const { categories, isLoading } = this.props.data;
         let filteredCategories = Object.keys(categories).filter((cId) => {
             return categories[cId].type === this.getActiveSelectedCategoryType(this.state.activeTabIndex);
         }).map(cId => categories[cId]);
@@ -95,26 +97,41 @@ class CreateTransaction extends React.Component {
                 className='create-transaction py-3 px-3 rounded mt-3'
                 style={{background: '#fff'}}
             >
-                <Tabs
-                    activeIndex={this.state.activeTabIndex}
-                    onTabChange={this.tabChange}
-                >
-                    <Tab>Income</Tab>
-                    <Tab>Outcome</Tab>
-                </Tabs>
-                <CategoryPicker
-                    categories={filteredCategories}
-                    onSelectCategory={this.selectCategory}
-                    selectedCategory={this.state.selectedCategory}
-                />
-                <EditTransactionForm
-                    onFormSubmit={this.finishSubmit}
-                    onFormCancel={this.cancelSubmit}
-                    transaction={this.getEditTransaction()}
-                />
+                {
+                    isLoading &&
+                    <Loader />
+                }
+                { !isLoading &&
+                    <React.Fragment>
+                        <Tabs
+                            activeIndex={this.state.activeTabIndex}
+                            onTabChange={this.tabChange}
+                        >
+                            <Tab>Income</Tab>
+                            <Tab>Outcome</Tab>
+                        </Tabs>
+                        <CategoryPicker
+                            categories={filteredCategories}
+                            onSelectCategory={this.selectCategory}
+                            selectedCategory={this.state.selectedCategory}
+                        />
+                        <EditTransactionForm
+                            onFormSubmit={this.finishSubmit}
+                            onFormCancel={this.cancelSubmit}
+                            transaction={this.getEditTransaction()}
+                        />
+                    </React.Fragment>
+                }
             </div>
         );
     }
 };
+
+CreateTransaction.propTypes = {
+    data: PropTypes.object.isRequired,
+    actions: PropTypes.object.isRequired,
+    history: PropTypes.object.isRequired,
+    match: PropTypes.object.isRequired
+}
 
 export default withRouter(withContext(CreateTransaction));
