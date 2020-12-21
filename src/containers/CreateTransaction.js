@@ -21,6 +21,7 @@ export class CreateTransaction extends React.Component {
             curCategory = categories[items[editTransaction.id].categoryId];
             tabIndex = curCategory.type === "income" ? 0 : 1;
         }
+
         this.state = {
             activeTabIndex: tabIndex,
             selectedCategory: curCategory

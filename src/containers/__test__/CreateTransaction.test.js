@@ -69,7 +69,7 @@ describe('CreateTransaction test: create new transaction', () => {
                 history={mockHistory}
                 match={emptyMatch}
             />
-        )
+        );
         expect(dataLoadingUI).toMatchSnapshot();        
     });
 
@@ -78,6 +78,45 @@ describe('CreateTransaction test: create new transaction', () => {
         expect(dataLoadingUI.find(Tab).length).toEqual(0);
         expect(dataLoadingUI.find(CategoryPicker).length).toEqual(0);
         expect(dataLoadingUI.find(EditTransactionForm).length).toEqual(0);
+    });
+
+    it('should not call create transaction method when submit empty form', () => {
+        const loadedEmptyData = {...emptyData, isLoading: false};
+        dataLoadingUI = mount(
+            <CreateTransaction
+                data={loadedEmptyData}
+                actions={mockActionsForLoadingUi}
+                history={mockHistory}
+                match={emptyMatch}
+            />
+        )
+        dataLoadingUI.find('form').simulate('submit');
+        expect(mockActionsForLoadingUi.createTransaction).not.toHaveBeenCalled();
+    });
+
+    it('should call create transaction method when submit valid form', () => {
+        const loadedEmptyData = {
+            ...emptyData,
+            categories: Utility.flattenArray(testCategories),
+            isLoading: false
+        };
+        
+        const loadedEmptyUI = mount(
+            <CreateTransaction
+                data={loadedEmptyData}
+                actions={mockActionsForLoadingUi}
+                history={mockHistory}
+                match={emptyMatch}
+            />
+        );
+        setInputValue('#date', loadedEmptyUI, '2020-10-10');
+        setInputValue('#desc', loadedEmptyUI, 't');
+        setInputValue('#amount', loadedEmptyUI, '10');
+
+        loadedEmptyUI.find('.category-item').at(0).simulate('click');
+        loadedEmptyUI.find('form').simulate('submit')
+        
+        expect(mockActionsForLoadingUi.createTransaction).toHaveBeenCalled();
     });
 });
 
@@ -126,8 +165,17 @@ describe('CreateTransaction test: edit a transaction', () => {
         expect(mockActionsForLoadedUi.getEditTransactionData)
             .toHaveBeenCalledWith(matchWithTransaction.params.transactionId);
     });
+
+    it('should call create transaction method when submit form', () => {
+        dataLoadedUI.find('form').simulate('submit');
+        expect(mockActionsForLoadedUi.updateTransaction)
+            .toHaveBeenCalled();
+    });
 });
 
+const setInputValue = (selector, domElement, newValue) => {
+    domElement.find(selector).instance().value = newValue;
+};
 
 
 
