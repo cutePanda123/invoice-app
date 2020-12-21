@@ -4,13 +4,12 @@ import { Tabs, Tab } from '../../components/Tabs';
 import { CreateTransaction } from '../CreateTransaction';
 import EditTransactionForm from '../../components/EditTransactionForm';
 import CategoryPicker from '../../components/CategoryPicker';
-import AppContext from '../../AppContext';
 import { testItems, testCategories } from '../../testData';
 import Utility from '../../utility';
-import { BrowserRouter as Router } from 'react-router-dom';
-import CreateTransactionButton from '../../components/CreateTransactionButton';
+import Loader from '../../components/Loader';
 
-let wrapper = null;
+let dataLoadedUI = null;
+let dataLoadingUI = null;
 
 const fullyLoadedData = {
     items: Utility.flattenArray(testItems),
@@ -34,65 +33,102 @@ const emptyMatch = {
     params: {}
 }
 
-const mockActions = {
+const mockActionsForLoadedUi = {
+    getEditTransactionData: jest.fn(),
+    createTransaction: jest.fn(),
+    updateTransaction: jest.fn()
+};
+
+const mockActionsForLoadingUi = {
     getEditTransactionData: jest.fn(),
     createTransaction: jest.fn(),
     updateTransaction: jest.fn()
 };
 
 
-
 const mockHistory = {
     push: jest.fn()
 };
 
-describe('CreateTransaction test', () => {
+describe('CreateTransaction test: create new transaction', () => {
     beforeEach(() => {
-        mockActions.getEditTransactionData.mockReturnValue(Promise.resolve(
+        mockActionsForLoadingUi.getEditTransactionData.mockReturnValue(Promise.resolve(
             {
                 modifiedTransaction: testItems[0],
                 categories: Utility.flattenArray(testCategories)
             }
         ));
-        mockActions.createTransaction.mockReturnValue(Promise.resolve(''));
-        mockActions.updateTransaction.mockReturnValue(Promise.resolve(''));
+        mockActionsForLoadingUi.createTransaction.mockReturnValue(Promise.resolve(''));
+        mockActionsForLoadingUi.updateTransaction.mockReturnValue(Promise.resolve(''));
     });
     it('initial data: snapshot test', () => {
-        mockActions.getEditTransactionData().then(data => {
-
-        });
-        wrapper = mount(
+        dataLoadingUI = mount(
             <CreateTransaction
                 data={emptyData}
-                actions={mockActions}
+                actions={mockActionsForLoadingUi}
                 history={mockHistory}
                 match={emptyMatch}
             />
         )
-        expect(wrapper).toMatchSnapshot();        
+        expect(dataLoadingUI).toMatchSnapshot();        
+    });
+
+    it('should render correct components if data is not ready', () => {
+        expect(dataLoadingUI.find(Loader).length).toEqual(1);
+        expect(dataLoadingUI.find(Tab).length).toEqual(0);
+        expect(dataLoadingUI.find(CategoryPicker).length).toEqual(0);
+        expect(dataLoadingUI.find(EditTransactionForm).length).toEqual(0);
+    });
+});
+
+describe('CreateTransaction test: edit a transaction', () => {
+    beforeEach(() => {
+        mockActionsForLoadedUi.getEditTransactionData.mockReturnValue(Promise.resolve(
+            {
+                modifiedTransaction: testItems[0],
+                categories: Utility.flattenArray(testCategories)
+            }
+        ));
+        mockActionsForLoadedUi.createTransaction.mockReturnValue(Promise.resolve(''));
+        mockActionsForLoadedUi.updateTransaction.mockReturnValue(Promise.resolve(''));
     });
 
     it('loaded data: snapshot test', () => {
-        mockActions.getEditTransactionData().then(data => {
-
-        });
-        wrapper = mount(
+        dataLoadedUI = mount(
             <CreateTransaction
                 data={fullyLoadedData}
-                actions={mockActions}
+                actions={mockActionsForLoadedUi}
                 history={mockHistory}
                 match={matchWithTransaction}
             />
-        )
-        expect(wrapper).toMatchSnapshot();        
+        );
+        expect(dataLoadedUI).toMatchSnapshot();    
     });
 
-    // it('should render correct components', () => {
-    //     expect(wrapper.find(Tabs).length).toEqual(1);
-    //     expect(wrapper.find(Tab).length).toEqual(2);
-    //     expect(wrapper.find(CategoryPicker).length).toEqual(1);
-    //     expect(wrapper.find(EditTransactionForm).length).toEqual(1);
-    // });
+    it('should render correct components if data is ready', () => {
+        expect(dataLoadedUI.find(Loader).length).toEqual(0);
+        expect(dataLoadedUI.find(Tab).length).toEqual(2);
+        expect(dataLoadedUI.find(CategoryPicker).length).toEqual(1);
+        expect(dataLoadedUI.find(Tabs).props().activeIndex).toEqual(1);
+        expect(dataLoadedUI.find(EditTransactionForm).length).toEqual(1);
+        expect(dataLoadedUI.find(EditTransactionForm).props().transaction).toEqual(testItems[0]);
+    });
+
+    it('should call data fetching method with correct parameter if transaction id presents', () => {
+        dataLoadedUI = mount(
+            <CreateTransaction
+                data={fullyLoadedData}
+                actions={mockActionsForLoadedUi}
+                history={mockHistory}
+                match={matchWithTransaction}
+            />
+        );
+        expect(mockActionsForLoadedUi.getEditTransactionData)
+            .toHaveBeenCalledWith(matchWithTransaction.params.transactionId);
+    });
 });
+
+
+
 
 

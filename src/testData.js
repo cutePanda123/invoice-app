@@ -45,21 +45,21 @@ export const testCategories = [
   
 export const testItems = [
   {
-    "id": 0,
+    "id": 1,
     "desc": "travel in Seattle",
     "amount": 2000,
     "date": "2020-10-20",
     "categoryId": 1
   },
   {
-    "id": 1,
+    "id": 2,
     "desc": "travel in San Jose",
     "amount": 4000,
     "date": "2020-12-10",
     "categoryId": 1
   },
   {
-    "id": 2,
+    "id": 3,
     "desc": "stock investement",
     "amount": 14000,
     "date": "2020-12-15",
@@ -68,7 +68,7 @@ export const testItems = [
 ];
 
 export const fakeTransaction = {
-  "id": 0,
+  "id": 100,
   "desc": "fake new transaction",
   "amount": 14000,
   "date": "2020-12-10",

@@ -29,6 +29,7 @@ export class CreateTransaction extends React.Component {
 
     componentDidMount() {
         const { transactionId } = this.props.match.params;
+
         this.props.actions.getEditTransactionData(transactionId).then(data => {
             const {modifiedTransaction, categories} = data;
             let filteredCategories = Object.keys(categories).filter((cId) => {
