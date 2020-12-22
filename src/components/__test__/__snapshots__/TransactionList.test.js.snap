@@ -6,7 +6,7 @@ exports[`TransactionList test snapshot test 1`] = `
 >
   <li
     className="list-group-item d-flex justify-content-between align-items-center"
-    key="0"
+    key="1"
   >
     <span
       className="col-1"
@@ -16,7 +16,7 @@ exports[`TransactionList test snapshot test 1`] = `
         className="rounded-circle"
         color="#fff"
         fontSize="30px"
-        icon="ios-restaurant"
+        icon="ios-plane"
         rotate={false}
         shake={false}
         style={
@@ -87,7 +87,7 @@ exports[`TransactionList test snapshot test 1`] = `
   </li>
   <li
     className="list-group-item d-flex justify-content-between align-items-center"
-    key="1"
+    key="2"
   >
     <span
       className="col-1"
@@ -97,7 +97,7 @@ exports[`TransactionList test snapshot test 1`] = `
         className="rounded-circle"
         color="#fff"
         fontSize="30px"
-        icon="ios-restaurant"
+        icon="ios-plane"
         rotate={false}
         shake={false}
         style={
@@ -168,7 +168,7 @@ exports[`TransactionList test snapshot test 1`] = `
   </li>
   <li
     className="list-group-item d-flex justify-content-between align-items-center"
-    key="2"
+    key="3"
   >
     <span
       className="col-1"
@@ -178,7 +178,7 @@ exports[`TransactionList test snapshot test 1`] = `
         className="rounded-circle"
         color="#fff"
         fontSize="30px"
-        icon="ios-basket"
+        icon="logo-yen"
         rotate={false}
         shake={false}
         style={
@@ -197,7 +197,7 @@ exports[`TransactionList test snapshot test 1`] = `
     <span
       className="col-2 font-weight-bold"
     >
-      -
+      +
       $
       14000
     </span>

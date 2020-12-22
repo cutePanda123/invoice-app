@@ -73,12 +73,12 @@ const TransactionList = ({ items, onModifyItem, onDeleteItem }) => {
             }
         </ul>
     );
-}
+};
 
 TransactionList.propTypes = {
     items: PropTypes.array.isRequired,
     onModifyItem: PropTypes.func.isRequired,
     onDeleteItem: PropTypes.func.isRequired
-}
+};
 
 export default TransactionList;
