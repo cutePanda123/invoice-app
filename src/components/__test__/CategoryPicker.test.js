@@ -53,8 +53,6 @@ describe('CategoryPicker test', () => {
     it('select a category should trigger callback and change the active item', () => {
         wrapper = mount(<CategoryPicker {...propsWithSelectedCategory} />);
         wrapper.find('.category-item').at(1).simulate('click');
-        expect(wrapper.find('.category-item').at(1).hasClass('active')).toEqual(true);
-        expect(wrapper.find('.category-item').at(0).hasClass('active')).toEqual(false);
         expect(propsWithSelectedCategory.onSelectCategory).toHaveBeenCalledWith(categories[1]);
     });
 });
