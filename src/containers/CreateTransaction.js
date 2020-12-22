@@ -134,6 +134,6 @@ CreateTransaction.propTypes = {
     actions: PropTypes.object.isRequired,
     history: PropTypes.object.isRequired,
     match: PropTypes.object.isRequired
-}
+};
 
 export default withRouter(withContext(CreateTransaction));

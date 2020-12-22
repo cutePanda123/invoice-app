@@ -10,10 +10,11 @@ import Ionicon from 'react-ionicons';
 import withContext from '../WithContext';
 import { withRouter } from 'react-router-dom';
 import Loader from '../components/Loader';
+import PropTypes from 'prop-types';
 
 const tabTexts = [Utility.LIST_VIEW_NAME, Utility.CHART_VIEW_NAME];
 
-class Home extends React.Component {
+export class Home extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -141,6 +142,13 @@ class Home extends React.Component {
       </React.Fragment>
     );
   }
-}
+};
+
+Home.propTypes = {
+  data: PropTypes.object.isRequired,
+  actions: PropTypes.object.isRequired,
+  history: PropTypes.object.isRequired,
+  match: PropTypes.object.isRequired
+};
 
 export default withRouter(withContext(Home));
