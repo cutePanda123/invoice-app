@@ -3,10 +3,10 @@ import { shallow } from 'enzyme';
 import Ionicon from 'react-ionicons';
 import TransactionList from '../TransactionList';
 import Utility from '../../utility';
-import { testItems as items, testCategories } from '../../testData';
+import { testItems, testCategories } from '../../testData';
 
 const categories = Utility.flattenArray(testCategories);
-const itemWithCategories = items.map((item) => {
+const itemWithCategories = testItems.map((item) => {
     item.category = categories[item.categoryId];
     return item;
 });
