@@ -11,7 +11,7 @@ import withContext from '../WithContext';
 import { withRouter } from 'react-router-dom';
 import Loader from '../components/Loader';
 import PropTypes from 'prop-types';
-import { PieChart, Pie, Cell, Tooltip } from 'recharts';
+import CustomPieChart from '../components/CustomPieChart';
 
 const tabTexts = [Utility.LIST_VIEW_NAME, Utility.CHART_VIEW_NAME];
 
@@ -74,7 +74,6 @@ export class Home extends React.Component {
 
   render() {
     const { tabView } = this.state;
-    const Colors = Object.keys(Utility.Colors).map(key => Utility.Colors[key]);
     const { items, categories, currentDate, isLoading } = this.props.data;
     let totalIncome = 0, totalOutcome = 0;
     let transactionsWithCategory = [];
@@ -89,7 +88,8 @@ export class Home extends React.Component {
       transactionsWithCategory.push(items[tId]);
     }
 
-    const chartData = generateChartDataByCategory(transactionsWithCategory, Utility.OUTCOME_TYPE);
+    const chartOutcomeData = generateChartDataByCategory(transactionsWithCategory, Utility.OUTCOME_TYPE);
+    const chartIncomeData = generateChartDataByCategory(transactionsWithCategory, Utility.INCOME_TYPE);
 
     return (
       <React.Fragment>
@@ -157,27 +157,10 @@ export class Home extends React.Component {
               }
               {
                 tabView === Utility.CHART_VIEW_NAME &&
-                <PieChart width={800} height={400}>
-                  <Pie
-                    dataKey="value"
-                    isAnimationActive={false}
-                    data={chartData}
-                    cx={200}
-                    cy={200}
-                    outerRadius={80}
-                    fill="#8884d8"
-                    label
-                  >
-                    {
-                      chartData.map((entry, index) => {
-                        return (
-                          <Cell key={`cell-${index}`} fill={Colors[index % Colors.length]} />
-                        );
-                      })
-                    }
-                  </Pie>
-                  <Tooltip />
-                </PieChart>
+                <React.Fragment>
+                  <CustomPieChart title={"Income Chart View"} categoryData={chartIncomeData} />
+                  <CustomPieChart title={"Outcome Chart View"} categoryData={chartOutcomeData} />
+                </React.Fragment>
               }
             </React.Fragment>
           }
