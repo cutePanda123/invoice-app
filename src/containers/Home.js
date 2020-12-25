@@ -11,8 +11,28 @@ import withContext from '../WithContext';
 import { withRouter } from 'react-router-dom';
 import Loader from '../components/Loader';
 import PropTypes from 'prop-types';
+import { PieChart, Pie, Cell, Tooltip } from 'recharts';
 
 const tabTexts = [Utility.LIST_VIEW_NAME, Utility.CHART_VIEW_NAME];
+
+const generateChartDataByCategory = (transactions, type = Utility.INCOME_TYPE) => {
+  let categoryMap = {};
+  transactions.filter(transaction => transaction.category.type === type).forEach(transaction => {
+    if (categoryMap[transaction.categoryId]) {
+      categoryMap[transaction.categoryId].value += (transaction.amount * 1);
+      categoryMap[transaction.categoryId].transactions.push(transaction.id);
+    } else {
+      categoryMap[transaction.categoryId] = {
+        name: transaction.category.name,
+        value: transaction.amount * 1,
+        transactions: [transaction.id]
+      };
+    }
+  });
+  return Object.keys(categoryMap).map(mapKey => {
+    return { ...categoryMap[mapKey] };
+  });
+};
 
 export class Home extends React.Component {
   constructor(props) {
@@ -54,9 +74,10 @@ export class Home extends React.Component {
 
   render() {
     const { tabView } = this.state;
+    const Colors = Object.keys(Utility.Colors).map(key => Utility.Colors[key]);
     const { items, categories, currentDate, isLoading } = this.props.data;
     let totalIncome = 0, totalOutcome = 0;
-    let itemsWithCategory = [];
+    let transactionsWithCategory = [];
     for (const tId in items) {
       const category = categories[items[tId].categoryId]
       if (category.type === Utility.OUTCOME_TYPE) {
@@ -65,8 +86,10 @@ export class Home extends React.Component {
         totalIncome += items[tId].amount;
       }
       items[tId]['category'] = category;
-      itemsWithCategory.push(items[tId]);
+      transactionsWithCategory.push(items[tId]);
     }
+
+    const chartData = generateChartDataByCategory(transactionsWithCategory, Utility.OUTCOME_TYPE);
 
     return (
       <React.Fragment>
@@ -127,14 +150,34 @@ export class Home extends React.Component {
               { 
                 tabView === Utility.LIST_VIEW_NAME && 
                 <TransactionList 
-                  items = {itemsWithCategory}
+                  items = {transactionsWithCategory}
                   onDeleteItem = {this.deleteTransaction}
                   onModifyItem = {this.modifyTrasaction}
                 /> 
               }
               {
                 tabView === Utility.CHART_VIEW_NAME &&
-                <h2>Place holder for Chart View</h2>
+                <PieChart width={800} height={400}>
+                  <Pie
+                    dataKey="value"
+                    isAnimationActive={false}
+                    data={chartData}
+                    cx={200}
+                    cy={200}
+                    outerRadius={80}
+                    fill="#8884d8"
+                    label
+                  >
+                    {
+                      chartData.map((entry, index) => {
+                        return (
+                          <Cell key={`cell-${index}`} fill={Colors[index % Colors.length]} />
+                        );
+                      })
+                    }
+                  </Pie>
+                  <Tooltip />
+                </PieChart>
               }
             </React.Fragment>
           }

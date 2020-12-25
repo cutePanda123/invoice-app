@@ -4,6 +4,15 @@ const Utility = {
     CHART_VIEW_NAME:'chart-view',
     INCOME_TYPE: 'income',
     OUTCOME_TYPE: 'outcome',
+    Colors: {
+        blue: '#347eff',
+        deepBlue: '#61dafb',
+        green: '#28a745',
+        red: '#dc3545',
+        gray: '#555',
+        lightGray: '#efefef',
+        white: '#fff',
+    },
     getMonthString: (month) => {
         return month < 10 ? '0' + month : month;
     },
