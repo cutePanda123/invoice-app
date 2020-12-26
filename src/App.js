@@ -37,13 +37,14 @@ class App extends React.Component {
         const {year, month} = this.state.currentDate;
         const getTransactionsUrl = `/transactions?dateTag=${year}-${month}&_sort=timestamp&_order=desc`;
         const results = await Promise.all([axios.get('/categories'), axios.get(getTransactionsUrl)]);
+        console.log(results);
         const [categories, items] = results;
         this.setState({
           items: Utility.flattenArray(items.data),
           categories: Utility.flattenArray(categories.data),
           isLoading: false
         });
-
+        
         return items;
       }),
 
