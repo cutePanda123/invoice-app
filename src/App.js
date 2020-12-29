@@ -37,7 +37,6 @@ class App extends React.Component {
         const {year, month} = this.state.currentDate;
         const getTransactionsUrl = `/transactions?dateTag=${year}-${month}&_sort=timestamp&_order=desc`;
         const results = await Promise.all([axios.get('/categories'), axios.get(getTransactionsUrl)]);
-        console.log(results);
         const [categories, items] = results;
         this.setState({
           items: Utility.flattenArray(items.data),
@@ -53,14 +52,17 @@ class App extends React.Component {
         const {items, categories} = this.state;
         if (Object.keys(categories).length === 0) {
           promises.push(axios.get('/categories'));
+        } else {
+          promises.push(Promise.resolve(null));
         }
-        if (id && Object.keys(items).indexOf(id) === -1) {
+
+        if (id && Object.keys(items).indexOf(id.toString()) === -1) {
           promises.push(axios.get(`/transactions/${id}`));
         }
 
         const results = await Promise.all(promises);
         const [fetchedCategories, fetchedTransaction] = results;
-        const finalCategories = fetchedCategories ?  Utility.flattenArray(fetchedCategories.data) : categories;
+        const finalCategories = fetchedCategories ? Utility.flattenArray(fetchedCategories.data) : categories;
         const modifiedTransaction = fetchedTransaction ? fetchedTransaction.data : items[id];
         if (id) {
           this.setState({
@@ -125,7 +127,7 @@ class App extends React.Component {
           }
         );
         this.setState({
-          items: {...this.state.items, [editedTransaction.id]: editedTransaction.data}
+          items: {...this.state.items, [editedTransaction.data.id]: editedTransaction.data}
         });
 
         return editedTransaction.data;

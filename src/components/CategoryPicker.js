@@ -60,7 +60,7 @@ class CategoryPicker extends React.Component {
 CategoryPicker.propTypes = {
     categories: PropTypes.array.isRequired,
     onSelectCategory: PropTypes.func.isRequired,
-    selectedCategory: PropTypes.object.isRequired
+    selectedCategory: PropTypes.object
 };
 
 export default CategoryPicker;
